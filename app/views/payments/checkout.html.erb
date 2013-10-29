@@ -1,0 +1,106 @@
+<% content_for :head do %>
+  <%= javascript_include_tag "http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js" %>
+  <%= javascript_include_tag "https://js.stripe.com/v2/" %>
+
+  <script type="text/javascript">
+    Stripe.setPublishableKey('pk_test_h3DuEFi6li4dKSe8ZcfporXg');
+
+    var stripeResponseHandler = function(status, response) {
+      var $form = $('#payment-form');
+
+      if (response.error) {
+        // Show the errors on the form
+        $form.find('.payment-errors').text(response.error.message);
+        $form.find('input[type="submit"]').prop('disabled', false);
+      } else {
+        // token contains id, last4, and card type
+        var token = response.id;
+        // Insert the token into the form so it gets submitted to the server
+        $form.append($('<input type="hidden" name="stripeToken" />').val(token));
+        // and submit
+        //$form.get(0).submit();
+
+        console.log(response);
+      }
+    };
+
+    jQuery(function($) {
+      $('#payment-form').submit(function(event) {
+        var $form = $(this);
+
+        // Disable the submit button to prevent repeated clicks
+        $form.find('input[type="submit"]').prop('disabled', true);
+
+        Stripe.card.createToken($form, stripeResponseHandler);
+
+        // Prevent the form from submitting with the default action
+        return false;
+      });
+    });
+
+    $(document).ready(function() {
+      $('#payment-form').validate({
+        debug: true,
+        errorPlacement: function(error, element) {
+
+        }
+      });
+    });
+
+  </script>
+<% end %>
+
+<%= form_for @user, :url => checkout_path, :html => {:id => "payment-form"} do |f| %>
+  <span class="payment-errors"></span>
+
+  <h3>Credit Card Information</h3>
+
+  <input type="text" size="20" data-stripe="number" placeholder="Card Number"/>
+  <div class="field-help">The 16 digits on the front of the card</div>
+
+  <div class="form-row credit-date">
+    <%= select_month 14, use_two_digit_numbers: true, prompt: 'Month', :size => 2, "data-stripe" => "exp-month" %>
+    <span> / </span>
+    <%= select_year 14, start_year: Time.now.year, end_year: Time.now.year+10, prompt: 'Year', :size => 4, "data-stripe" => "exp-year" %>
+    <div class="field-help">Expiration date - MM/YYYY </div>
+  </div>
+
+  <input type="text" size="4" data-stripe="cvc" placeholder="CVC Code" class="cvc"/>
+  <div class="field-help">Last 3 digits on back of card</div>
+
+  <h3>Billing Information</h3>
+  <%= f.text_field :billing_first_name, :placeholder => "First Name", :required => true  %>
+  <%= f.text_field :billing_last_name, :placeholder => "Last Name", :required => true %>
+  <%= f.text_field :billing_address_one, :placeholder => "Address Line 1", "data-stripe" => "address_line1", :required => true %>
+  <%= f.text_field :billing_address_two, :placeholder => "Address Line 2", "data-stripe" => "address_line2" %>
+  <%= f.select :billing_country, options_for_select(countries), {}, {"data-stripe" => "address_country", :required => true, :class => "country"} %>
+  <div class="form-row city-info">
+    <%= f.text_field :billing_city, :placeholder => "City", "data-stripe" => "address_city", :required => true %>
+    <%= f.select :billing_state, options_for_select(ca_provinces), "data-stripe" => "address_state", :required => true %>
+    <%= f.text_field :billing_zipcode, :placeholder => "Postal/Zip Code", "data-stripe" => "address_zip", :required => true %>
+  </div>
+  <%= f.text_field :billing_phone, :placeholder => "Phone", :required => true %>
+
+  <h3>
+    Shipping Information
+    <div class="same-billing">
+      <%= f.check_box  :shipping_same %><%= f.label :shipping_same, "Same as billing" %>
+    </div>
+  </h3>
+
+  <div class="shipping-info">
+    <%= f.text_field :shipping_first_name, :placeholder => "First Name" %>
+    <%= f.text_field :shipping_last_name, :placeholder => "Last Name" %>
+    <%= f.text_field :shipping_address_one, :placeholder => "Address Line 1" %>
+    <%= f.text_field :shipping_address_two, :placeholder => "Address Line 2" %>
+    <%= f.select :shipping_country, options_for_select(countries), {}, {:class => "country"} %>
+    <div class="form-row city-info">
+      <%= f.text_field :shipping_city, :placeholder => "City"%>
+      <%= f.select :shipping_state, options_for_select(ca_provinces) %>
+      <%= f.text_field :shipping_zipcode, :placeholder => "Postal/Zip Code" %>
+    </div>
+    <%= f.text_field :shipping_phone, :placeholder => "Phone" %>
+  </div>
+
+  <%= f.submit "Check out" %>
+<% end %>

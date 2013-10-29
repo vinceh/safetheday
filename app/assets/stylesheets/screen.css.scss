@@ -1,0 +1,146 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+@import "compass";
+
+@include font-face("ProximaNovaLight", font-files("ProximaNova-Light.otf"));
+@include font-face("ProximaNovaSemiBold", font-files("ProximaNova-Semibold.otf"));
+@include font-face("ProximaNovaRegular", font-files("ProximaNova-Regular.otf"));
+
+@mixin font-regular {
+  font-family: "ProximaNovaRegular";
+}
+
+@mixin font-light {
+  font-family: "ProximaNovaLight";
+}
+
+@mixin font-semibold {
+  font-family: "ProximaNovaSemiBold";
+}
+
+input, select {
+  @include font-light;
+  outline: none;
+  font-size: 16px;
+  color: #333;
+  &[type='text'] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    &:focus, &:hover {
+      border: 1px solid #999;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+select {
+  padding: 9px;
+  margin: 0;
+  border: 1px solid #ccc;
+  &:focus, &:hover {
+    border: 1px solid #999;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+h3 {
+  font-size: 24px;
+  @include font-semibold;
+  color: #333;
+}
+
+body {
+  @include font-light;
+  color: #777;
+}
+
+a.light {
+  color: #aaa;
+  text-decoration: none;
+  &:visited, &:hover {
+    color: white;
+  }
+}
+
+.header {
+  padding: 15px 0;
+  margin-bottom: 30px;
+  background-color: #222;
+  a {
+    font-size: 13px;
+  }
+}
+
+.container {
+  width: 900px;
+  margin: 0 auto;
+}
+
+#payment-form {
+  h3 {
+    margin: 40px 0 20px;
+    width: 472px;
+    .same-billing {
+      float: right;
+      label {
+        margin-left: 5px;
+        position: relative;
+        top: -1px;
+        color: #777;
+        font-size: 16px;
+        @include font-light;
+      }
+    }
+  }
+  .field-help {
+    margin-top: -3px;
+    font-size: 13px;
+    margin-bottom: 10px;
+    color: #888;
+  }
+  .form-row {
+    input {
+      display: inline-block;
+      width: auto;
+      margin: 0;
+      margin-bottom: 10px;
+    }
+    &.credit-date {
+      span {
+        margin: 0 5px;
+      }
+      select {
+        width: 224px;
+      }
+    }
+    &.city-info {
+    }
+  }
+  select {
+    margin-bottom: 10px;
+    &.country {
+      display: block;
+      width: 472px;
+    }
+  }
+  input {
+    display: block;
+    width: 450px;
+    margin-bottom: 10px;
+    &.cvc {
+      width: 100px;
+    }
+    &[type="checkbox"], &[type="submit"] {
+      display: inline;
+      width: auto;
+    }
+  }
+}
