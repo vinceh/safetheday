@@ -11,7 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131026013201) do
+ActiveRecord::Schema.define(:version => 20131030215112) do
+
+  create_table "invoices", :force => true do |t|
+    t.string   "stripe_invoice_id"
+    t.integer  "user_id"
+    t.string   "stripe_charge_id"
+    t.integer  "amount"
+    t.integer  "stripe_fee"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "",    :null => false
@@ -49,6 +59,7 @@ ActiveRecord::Schema.define(:version => 20131026013201) do
     t.string   "billing_phone"
     t.datetime "created_at",                                :null => false
     t.datetime "updated_at",                                :null => false
+    t.boolean  "paid",                   :default => false
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

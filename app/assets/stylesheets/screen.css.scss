@@ -190,8 +190,11 @@ a.light {
         &:first-child {
           width: 226px;
         }
+        select {
+          width: 72px;
+        }
         &:last-child {
-          width: 126px;
+          width: 122px;
         }
       }
     }

@@ -15,7 +15,7 @@ class PaymentsController < ApplicationController
       if @user.valid? && sub && @user.create_subscription(sub, params[:stripeToken])
         redirect_to root_url
       else
-
+        redirect_to root_url
       end
 
       # redirect_to root_url
