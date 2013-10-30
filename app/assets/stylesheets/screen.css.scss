@@ -151,6 +151,11 @@ a.light {
         margin-right: 3px;
       }
     }
+    img {
+      position: relative;
+      top: 1px;
+      height: 19px;
+    }
   }
   .payment-errors {
     color: $error;
@@ -183,7 +188,7 @@ a.light {
     &.city-info {
       input {
         &:first-child {
-          width: 222px;
+          width: 226px;
         }
         &:last-child {
           width: 126px;
@@ -214,6 +219,9 @@ a.light {
       background-image: url("ast.png");
       background-repeat: no-repeat;
       background-position: right center;
+      &.not-required {
+        background-image: none;
+      }
     }
     &[type="checkbox"], &[type="submit"] {
       display: inline;

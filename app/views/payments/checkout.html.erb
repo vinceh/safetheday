@@ -18,18 +18,16 @@
         $form.find('.payment-errors').text("");
         // Insert the token into the form so it gets submitted to the server
         $form.append($('<input type="hidden" name="stripeToken" />').val(token));
-        // and submit
-        //$form.get(0).submit();
 
         console.log(response);
+
+        $form.get(0).submit();
       }
     };
 
     $(document).ready(function() {
       $('#payment-form').validate({
-        debug: true,
         errorPlacement: function(error, element) {
-
         },
         errorClass: "error-field",
         rules: {
@@ -40,9 +38,6 @@
             required: ".billing-same:unchecked"
           },
           "user[shipping_address_one]": {
-            required: ".billing-same:unchecked"
-          },
-          "user[shipping_address_two]": {
             required: ".billing-same:unchecked"
           },
           "user[shipping_city]": {
@@ -56,26 +51,26 @@
           }
         },
         submitHandler: function() {
-          $('#payment-form').submit(function(event) {
-            var $form = $(this);
+          var $form = $('#payment-form');
 
-            // Disable the submit button to prevent repeated clicks
-            $form.find('input[type="submit"]').prop('disabled', true);
+          // Disable the submit button to prevent repeated clicks
+          $form.find('input[type="submit"]').prop('disabled', true);
 
-            Stripe.card.createToken($form, stripeResponseHandler);
+          Stripe.card.createToken($form, stripeResponseHandler);
 
-            // Prevent the form from submitting with the default action
-            return false;
-          });
+          // Prevent the form from submitting with the default action
+          return false;
         }
       });
     });
   </script>
 <% end %>
 
-<%= form_for @user, :url => checkout_path, :html => {:id => "payment-form"} do |f| %>
+<%= form_for @user, :url => customer_payment_path, :method => "POST", :html => {:id => "payment-form"} do |f| %>
+  <%= hidden_field_tag 'subscription', session[:cart] %>
+
   <h3>
-    Credit Card Information
+    Credit Card Information <%= image_tag "lock.png" %>
     <div class="required-text"><span>*</span> Required fields</div>
   </h3>
 
@@ -85,7 +80,21 @@
   <div class="field-help">The 16 digits on the front of the card</div>
 
   <div class="form-row credit-date">
-    <%= select_month 14, {use_two_digit_numbers: true, prompt: 'Month'}, {"data-stripe" => "exp-month"} %>
+    <select data-stripe="exp-month" id="date_month" name="date[month]">
+      <option value="">Month</option>
+      <option value="01">01</option>
+      <option value="02">02</option>
+      <option value="03">03</option>
+      <option value="04">04</option>
+      <option value="05">05</option>
+      <option value="06">06</option>
+      <option value="07">07</option>
+      <option value="08">08</option>
+      <option value="09">09</option>
+      <option value="10">10</option>
+      <option value="11">11</option>
+      <option value="12">12</option>
+    </select>
     <span> / </span>
     <%= select_year 14, {start_year: Time.now.year, end_year: Time.now.year+10, prompt: 'Year'}, {"data-stripe" => "exp-year"} %>
     <div class="field-help">Expiration date - MM/YYYY </div>
@@ -98,7 +107,7 @@
   <%= f.text_field :billing_first_name, :placeholder => "First Name", :required => true  %>
   <%= f.text_field :billing_last_name, :placeholder => "Last Name", :required => true %>
   <%= f.text_field :billing_address_one, :placeholder => "Address Line 1", "data-stripe" => "address_line1", :required => true %>
-  <%= f.text_field :billing_address_two, :placeholder => "Address Line 2", "data-stripe" => "address_line2" %>
+  <%= f.text_field :billing_address_two, :placeholder => "Address Line 2", "data-stripe" => "address_line2", :class => "not-required" %>
   <%= f.select :billing_country, options_for_select(countries), {}, {"data-stripe" => "address_country", :required => true, :class => "country"} %>
   <div class="form-row city-info">
     <%= f.text_field :billing_city, :placeholder => "City", "data-stripe" => "address_city", :required => true %>
@@ -118,7 +127,7 @@
     <%= f.text_field :shipping_first_name, :placeholder => "First Name" %>
     <%= f.text_field :shipping_last_name, :placeholder => "Last Name" %>
     <%= f.text_field :shipping_address_one, :placeholder => "Address Line 1" %>
-    <%= f.text_field :shipping_address_two, :placeholder => "Address Line 2" %>
+    <%= f.text_field :shipping_address_two, :placeholder => "Address Line 2", :class => "not-required" %>
     <%= f.select :shipping_country, options_for_select(countries), {}, {:class => "country"} %>
     <div class="form-row city-info">
       <%= f.text_field :shipping_city, :placeholder => "City"%>
