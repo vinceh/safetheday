@@ -15,6 +15,7 @@
       } else {
         // token contains id, last4, and card type
         var token = response.id;
+        $form.find('.payment-errors').text("");
         // Insert the token into the form so it gets submitted to the server
         $form.append($('<input type="hidden" name="stripeToken" />').val(token));
         // and submit
@@ -24,48 +25,73 @@
       }
     };
 
-    jQuery(function($) {
-      $('#payment-form').submit(function(event) {
-        var $form = $(this);
-
-        // Disable the submit button to prevent repeated clicks
-        $form.find('input[type="submit"]').prop('disabled', true);
-
-        Stripe.card.createToken($form, stripeResponseHandler);
-
-        // Prevent the form from submitting with the default action
-        return false;
-      });
-    });
-
     $(document).ready(function() {
       $('#payment-form').validate({
         debug: true,
         errorPlacement: function(error, element) {
 
+        },
+        errorClass: "error-field",
+        rules: {
+          "user[shipping_first_name]": {
+            required: ".billing-same:unchecked"
+          },
+          "user[shipping_last_name]": {
+            required: ".billing-same:unchecked"
+          },
+          "user[shipping_address_one]": {
+            required: ".billing-same:unchecked"
+          },
+          "user[shipping_address_two]": {
+            required: ".billing-same:unchecked"
+          },
+          "user[shipping_city]": {
+            required: ".billing-same:unchecked"
+          },
+          "user[shipping_zipcode]": {
+            required: ".billing-same:unchecked"
+          },
+          "user[shipping_phone]": {
+            required: ".billing-same:unchecked"
+          }
+        },
+        submitHandler: function() {
+          $('#payment-form').submit(function(event) {
+            var $form = $(this);
+
+            // Disable the submit button to prevent repeated clicks
+            $form.find('input[type="submit"]').prop('disabled', true);
+
+            Stripe.card.createToken($form, stripeResponseHandler);
+
+            // Prevent the form from submitting with the default action
+            return false;
+          });
         }
       });
     });
-
   </script>
 <% end %>
 
 <%= form_for @user, :url => checkout_path, :html => {:id => "payment-form"} do |f| %>
-  <span class="payment-errors"></span>
+  <h3>
+    Credit Card Information
+    <div class="required-text"><span>*</span> Required fields</div>
+  </h3>
 
-  <h3>Credit Card Information</h3>
+  <div class="payment-errors"></div>
 
-  <input type="text" size="20" data-stripe="number" placeholder="Card Number"/>
+  <input type="text" size="20" data-stripe="number" placeholder="Card Number" name="card-number" required/>
   <div class="field-help">The 16 digits on the front of the card</div>
 
   <div class="form-row credit-date">
-    <%= select_month 14, use_two_digit_numbers: true, prompt: 'Month', :size => 2, "data-stripe" => "exp-month" %>
+    <%= select_month 14, {use_two_digit_numbers: true, prompt: 'Month'}, {"data-stripe" => "exp-month"} %>
     <span> / </span>
-    <%= select_year 14, start_year: Time.now.year, end_year: Time.now.year+10, prompt: 'Year', :size => 4, "data-stripe" => "exp-year" %>
+    <%= select_year 14, {start_year: Time.now.year, end_year: Time.now.year+10, prompt: 'Year'}, {"data-stripe" => "exp-year"} %>
     <div class="field-help">Expiration date - MM/YYYY </div>
   </div>
 
-  <input type="text" size="4" data-stripe="cvc" placeholder="CVC Code" class="cvc"/>
+  <input type="text" size="4" data-stripe="cvc" placeholder="CVC Code" class="cvc" name="cvc-code" required/>
   <div class="field-help">Last 3 digits on back of card</div>
 
   <h3>Billing Information</h3>
@@ -84,7 +110,7 @@
   <h3>
     Shipping Information
     <div class="same-billing">
-      <%= f.check_box  :shipping_same %><%= f.label :shipping_same, "Same as billing" %>
+      <%= f.check_box :shipping_same, :checked => true, :class => "billing-same"  %><%= f.label :shipping_same, "Same as billing"%>
     </div>
   </h3>
 
@@ -102,5 +128,21 @@
     <%= f.text_field :shipping_phone, :placeholder => "Phone" %>
   </div>
 
+  <p class="terms">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eget ultrices eros, quis dapibus nulla. Nulla faucibus nunc volutpat consequat lobortis. Aliquam non metus at elit elementum lacinia. Nunc adipiscing vehicula vestibulum.
+  </p>
+
   <%= f.submit "Check out" %>
 <% end %>
+
+<script type="text/javascript">
+  $('.billing-same').on('change', function() {
+    var $this = $(this);
+    if ( $this.prop('checked') ) {
+      $('.shipping-info').hide();
+    }
+    else {
+      $('.shipping-info').show();
+    }
+  });
+</script>

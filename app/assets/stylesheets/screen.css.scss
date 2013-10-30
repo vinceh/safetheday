@@ -10,6 +10,8 @@
 @include font-face("ProximaNovaSemiBold", font-files("ProximaNova-Semibold.otf"));
 @include font-face("ProximaNovaRegular", font-files("ProximaNova-Regular.otf"));
 
+$error: #ff4c4f;
+
 @mixin font-regular {
   font-family: "ProximaNovaRegular";
 }
@@ -20,6 +22,37 @@
 
 @mixin font-semibold {
   font-family: "ProximaNovaSemiBold";
+}
+
+p {
+  line-height: 1.6em;
+  color: #666;
+}
+
+input[type="submit"], button, .btn {
+  border: none;
+  background-color: #333;
+  @include font-semibold;
+  color: white;
+  @include box-shadow(3px 3px 0 #888);
+  margin: 0;
+  &:hover {
+    cursor: pointer;
+    background-color: #222;
+  }
+  &:active {
+    position: relative;
+    top: 1px;
+    left: 1px;
+    background-color: #222;
+    @include box-shadow(2px 2px 0 #888);
+  }
+  &:disabled {
+    color: #999;
+    &:hover {
+      color: #999;
+    }
+  }
 }
 
 input, select {
@@ -72,7 +105,6 @@ a.light {
 
 .header {
   padding: 15px 0;
-  margin-bottom: 30px;
   background-color: #222;
   a {
     font-size: 13px;
@@ -80,11 +112,17 @@ a.light {
 }
 
 .container {
-  width: 900px;
+  width: 960px;
   margin: 0 auto;
 }
 
+.container {
+  display: table;
+}
+
 #payment-form {
+  float: right;
+  margin: 100px 0 200px;
   h3 {
     margin: 40px 0 20px;
     width: 472px;
@@ -99,6 +137,27 @@ a.light {
         @include font-light;
       }
     }
+    .required-text {
+      float: right;
+      font-size: 16px;
+      @include font-light;
+      color: #888;
+      span {
+        font-size: 21px;
+        @include font-semibold;
+        color: $error;
+        position: relative;
+        top: 5px;
+        margin-right: 3px;
+      }
+    }
+  }
+  .payment-errors {
+    color: $error;
+    margin-bottom: 10px;
+  }
+  .shipping-info {
+    display: none;
   }
   .field-help {
     margin-top: -3px;
@@ -122,6 +181,14 @@ a.light {
       }
     }
     &.city-info {
+      input {
+        &:first-child {
+          width: 222px;
+        }
+        &:last-child {
+          width: 126px;
+        }
+      }
     }
   }
   select {
@@ -131,6 +198,11 @@ a.light {
       width: 472px;
     }
   }
+  p {
+    width: 450px;
+    font-size: 14px;
+    color: #888;
+  }
   input {
     display: block;
     width: 450px;
@@ -138,9 +210,28 @@ a.light {
     &.cvc {
       width: 100px;
     }
+    &[type="text"] {
+      background-image: url("ast.png");
+      background-repeat: no-repeat;
+      background-position: right center;
+    }
     &[type="checkbox"], &[type="submit"] {
       display: inline;
       width: auto;
     }
   }
+  input[type="submit"] {
+    margin-top: 20px;
+    color: #eee;
+    padding: 15px 25px;
+    @include font-semibold;
+    font-size: 21px;
+  }
+  .terms {
+    margin-top: 20px;
+  }
+}
+
+.error-field {
+  border: 1px solid #ff7151 !important;
 }
