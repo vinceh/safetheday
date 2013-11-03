@@ -1,98 +1,99 @@
-<% content_for :head do %>
-  <%= javascript_include_tag "http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js" %>
-  <%= javascript_include_tag "https://js.stripe.com/v2/" %>
+<div class="container">
+  <% content_for :head do %>
+    <%= javascript_include_tag "http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js" %>
+    <%= javascript_include_tag "https://js.stripe.com/v2/" %>
 
-  <script type="text/javascript">
-    Stripe.setPublishableKey('pk_test_h3DuEFi6li4dKSe8ZcfporXg');
+    <script type="text/javascript">
+      Stripe.setPublishableKey('pk_test_h3DuEFi6li4dKSe8ZcfporXg');
 
-    var stripeResponseHandler = function(status, response) {
-      var $form = $('#payment-form');
+      var stripeResponseHandler = function(status, response) {
+        var $form = $('#payment-form');
 
-      if (response.error) {
-        // Show the errors on the form
-        $form.find('.payment-errors').text(response.error.message);
-        $form.find('input[type="submit"]').prop('disabled', false);
-      } else {
-        // token contains id, last4, and card type
-        var token = response.id;
-        $form.find('.payment-errors').text("");
-        // Insert the token into the form so it gets submitted to the server
-        $form.append($('<input type="hidden" name="stripeToken" />').val(token));
+        if (response.error) {
+          // Show the errors on the form
+          $form.find('.payment-errors').text(response.error.message);
+          $form.find('input[type="submit"]').prop('disabled', false);
+        } else {
+          // token contains id, last4, and card type
+          var token = response.id;
+          $form.find('.payment-errors').text("");
+          // Insert the token into the form so it gets submitted to the server
+          $form.append($('<input type="hidden" name="stripeToken" />').val(token));
 
-        console.log(response);
+          console.log(response);
 
-        $form.get(0).submit();
-      }
-    };
-
-    $(document).ready(function() {
-      $('#payment-form').validate({
-        errorPlacement: function(error, element) {
-        },
-        errorClass: "error-field",
-        rules: {
-          "user[shipping_first_name]": {
-            required: ".billing-same:unchecked"
-          },
-          "user[shipping_last_name]": {
-            required: ".billing-same:unchecked"
-          },
-          "user[shipping_address_one]": {
-            required: ".billing-same:unchecked"
-          },
-          "user[shipping_city]": {
-            required: ".billing-same:unchecked"
-          },
-          "user[shipping_zipcode]": {
-            required: ".billing-same:unchecked"
-          },
-          "user[shipping_phone]": {
-            required: ".billing-same:unchecked"
-          }
-        },
-        submitHandler: function() {
-          var $form = $('#payment-form');
-
-          // Disable the submit button to prevent repeated clicks
-          $form.find('input[type="submit"]').prop('disabled', true);
-
-          Stripe.card.createToken($form, stripeResponseHandler);
-
-          // Prevent the form from submitting with the default action
-          return false;
+          $form.get(0).submit();
         }
+      };
+
+      $(document).ready(function() {
+        $('#payment-form').validate({
+          errorPlacement: function(error, element) {
+          },
+          errorClass: "error-field",
+          rules: {
+            "user[shipping_first_name]": {
+              required: ".billing-same:unchecked"
+            },
+            "user[shipping_last_name]": {
+              required: ".billing-same:unchecked"
+            },
+            "user[shipping_address_one]": {
+              required: ".billing-same:unchecked"
+            },
+            "user[shipping_city]": {
+              required: ".billing-same:unchecked"
+            },
+            "user[shipping_zipcode]": {
+              required: ".billing-same:unchecked"
+            },
+            "user[shipping_phone]": {
+              required: ".billing-same:unchecked"
+            }
+          },
+          submitHandler: function() {
+            var $form = $('#payment-form');
+
+            // Disable the submit button to prevent repeated clicks
+            $form.find('input[type="submit"]').prop('disabled', true);
+
+            Stripe.card.createToken($form, stripeResponseHandler);
+
+            // Prevent the form from submitting with the default action
+            return false;
+          }
+        });
       });
-    });
-  </script>
-<% end %>
+    </script>
+  <% end %>
 
-<%= form_for @user, :url => customer_payment_path, :method => "POST", :html => {:id => "payment-form"} do |f| %>
-  <%= hidden_field_tag 'subscription', session[:cart] %>
+  <%= form_for @user, :url => customer_payment_path, :method => "POST", :html => {:id => "payment-form"} do |f| %>
+    <%= hidden_field_tag 'subscription', session[:cart] %>
 
-  <h3>
-    Credit Card Information <%= image_tag "lock.png" %>
-    <div class="required-text"><span>*</span> Required fields</div>
-  </h3>
+    <h3>
+      Credit Card Information <%= image_tag "lock.png" %>
+      <div class="required-text"><span>*</span> Required fields</div>
+    </h3>
 
-  <div class="payment-errors"></div>
+    <div class="payment-errors"></div>
 
-  <input type="text" size="20" data-stripe="number" placeholder="Card Number" name="card-number" required/>
-  <div class="field-help">The 16 digits on the front of the card</div>
+    <input type="text" size="20" data-stripe="number" placeholder="Card Number" name="card-number" required/>
+    <div class="field-help">The 16 digits on the front of the card</div>
 
-  <div class="form-row credit-date">
-    <select data-stripe="exp-month" id="date_month" name="date[month]">
-      <option value="">Month</option>
-      <option value="01">01</option>
-      <option value="02">02</option>
-      <option value="03">03</option>
-      <option value="04">04</option>
-      <option value="05">05</option>
-      <option value="06">06</option>
-      <option value="07">07</option>
-      <option value="08">08</option>
-      <option value="09">09</option>
-      <option value="10">10</option>
-      <option value="11">11</option>
+    <div class="form-row credit-date">
+      <select data-stripe="exp-month" id="date_month" name="date[month]">
+        <option value="">Month</option>
+        <option value="01">01</option>
+        <option value="02">02</option>
+        <option value="03">03</option>
+        <option value="04">04</option>
+        <option value="05">05</option>
+        <option value="06">06</option>
+        <option value="07">07</option>
+        <option value="08">08</option>
+        <option value="09">09</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
       <option value="12">12</option>
     </select>
     <span> / </span>
@@ -143,6 +144,7 @@
 
   <%= f.submit "Check out" %>
 <% end %>
+</div>
 
 <script type="text/javascript">
   $('.billing-same').on('change', function() {

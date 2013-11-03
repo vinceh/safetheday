@@ -13,15 +13,16 @@
 
 <div class="header">
   <div class="container">
-    <% if current_user %>
-      <%= link_to "LOGOUT", destroy_user_session_path, :method => "DELETE", :class => "light" %>
-    <% end %>
+    <div class="right-links">
+      <%= link_to "MY ACCOUNT", user_root_path, :class => "light" %>
+      <% if current_user %>
+        <%= link_to "LOGOUT", destroy_user_session_path, :method => "DELETE", :class => "light" %>
+      <% end %>
+    </div>
   </div>
 </div>
 
-<div class="container">
-  <%= yield %>
-</div>
+<%= yield %>
 
 </body>
 </html>

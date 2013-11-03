@@ -1,5 +1,7 @@
 Safe::Application.routes.draw do
-  devise_for :users
+  devise_for :users do
+    get 'account', :to => 'users#account', :as => :user_root
+  end
 
   root :to => "home#index"
 
