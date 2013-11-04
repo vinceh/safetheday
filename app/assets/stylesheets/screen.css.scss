@@ -11,6 +11,7 @@
 @include font-face("ProximaNovaRegular", font-files("ProximaNova-Regular.otf"));
 
 $error: #ff4c4f;
+$change: #4597ca;
 
 @mixin font-regular {
   font-family: "ProximaNovaRegular";
@@ -60,6 +61,18 @@ input[type="submit"], button, .btn {
     &:hover {
       color: #999;
     }
+  }
+  &.cancel {
+    background-color: $error;
+  }
+  &.cancel:hover, &.cancel:active {
+    background-color: #e54548;
+  }
+  &.change {
+    background-color: $change;
+  }
+  &.change:hover, &.change:active {
+    background-color: #4888bc;
   }
 }
 
@@ -298,7 +311,7 @@ a.light {
   width: 660px;
   float: right;
   .sub-wrap {
-    margin-top: 50px;
+    margin-top: 30px;
     display: table;
     background-color: #fafafa;
     padding: 20px;
@@ -332,6 +345,14 @@ a.light {
       }
     }
   }
+  .change-sub {
+    margin-top: 20px;
+    a {
+      padding: 15px 25px;
+      display: inline-block;
+      font-size: 18px;
+    }
+  }
   .danger {
     margin-top: 80px;
     h3 {
@@ -339,6 +360,12 @@ a.light {
     }
     p {
       width: 75%;
+    }
+    a {
+      margin-top: 15px;
+      padding: 15px 25px;
+      display: inline-block;
+      font-size: 16px;
     }
   }
 }
