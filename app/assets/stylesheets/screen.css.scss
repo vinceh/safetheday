@@ -38,6 +38,13 @@ p {
   color: #555;
 }
 
+a {
+  text-decoration: none;
+  &:hover, &:visited {
+    text-decoration: none;
+  }
+}
+
 input[type="submit"], button, .btn {
   border: none;
   background-color: #333;
@@ -295,6 +302,10 @@ a.light {
   .item {
     padding: 18px 30px;
     display: block;
+    color: #777;
+    &:visited {
+      color: #777;
+    }
     &.active, &:hover {
       background-color: #f6f6f6;
       color: #111;
@@ -307,6 +318,7 @@ a.light {
 
 .right-panel {
   padding-top: 200px;
+  padding-bottom: 200px;
   padding-left: 50px;
   width: 660px;
   float: right;
@@ -366,6 +378,20 @@ a.light {
       padding: 15px 25px;
       display: inline-block;
       font-size: 16px;
+    }
+  }
+  &.address-settings {
+    #payment-form {
+      margin-top: 0;
+      float: none;
+      .title {
+        margin-top: 0;
+      }
+      input[type='submit'] {
+        padding: 15px 25px;
+        display: inline-block;
+        font-size: 18px;
+      }
     }
   }
 }

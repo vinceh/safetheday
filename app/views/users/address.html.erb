@@ -1,0 +1,94 @@
+<div class="container">
+  <%= render :partial => "account_side", :locals => {:current => "address"} %>
+  <div class="right-panel address-settings">
+    <% content_for :head do %>
+      <%= javascript_include_tag "http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js" %>
+      <%= javascript_include_tag "https://js.stripe.com/v2/" %>
+
+      <script type="text/javascript">
+        $(document).ready(function() {
+          $('#payment-form').validate({
+            errorPlacement: function(error, element) {
+            },
+            errorClass: "error-field",
+            rules: {
+              "user[shipping_first_name]": {
+                required: ".billing-same:unchecked"
+              },
+              "user[shipping_last_name]": {
+                required: ".billing-same:unchecked"
+              },
+              "user[shipping_address_one]": {
+                required: ".billing-same:unchecked"
+              },
+              "user[shipping_city]": {
+                required: ".billing-same:unchecked"
+              },
+              "user[shipping_zipcode]": {
+                required: ".billing-same:unchecked"
+              },
+              "user[shipping_phone]": {
+                required: ".billing-same:unchecked"
+              }
+            }
+          });
+        });
+      </script>
+    <% end %>
+
+    <%= form_for @user, :url => customer_payment_path, :method => "POST", :html => {:id => "payment-form"} do |f| %>
+      <h3 class="title">Billing Information</h3>
+      <%= f.text_field :billing_first_name, :placeholder => "First Name", :required => true  %>
+      <%= f.text_field :billing_last_name, :placeholder => "Last Name", :required => true %>
+      <%= f.text_field :billing_address_one, :placeholder => "Address Line 1", "data-stripe" => "address_line1", :required => true %>
+      <%= f.text_field :billing_address_two, :placeholder => "Address Line 2", "data-stripe" => "address_line2", :class => "not-required" %>
+      <%= f.select :billing_country, options_for_select(countries), {}, {"data-stripe" => "address_country", :required => true, :class => "country"} %>
+      <div class="form-row city-info">
+        <%= f.text_field :billing_city, :placeholder => "City", "data-stripe" => "address_city", :required => true %>
+        <%= f.select :billing_state, options_for_select(ca_provinces), "data-stripe" => "address_state", :required => true %>
+        <%= f.text_field :billing_zipcode, :placeholder => "Postal/Zip Code", "data-stripe" => "address_zip", :required => true %>
+      </div>
+      <%= f.text_field :billing_phone, :placeholder => "Phone", :required => true %>
+
+      <h3>
+        Shipping Information
+        <div class="same-billing">
+          <%= f.check_box :shipping_same, :checked => true, :class => "billing-same"  %><%= f.label :shipping_same, "Same as billing"%>
+        </div>
+      </h3>
+
+      <div class="shipping-info">
+        <%= f.text_field :shipping_first_name, :placeholder => "First Name" %>
+        <%= f.text_field :shipping_last_name, :placeholder => "Last Name" %>
+        <%= f.text_field :shipping_address_one, :placeholder => "Address Line 1" %>
+        <%= f.text_field :shipping_address_two, :placeholder => "Address Line 2", :class => "not-required" %>
+        <%= f.select :shipping_country, options_for_select(countries), {}, {:class => "country"} %>
+        <div class="form-row city-info">
+          <%= f.text_field :shipping_city, :placeholder => "City"%>
+          <%= f.select :shipping_state, options_for_select(ca_provinces) %>
+          <%= f.text_field :shipping_zipcode, :placeholder => "Postal/Zip Code" %>
+        </div>
+        <%= f.text_field :shipping_phone, :placeholder => "Phone" %>
+      </div>
+
+      <p class="terms">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eget ultrices eros, quis dapibus nulla. Nulla faucibus nunc volutpat consequat lobortis. Aliquam non metus at elit elementum lacinia. Nunc adipiscing vehicula vestibulum.
+      </p>
+
+      <%= f.submit "Update" %>
+    <% end %>
+  </div>
+
+  <script type="text/javascript">
+    $('.billing-same').on('change', function() {
+      var $this = $(this);
+      if ( $this.prop('checked') ) {
+        $('.shipping-info').hide();
+      }
+      else {
+        $('.shipping-info').show();
+      }
+    });
+  </script>
+  </div>
+</div>
