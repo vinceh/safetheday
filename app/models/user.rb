@@ -29,6 +29,10 @@ class User < ActiveRecord::Base
 
       self.stripe_customer_id = customer.id
       self.plan_ending_date = Time.at(customer.subscription.current_period_end)
+
+      token = Stripe::Token.retrieve(stripe_token)
+      self.card_last_four = token.card.last4
+      self.card_type = token.card.type
       save
 
       UserMailer.subscribed(self).deliver
@@ -36,6 +40,23 @@ class User < ActiveRecord::Base
     rescue Stripe::CardError => e
       nil
     end
+  end
 
+  def update_payment(stripe_token)
+    begin
+      customer = Stripe::Customer.retrieve(self.stripe_customer_id)
+      customer.card = stripe_token
+      customer.save
+
+      token = Stripe::Token.retrieve(stripe_token)
+      self.card_last_four = token.card.last4
+      self.card_type = token.card.type
+      save
+
+      UserMailer.updated_payment(self).deliver
+      true
+    rescue Stripe::CardError => e
+      nil
+    end
   end
 end

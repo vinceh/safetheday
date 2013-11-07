@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131030215112) do
+ActiveRecord::Schema.define(:version => 20131106234348) do
 
   create_table "invoices", :force => true do |t|
     t.string   "stripe_invoice_id"
@@ -60,6 +60,8 @@ ActiveRecord::Schema.define(:version => 20131030215112) do
     t.datetime "created_at",                                :null => false
     t.datetime "updated_at",                                :null => false
     t.boolean  "paid",                   :default => false
+    t.string   "card_last_four"
+    t.string   "card_type"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

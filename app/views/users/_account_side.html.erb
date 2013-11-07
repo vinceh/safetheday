@@ -3,8 +3,5 @@
   <a class="item">
     Subscription History
   </a>
-  <%= link_to "Address Settings", user_address_path, :class => "item #{'active' if (current == 'address')}"  %>
-  <a class="item">
-    Payment Settings
-  </a>
+  <%= link_to "Payment and Shipping", user_payment_path, :class => "item #{'active' if (current == 'address')}"  %>
 </div>

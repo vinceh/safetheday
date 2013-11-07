@@ -9,7 +9,7 @@ class PaymentsController < ApplicationController
 
     if request.post?
       @user = current_user
-      @user.update_attributes!(params[:user])
+      @user.update_attributes(params[:user])
       sub = ENV[params[:subscription]]
 
       if @user.valid? && sub && @user.create_subscription(sub, params[:stripeToken])
@@ -17,8 +17,6 @@ class PaymentsController < ApplicationController
       else
         redirect_to root_url
       end
-
-      # redirect_to root_url
     end
   end
 end

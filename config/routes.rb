@@ -1,8 +1,8 @@
 Safe::Application.routes.draw do
   devise_for :users do
     get 'account', :to => 'users#account', :as => :user_root
-    get 'account/address', :to => 'users#address', :as => :user_address
-    post 'account/address', :to => 'users#address', :as => :user_update_address
+    get 'account/payment', :to => 'users#payment', :as => :user_payment
+    post 'account/payment', :to => 'users#payment', :as => :user_update_payment
   end
 
   root :to => "home#index"

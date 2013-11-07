@@ -393,5 +393,28 @@ a.light {
         font-size: 18px;
       }
     }
+    .current-card {
+      margin-bottom: 50px;
+      h3 {
+        margin-bottom: 30px;
+      }
+      img {
+        position: relative;
+      }
+      .card-wrap {
+        @include box-shadow(inset 0 0 10px #ddd);
+        background-color: #fafafa;
+        padding: 15px 17px 10px 13px;
+        @include inline-block;
+      }
+      span {
+        font-size: 22px;
+        margin-left: 5px;
+        position: relative;
+        bottom: 15px;
+      }
+      @include font-semibold;
+      color: #333;
+    }
   }
 }
