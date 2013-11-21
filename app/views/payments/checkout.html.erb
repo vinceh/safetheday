@@ -26,6 +26,17 @@
         }
       };
 
+      var addNameToForm = function(form) {
+        $form = form;
+        $name = form.find(".billing-name");
+        if (!$name.length) {
+          $name = form.prepend($("<input type='hidden' data-stripe='name' class='billing-name'>"));
+          $name = form.find(".billing-name");
+        }
+
+        $name.attr('value', $('.billing-first').val()+" "+$('.billing-last').val());
+      };
+
       $(document).ready(function() {
         $('#payment-form').validate({
           errorPlacement: function(error, element) {
@@ -56,6 +67,7 @@
 
             // Disable the submit button to prevent repeated clicks
             $form.find('input[type="submit"]').prop('disabled', true);
+            addNameToForm($form);
 
             Stripe.card.createToken($form, stripeResponseHandler);
 
@@ -105,14 +117,14 @@
   <div class="field-help">Last 3 digits on back of card</div>
 
   <h3>Billing Information</h3>
-  <%= f.text_field :billing_first_name, :placeholder => "First Name", :required => true  %>
-  <%= f.text_field :billing_last_name, :placeholder => "Last Name", :required => true %>
+  <%= f.text_field :billing_first_name, :placeholder => "First Name", :required => true, :class => "billing-first"  %>
+  <%= f.text_field :billing_last_name, :placeholder => "Last Name", :required => true, :class => "billing-last" %>
   <%= f.text_field :billing_address_one, :placeholder => "Address Line 1", "data-stripe" => "address_line1", :required => true %>
   <%= f.text_field :billing_address_two, :placeholder => "Address Line 2", "data-stripe" => "address_line2", :class => "not-required" %>
   <%= f.select :billing_country, options_for_select(countries), {}, {"data-stripe" => "address_country", :required => true, :class => "country"} %>
   <div class="form-row city-info">
     <%= f.text_field :billing_city, :placeholder => "City", "data-stripe" => "address_city", :required => true %>
-    <%= f.select :billing_state, options_for_select(ca_provinces), "data-stripe" => "address_state", :required => true %>
+    <%= f.select :billing_state, options_for_select(ca_provinces), {}, {"data-stripe" => "address_state", :required => true} %>
     <%= f.text_field :billing_zipcode, :placeholder => "Postal/Zip Code", "data-stripe" => "address_zip", :required => true %>
   </div>
   <%= f.text_field :billing_phone, :placeholder => "Phone", :required => true %>

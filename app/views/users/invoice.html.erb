@@ -1,0 +1,45 @@
+<div class="invoice-container">
+  <div class="logo-image">
+    <%= image_tag "logo_with_text.png" %>
+  </div>
+
+  <div class="content-wrap">
+    <div class="billed-to">
+      <div class="bold">Billed To</div>
+      <div class>
+        <%= @charge.card.name %> <br/>
+        <%= @charge.card.address_line1 %>
+        <%= @charge.card.address_line2 %> <%= @charge.card.address_city %>, <%= @charge.card.address_state %>, <%= @charge.card.address_zip %>
+      </div>
+      <div class="invoice-number">
+        invoice #
+        <div class="bold">
+          <%= @invoice.id %>
+        </div>
+      </div>
+    </div>
+
+    <div class="amount-wrap">
+      <h3>
+        Summary
+        <span><%= @invoice.created_at.strftime("%b %_m, %Y") %></span>
+      </h3>
+      <div class="item bold">
+        <%= @stripe_invoice.lines.data[0].plan.name %>
+        <span>
+          <%= display_fee(@charge.amount) %>
+        </span>
+      </div>
+      <div class="total">
+          Total:
+          <span class="bold">
+            <%= display_fee(@charge.amount) %>
+          </span>
+      </div>
+    </div>
+  </div>
+  <p>
+    This charge will appear on your credit card statement as "WWW.GETSAFE.IO".    <br/>
+    Emberyl Creative Inc. 1115 London St. New Westminster, BC, Canada V3M3B9
+  </p>
+</div>

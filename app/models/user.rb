@@ -12,11 +12,6 @@ class User < ActiveRecord::Base
                   :subscription_id, :shipping_first_name, :shipping_last_name, :shipping_address_one, :shipping_city,
                   :shipping_state, :shipping_country, :shipping_zipcode, :shipping_phone, :billing_address_two, :shipping_address_two
 
-  validates_presence_of :billing_first_name, :billing_last_name, :billing_address_one,
-                        :billing_city, :billing_state, :billing_country, :billing_zipcode, :billing_phone
-  validates_presence_of :shipping_first_name, :shipping_last_name, :shipping_address_one, :shipping_city,
-                        :shipping_state, :shipping_country, :shipping_zipcode, :shipping_phone, :unless => :shipping_same
-
   def create_subscription(subscription, stripe_token)
     self.subscription_id = subscription
 
@@ -58,5 +53,9 @@ class User < ActiveRecord::Base
     rescue Stripe::CardError => e
       nil
     end
+  end
+
+  def get_invoice(id)
+    self.invoices.find(id)
   end
 end

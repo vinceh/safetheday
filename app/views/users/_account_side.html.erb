@@ -1,7 +1,5 @@
 <div class="left-panel">
   <%= link_to "Current Subscription", user_root_path, :class => "item #{'active' if current == 'current'}" %>
-  <a class="item">
-    Subscription History
-  </a>
+  <%= link_to "Payment/Shipment History", user_history_path, :class => "item #{'active' if current == 'history'}" %>
   <%= link_to "Payment and Shipping", user_payment_path, :class => "item #{'active' if (current == 'address')}"  %>
 </div>

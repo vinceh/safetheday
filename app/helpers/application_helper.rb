@@ -80,5 +80,22 @@ module ApplicationHelper
     ]
   end
 
+  def subs
+   {
+     '12_ca' => {
+       'name' => 'The Journeyman',
+       'interval' => '2-months',
+       'amount' => '$12.99'
+     },
+     '24_ca' => {
+       'name' => 'The Adventurer',
+       'interval' => 'month',
+       'amount' => '$12.99'
+     }
+   }
+  end
 
+  def display_fee(fee)
+    '$'+sprintf("%.2f", fee.to_f/100)
+  end
 end

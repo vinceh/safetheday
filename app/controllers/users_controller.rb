@@ -23,4 +23,20 @@ class UsersController < ApplicationController
       end
     end
   end
+
+  def history
+    @invoices = current_user.invoices
+  end
+
+  def invoice
+    @invoice = current_user.get_invoice(params[:id])
+    @charge = Stripe::Charge.retrieve(@invoice.stripe_charge_id)
+    @stripe_invoice = Stripe::Invoice.retrieve(@invoice.stripe_invoice_id)
+
+    unless @invoice
+      redirect_to root_path
+    end
+
+    render :layout => "layouts/invoice"
+  end
 end

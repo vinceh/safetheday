@@ -3,6 +3,8 @@ Safe::Application.routes.draw do
     get 'account', :to => 'users#account', :as => :user_root
     get 'account/payment', :to => 'users#payment', :as => :user_payment
     post 'account/payment', :to => 'users#payment', :as => :user_update_payment
+    get 'account/history', :to => 'users#history', :as => :user_history
+    get 'invoice/:id', :to => 'users#invoice', :as => :show_invoice
   end
 
   root :to => "home#index"
