@@ -4,7 +4,8 @@ class UsersController < ApplicationController
   before_filter :authenticate_user!
 
   def account
-
+    @sub = current_user.subscription_id
+    @stripe_customer = Stripe::Customer.retrieve(current_user.stripe_customer_id)
   end
 
   def payment
@@ -25,7 +26,7 @@ class UsersController < ApplicationController
   end
 
   def history
-    @invoices = current_user.invoices
+    @invoices = current_user.invoices.order('created_at DESC')
   end
 
   def invoice
@@ -38,5 +39,11 @@ class UsersController < ApplicationController
     end
 
     render :layout => "layouts/invoice"
+  end
+
+  def unsubscribe
+    current_user.unsubscribe
+
+    redirect_to root_url
   end
 end

@@ -27,7 +27,13 @@
       <div class="item bold">
         <%= @stripe_invoice.lines.data[0].plan.name %>
         <span>
-          <%= display_fee(@charge.amount) %>
+          <%= subs[@stripe_invoice.lines.data[0].plan.id]['amount'] %>
+        </span>
+      </div>
+      <div class="item bold">
+        Tax
+        <span>
+          <%= subs[@stripe_invoice.lines.data[0].plan.id]['tax'] %>
         </span>
       </div>
       <div class="total">

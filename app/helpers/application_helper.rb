@@ -84,13 +84,18 @@ module ApplicationHelper
    {
      '12_ca' => {
        'name' => 'The Journeyman',
+       'desc' => '12 high quality condoms',
        'interval' => '2-months',
-       'amount' => '$12.99'
+       'interval-words' => '2 Months',
+       'amount' => '$12.99CAD',
+       'tax' => '$0.79CAD',
+       'total' => '$12.76CAD'
      },
      '24_ca' => {
        'name' => 'The Adventurer',
        'interval' => 'month',
-       'amount' => '$12.99'
+       'amount' => '$12.99',
+       'tax' => '$0.79'
      }
    }
   end

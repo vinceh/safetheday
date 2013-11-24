@@ -58,4 +58,12 @@ class User < ActiveRecord::Base
   def get_invoice(id)
     self.invoices.find(id)
   end
+
+  def unsubscribe
+    self.subscription_id = nil
+    if save!
+      cu = Stripe::Customer.retrieve(stripe_customer_id)
+      cu.cancel_subscription
+    end
+  end
 end

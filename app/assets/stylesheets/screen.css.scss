@@ -326,9 +326,8 @@ a.light {
   .sub-wrap {
     margin-top: 30px;
     display: table;
-    background-color: #fafafa;
+    border: 1px solid #ddd;
     padding: 20px;
-    @include box-shadow(inset 0 0 15px #ddd);
     .avatar, .content {
       float: left;
     }
@@ -340,7 +339,7 @@ a.light {
       @include text-shadow(1px 1px white);
     }
     .content {
-      width: 389px;
+      width: 387px;
       padding-left: 30px;
       p {
         font-size: 18px;
@@ -494,7 +493,7 @@ a.light {
         span {
           float: right;
         }
-        border-bottom: 1px dashed #aaa;
+        border-bottom: 1px dashed #ccc;
         padding: 15px;
         margin-bottom: 5px;
       }
@@ -508,7 +507,7 @@ a.light {
         margin-top: 5px;
         padding: 15px;
         text-align: right;
-        border-top: 1px dashed #aaa;
+        border-top: 1px dashed #ccc;
         font-size: 20px;
       }
     }
