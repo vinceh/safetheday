@@ -14,8 +14,16 @@ class ApplicationController < ActionController::Base
   end
 
   def select_pack
-    unless session[:cart]
+    if current_user.subscription_id
+      redirect_to user_root_path
+    elsif !session[:cart]
       redirect_to select_pack_path
+    end
+  end
+
+  def no_sub
+    if current_user && current_user.subscription_id
+      redirect_to user_root_path
     end
   end
 end

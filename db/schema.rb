@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131119235935) do
+ActiveRecord::Schema.define(:version => 20131124040239) do
 
   create_table "invoices", :force => true do |t|
     t.string   "stripe_invoice_id"
@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(:version => 20131119235935) do
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
     t.datetime "shipped_on"
+    t.string   "subscription_id"
+    t.string   "currency"
   end
 
   create_table "users", :force => true do |t|

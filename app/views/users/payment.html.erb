@@ -9,6 +9,111 @@
         <%= image_tag "#{current_user.card_type}.png" %>
         <span><%= current_user.card_type %> ending in <%= current_user.card_last_four %></span>
       </div>
+
+      <div class="current-wrap">
+        <div class="billing">
+          <h3>Billing Address</h3>
+          <div class="address-wrap">
+            <div class="account-item">
+              <div>First Name</div>
+              <div><%= current_user.billing_first_name %></div>
+            </div>
+            <div class="account-item">
+              <div>Last Name</div>
+              <div><%= current_user.billing_last_name %></div>
+            </div>
+            <div class="account-item">
+              <div>Phone</div>
+              <div><%= current_user.billing_phone %></div>
+            </div>
+            <div class="account-item">
+              <div>Address</div>
+              <div><%= current_user.billing_address_one %></div>
+            </div>
+            <div class="account-item">
+              <div></div>
+              <div><%= current_user.billing_address_two %></div>
+            </div>
+            <div class="account-item">
+              <div>City</div>
+              <div><%= current_user.billing_city %></div>
+            </div>
+            <div class="account-item">
+              <div>State/Province</div>
+              <div><%= current_user.billing_state %></div>
+            </div>
+            <div class="account-item">
+              <div>Zipcode</div>
+              <div><%= current_user.billing_zipcode %></div>
+            </div>
+          </div>
+        </div>
+        <div class="shipping">
+          <h3>
+            Shipping Address
+            <a class="hider" data-target="update-shipping" data-origin="shipping">edit</a>
+          </h3>
+          <% if current_user.shipping_same %>
+            <div class="address-wrap">
+              <div class="account-item">
+                <div>First Name</div>
+                <div><%= current_user.billing_first_name %></div>
+              </div>
+              <div class="account-item">
+                <div>Last Name</div>
+                <div><%= current_user.billing_last_name %></div>
+              </div>
+              <div class="account-item">
+                <div>Phone</div>
+                <div><%= current_user.billing_phone %></div>
+              </div>
+              <div class="account-item">
+                <div>Address</div>
+                <div><%= current_user.billing_address_one %></div>
+              </div>
+              <div class="account-item">
+                <div></div>
+                <div><%= current_user.billing_address_two %></div>
+              </div>
+              <div class="account-item">
+                <div>City</div>
+                <div><%= current_user.billing_city %></div>
+              </div>
+              <div class="account-item">
+                <div>State/Province</div>
+                <div><%= current_user.billing_state %></div>
+              </div>
+              <div class="account-item">
+                <div>Zipcode</div>
+                <div><%= current_user.billing_zipcode %></div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+        <div class="update-shipping">
+          <%= form_for @user,:url => account_update_shipping_path, :method => "POST", :html => {:class => 'user-form'} do |f| %>
+            <h3>
+              Shipping Address
+              <div class="same-billing">
+                <%= f.check_box :shipping_same, :checked => true, :class => "billing-same"  %><%= f.label :shipping_same, "Same as billing"%>
+              </div>
+            </h3>
+            <div class="shipping-info">
+              <%= f.text_field :shipping_first_name, :placeholder => "First Name" %>
+              <%= f.text_field :shipping_last_name, :placeholder => "Last Name" %>
+              <%= f.text_field :shipping_address_one, :placeholder => "Address Line 1" %>
+              <%= f.text_field :shipping_address_two, :placeholder => "Address Line 2", :class => "not-required" %>
+              <%= f.select :shipping_country, options_for_select(countries), {}, {:class => "country"} %>
+              <div class="form-row city-info">
+                <%= f.text_field :shipping_city, :placeholder => "City"%>
+                <%= f.select :shipping_state, options_for_select(ca_provinces) %>
+                <%= f.text_field :shipping_zipcode, :placeholder => "Postal/Zip Code" %>
+              </div>
+              <%= f.text_field :shipping_phone, :placeholder => "Phone" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
     </div>
     <div class="update-wrap">
       <% content_for :head do %>
@@ -146,9 +251,9 @@
             <%= f.text_field :shipping_city, :placeholder => "City"%>
             <%= f.select :shipping_state, options_for_select(ca_provinces) %>
             <%= f.text_field :shipping_zipcode, :placeholder => "Postal/Zip Code" %>
+          </div>
+          <%= f.text_field :shipping_phone, :placeholder => "Phone" %>
         </div>
-        <%= f.text_field :shipping_phone, :placeholder => "Phone" %>
-      </div>
 
       <p class="terms">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eget ultrices eros, quis dapibus nulla. Nulla faucibus nunc volutpat consequat lobortis. Aliquam non metus at elit elementum lacinia. Nunc adipiscing vehicula vestibulum.
@@ -170,5 +275,14 @@
     else {
       $('.shipping-info').show();
     }
+  });
+
+  $('.hider').on('click', function() {
+    var $this = $(this);
+    var $origin = $('.'+$this.attr('data-origin'));
+    var $target = $('.'+$this.attr('data-target'));
+
+    $origin.hide();
+    $target.show();
   });
 </script>

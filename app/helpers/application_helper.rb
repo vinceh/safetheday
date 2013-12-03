@@ -89,7 +89,8 @@ module ApplicationHelper
        'interval-words' => '2 Months',
        'amount' => '$12.99CAD',
        'tax' => '$0.79CAD',
-       'total' => '$12.76CAD'
+       'total' => '$12.76CAD',
+       'currency' => 'CAD'
      },
      '24_ca' => {
        'name' => 'The Adventurer',

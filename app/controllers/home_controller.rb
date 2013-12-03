@@ -1,6 +1,8 @@
 class HomeController < ApplicationController
   protect_from_forgery
 
+  before_filter :no_sub, :only => [:add_pack, :select_pack]
+
   def select_pack
 
   end

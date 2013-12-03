@@ -53,6 +53,8 @@ input[type="submit"], button, .btn {
   color: white;
   @include box-shadow(3px 3px 0 #888);
   margin: 0;
+  @include transition-property(background-color);
+  @include transition-duration(0.3s);
   &:hover {
     cursor: pointer;
     background-color: #222;
@@ -164,7 +166,7 @@ a.light {
   display: table;
 }
 
-#payment-form {
+#payment-form, .user-form {
   float: right;
   margin: 100px 0 200px;
   h3 {
@@ -287,28 +289,53 @@ a.light {
   }
 }
 
+.update-shipping {
+  display: none;
+}
+
+.hider {
+  color: $change;
+  @include font-light;
+  font-size: 16px;
+  margin-left: 15px;
+  line-height: 24px;
+  position: relative;
+  bottom: 3px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.user-form {
+  float: none;
+  margin-top: 0;
+  .same-billing {
+    margin-top: 15px;
+    float: none !important;
+  }
+}
+
 .error-field {
   border: 1px solid #ff7151 !important;
 }
 
 .left-panel {
-  width: 248px;
+  width: 250px;
   float: left;
-  margin-top: 100px;
-  padding-top: 100px;
-  border: 1px dashed #ccc;
-  border-top: 0;
-  border-bottom: 0;
+  margin-top: 175px;
   padding-bottom: 100px;
   .item {
     padding: 18px 30px;
     display: block;
     color: #777;
+    border-right: 3px solid #f6f6f6;
+    @include transition-property(color, border);
+    @include transition-duration(0.3s);
     &:visited {
       color: #777;
     }
     &.active, &:hover {
-      background-color: #f6f6f6;
+      border-right: 3px solid #333;
       color: #111;
     }
     &:hover {
@@ -317,8 +344,12 @@ a.light {
   }
 }
 
+.update-wrap {
+  display: none;
+}
+
 .right-panel {
-  padding-top: 200px;
+  padding-top: 175px;
   padding-bottom: 200px;
   padding-left: 50px;
   width: 660px;
@@ -326,8 +357,30 @@ a.light {
   .sub-wrap {
     margin-top: 30px;
     display: table;
-    border: 1px solid #ddd;
     padding: 20px;
+    background-color: #f6f6f6;
+    position: relative;
+    @include border-radius(3px);
+    &:before, &:after
+    {
+      z-index: -1;
+      position: absolute;
+      content: "";
+      bottom: 15px;
+      left: 10px;
+      width: 50%;
+      top: 80%;
+      max-width:300px;
+      background: rgba(0, 0, 0, 0.3);
+      @include box-shadow(0 15px 10px rgba(0,0,0, 0.3));
+      @include transform(rotate(-2deg));
+    }
+    &:after
+    {
+      @include transform(rotate(2deg));
+      right: 10px;
+      left: auto;
+    }
     .avatar, .content {
       float: left;
     }
@@ -395,6 +448,8 @@ a.light {
     }
     .current-card {
       margin-bottom: 50px;
+      @include font-semibold;
+      color: #333;
       h3 {
         margin-bottom: 30px;
       }
@@ -413,8 +468,28 @@ a.light {
         position: relative;
         bottom: 15px;
       }
-      @include font-semibold;
-      color: #333;
+      .current-wrap {
+        @include font-light;
+        color: #777;
+        h3 {
+          margin-top: 50px;
+        }
+        .account-item {
+          width: 65%;
+          display: table;
+          margin: 15px 0;
+          div {
+            float: left;
+            width: 50%;
+            color: #999;
+            &:last-child {
+              @include font-light;
+              font-weight: bold;
+              color: #555;
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -428,12 +503,14 @@ a.light {
     @include box-sizing(border-box);
     color: #777;
     border-bottom: 1px solid #eee;
+    @include transition-property(background-color, color);
+    @include transition-duration(0.3s);
     &:last-child {
       border-bottom: 0;
     }
     &:hover {
       cursor: pointer;
-      background-color: #fcfcfc;
+      background-color: #f6f6f6;
       color: #333;
     }
     .desc {
@@ -514,6 +591,7 @@ a.light {
   }
   p {
     margin-top: 100px;
+    margin-bottom: 100px;
     color: #aaa;
     text-align: center;
     line-height: 1.4em;

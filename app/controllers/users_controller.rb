@@ -44,6 +44,6 @@ class UsersController < ApplicationController
   def unsubscribe
     current_user.unsubscribe
 
-    redirect_to root_url
+    redirect_to user_root_path
   end
 end

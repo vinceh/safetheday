@@ -1,33 +1,39 @@
 <div class="container">
   <%= render "account_side", :current => "current" %>
   <div class="right-panel">
-    <h3>
-      Current Subscription
-    </h3>
-    <div class="sub-wrap">
-      <div class="avatar">
+    <% if current_user.subscription_id %>
+      <h3>
+        Current Subscription
+      </h3>
+      <div class="sub-wrap">
+        <div class="avatar">
 
+        </div>
+        <div class="content">
+          <h4><%= subs[@sub]['name'] %></h4>
+          <p class="sub"><%= subs[@sub]['desc'] %></p>
+          <p class="line-item">
+            Billing & delivery: <span class="bold"><%= subs[@sub]['interval-words'] %></span>
+          </p>
+          <p class="line-item">
+            Next bill date: <span class="bold"><%= (Time.at(@stripe_customer.subscription.current_period_end)+1.day).strftime("%b %_m, %Y") %></span>
+          </p>
+          <p class="line-item">
+            Amount: <span class="bold"><%= subs[@sub]['total'] %></span>
+          </p>
+        </div>
       </div>
-      <div class="content">
-        <h4><%= subs[@sub]['name'] %></h4>
-        <p class="sub"><%= subs[@sub]['desc'] %></p>
-        <p class="line-item">
-          Billing & delivery: <span class="bold"><%= subs[@sub]['interval-words'] %></span>
-        </p>
-        <p class="line-item">
-          Next bill date: <span class="bold"><%= (Time.at(@stripe_customer.subscription.current_period_end)+1.day).strftime("%b %_m, %Y") %></span>
-        </p>
-        <p class="line-item">
-          Amount: <span class="bold"><%= subs[@sub]['total'] %></span>
-        </p>
-      </div>
-    </div>
 
-    <div class="danger">
-      <h3>Danger Zone!</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel dictum quam. Donec tincidunt lacus vitae elementum varius. </p>
-      <%= link_to "Cancel Subscription", {}, :confirm => "Are you sure you want to cancel your subscription?", :class => "btn cancel" %>
-    </div>
+      <div class="danger">
+        <h3>Danger Zone!</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel dictum quam. Donec tincidunt lacus vitae elementum varius. </p>
+        <%= link_to "Cancel Subscription", unsubscribe_path, :method => "POST", :confirm => "Are you sure you want to cancel your subscription?", :class => "btn cancel" %>
+      </div>
+    <% else %>
+      <h3>
+        Let's get you started again
+      </h3>
+    <% end %>
   </div>
 </div>
 
