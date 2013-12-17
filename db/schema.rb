@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131124040239) do
+ActiveRecord::Schema.define(:version => 20131210021920) do
 
   create_table "invoices", :force => true do |t|
     t.string   "stripe_invoice_id"
@@ -26,21 +26,45 @@ ActiveRecord::Schema.define(:version => 20131124040239) do
     t.string   "currency"
   end
 
+  create_table "regional_subscriptions", :force => true do |t|
+    t.integer  "subscription_id"
+    t.string   "stripe_subscription_id"
+    t.string   "state"
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
+  end
+
+  create_table "subscriptions", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.integer  "price"
+  end
+
+  create_table "taxes", :force => true do |t|
+    t.integer  "regional_subscription_id"
+    t.string   "name"
+    t.string   "shorthand"
+    t.integer  "percentage"
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
+  end
+
   create_table "users", :force => true do |t|
-    t.string   "email",                  :default => "",    :null => false
-    t.string   "encrypted_password",     :default => "",    :null => false
+    t.string   "email",                    :default => "",    :null => false
+    t.string   "encrypted_password",       :default => "",    :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          :default => 0
+    t.integer  "sign_in_count",            :default => 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.string   "stripe_customer_id"
-    t.string   "subscription_id"
     t.datetime "plan_ending_date"
-    t.boolean  "cancel_at_period_end",   :default => false
+    t.boolean  "cancel_at_period_end",     :default => false
     t.string   "shipping_first_name"
     t.string   "shipping_last_name"
     t.string   "shipping_address_one"
@@ -60,11 +84,12 @@ ActiveRecord::Schema.define(:version => 20131124040239) do
     t.string   "billing_country"
     t.string   "billing_zipcode"
     t.string   "billing_phone"
-    t.datetime "created_at",                                :null => false
-    t.datetime "updated_at",                                :null => false
-    t.boolean  "paid",                   :default => false
+    t.datetime "created_at",                                  :null => false
+    t.datetime "updated_at",                                  :null => false
+    t.boolean  "paid",                     :default => false
     t.string   "card_last_four"
     t.string   "card_type"
+    t.integer  "regional_subscription_id"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

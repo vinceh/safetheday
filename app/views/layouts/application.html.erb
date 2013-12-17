@@ -22,6 +22,12 @@
   </div>
 </div>
 
+<% if flash[:success] %>
+  <div class="success-flash">
+    <%= flash[:success] %>
+  </div>
+<% end %>
+
 <%= yield %>
 
 </body>

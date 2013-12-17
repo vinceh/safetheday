@@ -22,6 +22,14 @@ class EventsController < ApplicationController
           invoice.stripe_charge_id = response.charge
           invoice.save!
 
+          ch = Stripe::Charge.retrieve(invoice.stripe_charge_id)
+          meta = {}
+          user.regional_subscription.taxes.each do |t|
+            meta[t.shorthand] = t.percentage
+          end
+          ch.metadata = meta
+          ch.save
+
           UserMailer.invoice(user).deliver
         when 'invoice.payment_failed'
           response = event.data.object

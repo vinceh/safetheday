@@ -9,3 +9,16 @@ task :seeder => :environment do
     i.save
   end
 end
+
+task :invoicer => :environment do
+  user = User.first
+  invoice = Invoice.find(1)
+
+  ch = Stripe::Charge.retrieve(invoice.stripe_charge_id)
+  meta = {}
+  user.regional_subscription.taxes.each do |t|
+    meta[t.shorthand] = ((t.percentage.to_f/100)*user.regional_subscription.untaxed_amount).round
+  end
+  ch.metadata = meta
+  ch.save
+end

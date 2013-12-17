@@ -12,6 +12,7 @@
 
 $error: #ff4c4f;
 $success: #61c478;
+$light-success: #B5F1B3;
 $change: #4597ca;
 
 @mixin font-regular {
@@ -68,7 +69,9 @@ input[type="submit"], button, .btn {
   }
   &:disabled {
     color: #999;
+    opacity: 0.5;
     &:hover {
+      cursor: default;
       color: #999;
     }
   }
@@ -289,8 +292,27 @@ a.light {
   }
 }
 
+.update-payment {
+  display: none;
+  margin-bottom: 50px !important;
+  input[type='submit'] {
+    font-size: 15px !important;
+    padding: 12px 20px !important;
+  }
+}
+
 .update-shipping {
   display: none;
+  input[type='submit'] {
+    font-size: 15px;
+    padding: 12px 20px;
+  }
+  h3 {
+    margin-bottom: 0 !important;
+  }
+  .show {
+    display: block;
+  }
 }
 
 .hider {
@@ -301,6 +323,17 @@ a.light {
   line-height: 24px;
   position: relative;
   bottom: 3px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.canceller {
+  color: $change;
+  @include font-light;
+  font-size: 15px;
+  margin-left: 15px;
+  line-height: 24px;
   &:hover {
     cursor: pointer;
   }
@@ -462,7 +495,7 @@ a.light {
         padding: 15px 17px 10px 13px;
         @include inline-block;
       }
-      span {
+      .card-type {
         font-size: 22px;
         margin-left: 5px;
         position: relative;
@@ -473,6 +506,12 @@ a.light {
         color: #777;
         h3 {
           margin-top: 50px;
+          &:first-child {
+            margin-top: 0;
+          }
+        }
+        .billing {
+          margin-bottom: 50px;
         }
         .account-item {
           width: 65%;
@@ -597,4 +636,12 @@ a.light {
     line-height: 1.4em;
     font-size: 14px;
   }
+}
+
+.success-flash {
+  margin: 0 auto;
+  text-align: center;
+  padding: 15px;
+  background-color: $light-success;
+  margin-bottom: -46px;
 }

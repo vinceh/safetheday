@@ -4,25 +4,12 @@ class UsersController < ApplicationController
   before_filter :authenticate_user!
 
   def account
-    @sub = current_user.subscription_id
+    @sub = current_user.regional_subscription
     @stripe_customer = Stripe::Customer.retrieve(current_user.stripe_customer_id)
   end
 
   def payment
     @user = current_user
-
-    if request.post?
-      @user = current_user
-      @user.update_attributes(params[:user])
-
-      if @user.valid? && @user.update_payment(params[:stripeToken])
-        flash[:success] = "Your payment and shipping settings have been updated!"
-        redirect_to user_payment_path
-      else
-        flash[:error] = "There was an error updating your payment and shipping settings"
-        redirect_to user_payment_path
-      end
-    end
   end
 
   def history
@@ -45,5 +32,25 @@ class UsersController < ApplicationController
     current_user.unsubscribe
 
     redirect_to user_root_path
+  end
+
+  def update_shipping
+    @user = current_user
+    @user.update_attributes(params[:user])
+
+    flash[:success] = "Shipping address updated!  Your next box will be shipped to your new address."
+
+    redirect_to :action => :payment
+  end
+
+  def update_payment
+    @user = current_user
+    @user.update_attributes(params[:user])
+
+    if @user.valid? && @user.update_payment(params[:stripeToken])
+
+      flash[:success] = "Credit Card Updated!  Your next box will be charged to your new Credit Card."
+      redirect_to :action => :payment
+    end
   end
 end

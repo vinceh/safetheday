@@ -1,7 +1,7 @@
 <div class="container">
   <%= render "account_side", :current => "current" %>
   <div class="right-panel">
-    <% if current_user.subscription_id %>
+    <% if current_user.regional_subscription %>
       <h3>
         Current Subscription
       </h3>
@@ -10,16 +10,16 @@
 
         </div>
         <div class="content">
-          <h4><%= subs[@sub]['name'] %></h4>
-          <p class="sub"><%= subs[@sub]['desc'] %></p>
+          <h4><%= @sub.name %></h4>
+          <p class="sub"><%= @sub.description %></p>
           <p class="line-item">
-            Billing & delivery: <span class="bold"><%= subs[@sub]['interval-words'] %></span>
+            Billing & delivery: <span class="bold"><%= @sub.interval_words %></span>
           </p>
           <p class="line-item">
-            Next bill date: <span class="bold"><%= (Time.at(@stripe_customer.subscription.current_period_end)+1.day).strftime("%b %_m, %Y") %></span>
+            Next bill date: <span class="bold"><%= (Time.at(@stripe_customer.subscription.current_period_end)+1.day).strftime("%b %d, %Y") %></span>
           </p>
           <p class="line-item">
-            Amount: <span class="bold"><%= subs[@sub]['total'] %></span>
+            Amount: <span class="bold"><%= "$"+display_fee(@sub.fee)+@sub.currency %></span>
           </p>
         </div>
       </div>

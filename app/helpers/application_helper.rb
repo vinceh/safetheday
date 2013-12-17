@@ -18,7 +18,6 @@ module ApplicationHelper
       ['NU', 'NU'],
       ['ON', 'ON'],
       ['PE', 'PE'],
-      ['QC', 'QC'],
       ['SK', 'SK'],
       ['YT', 'YT']
     ]
@@ -102,6 +101,14 @@ module ApplicationHelper
   end
 
   def display_fee(fee)
-    '$'+sprintf("%.2f", fee.to_f/100)
+    sprintf("%.2f", fee.to_f/100)
+  end
+
+  def tax_amounts_for(charge)
+    total = 0
+    charge.metadata.each do |k, v|
+      total = total + v.to_i
+    end
+    return total
   end
 end

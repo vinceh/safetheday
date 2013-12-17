@@ -27,19 +27,19 @@
       <div class="item bold">
         <%= @stripe_invoice.lines.data[0].plan.name %>
         <span>
-          <%= subs[@stripe_invoice.lines.data[0].plan.id]['amount'] %>
+          <%= "$"+display_fee(@charge.amount-tax_amounts_for(@charge))+@charge.currency.upcase %>
         </span>
       </div>
       <div class="item bold">
         Tax
         <span>
-          <%= subs[@stripe_invoice.lines.data[0].plan.id]['tax'] %>
+          <%= "$"+display_fee(tax_amounts_for(@charge))+@charge.currency.upcase %>
         </span>
       </div>
       <div class="total">
           Total:
           <span class="bold">
-            <%= display_fee(@charge.amount) %>
+            <%= "$"+display_fee(@charge.amount)+@charge.currency.upcase %>
           </span>
       </div>
     </div>

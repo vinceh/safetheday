@@ -4,7 +4,7 @@ class HomeController < ApplicationController
   before_filter :no_sub, :only => [:add_pack, :select_pack]
 
   def select_pack
-
+    @subs = Subscription.all
   end
 
   def add_pack

@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
 
   has_many :invoices
+  belongs_to :regional_subscription
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -13,12 +14,14 @@ class User < ActiveRecord::Base
                   :shipping_state, :shipping_country, :shipping_zipcode, :shipping_phone, :billing_address_two, :shipping_address_two
 
   def create_subscription(subscription, stripe_token)
-    self.subscription_id = subscription
+    self.regional_subscription = RegionalSubscription
+                                    .where(state: billing_state,
+                                           subscription_id: subscription.id).first
 
     begin
       customer = Stripe::Customer.create(
         :card  => stripe_token,
-        :plan => self.subscription_id,
+        :plan => self.regional_subscription.stripe_subscription_id,
         :email => self.email
       )
 
@@ -38,17 +41,21 @@ class User < ActiveRecord::Base
   end
 
   def update_payment(stripe_token)
+    self.regional_subscription = RegionalSubscription
+                                    .where(state: billing_state,
+                                           subscription_id: self.regional_subscription.subscription_id).first
+
     begin
       customer = Stripe::Customer.retrieve(self.stripe_customer_id)
-      customer.card = stripe_token
-      customer.save
+      customer.update_subscription(:plan => self.regional_subscription.stripe_subscription_id,
+                                   :prorate => false,
+                                   :card => stripe_token)
 
       token = Stripe::Token.retrieve(stripe_token)
       self.card_last_four = token.card.last4
       self.card_type = token.card.type
       save
 
-      UserMailer.updated_payment(self).deliver
       true
     rescue Stripe::CardError => e
       nil
@@ -62,8 +69,8 @@ class User < ActiveRecord::Base
   def unsubscribe
     self.subscription_id = nil
     if save!
-      #cu = Stripe::Customer.retrieve(stripe_customer_id)
-      #cu.cancel_subscription
+      cu = Stripe::Customer.retrieve(stripe_customer_id)
+      cu.cancel_subscription
     end
   end
 end

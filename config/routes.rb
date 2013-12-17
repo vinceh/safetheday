@@ -6,7 +6,8 @@ Safe::Application.routes.draw do
     get 'account/history', :to => 'users#history', :as => :user_history
     get 'invoice/:id', :to => 'users#invoice', :as => :show_invoice
     post 'unsubscribe', :to => 'users#unsubscribe', :as => :unsubscribe
-    post 'account/update_billing', :to => 'users#update_billing', :as => :account_update_shipping
+    post 'account/update_shipping', :to => 'users#update_shipping', :as => :account_update_shipping
+    post 'account/update_payment', :to => 'users#update_payment', :as => :update_payment
   end
 
   root :to => "home#index"

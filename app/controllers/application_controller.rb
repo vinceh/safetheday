@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
   end
 
   def select_pack
-    if current_user.subscription_id
+    if current_user.regional_subscription
       redirect_to user_root_path
     elsif !session[:cart]
       redirect_to select_pack_path
@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
   end
 
   def no_sub
-    if current_user && current_user.subscription_id
+    if current_user && current_user.regional_subscription
       redirect_to user_root_path
     end
   end

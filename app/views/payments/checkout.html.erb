@@ -20,8 +20,6 @@
           // Insert the token into the form so it gets submitted to the server
           $form.append($('<input type="hidden" name="stripeToken" />').val(token));
 
-          console.log(response);
-
           $form.get(0).submit();
         }
       };
