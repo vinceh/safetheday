@@ -1,5 +1,6 @@
 Safe::Application.routes.draw do
   devise_for :users do
+    get 'account/settings', :to => 'devise/registrations#edit', :as => :edit_user_registration
     get 'account', :to => 'users#account', :as => :user_root
     get 'account/payment', :to => 'users#payment', :as => :user_payment
     post 'account/payment', :to => 'users#payment', :as => :user_update_payment
@@ -8,6 +9,7 @@ Safe::Application.routes.draw do
     post 'unsubscribe', :to => 'users#unsubscribe', :as => :unsubscribe
     post 'account/update_shipping', :to => 'users#update_shipping', :as => :account_update_shipping
     post 'account/update_payment', :to => 'users#update_payment', :as => :update_payment
+
   end
 
   root :to => "home#index"

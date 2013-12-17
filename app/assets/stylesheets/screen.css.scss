@@ -94,7 +94,8 @@ input, select {
   outline: none;
   font-size: 16px;
   color: #333;
-  &[type='text'] {
+  &[type='text'], &[type='email'], &[type='password'] {
+    margin: 0;
     padding: 10px;
     border: 1px solid #ccc;
     &:focus, &:hover {
@@ -644,4 +645,21 @@ a.light {
   padding: 15px;
   background-color: $light-success;
   margin-bottom: -46px;
+}
+
+.edit-user-form {
+  margin-top: 30px;
+  label {
+    margin: 15px 10px;
+    display: block;
+  }
+  input {
+    display: block;
+    margin-bottom: 5px;
+    &[type='submit'] {
+      margin-top: 30px;
+      font-size: 15px;
+      padding: 12px 20px;
+    }
+  }
 }
