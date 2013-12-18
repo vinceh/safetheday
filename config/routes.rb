@@ -18,4 +18,7 @@ Safe::Application.routes.draw do
   get "add/:pack" => "home#add_pack", :as => :add_pack
   get "checkout" => "payments#checkout", :as => :checkout
   post "checkout" => "payments#checkout", :as => :customer_payment
+
+  # Stripe Webhook
+  post 'stripe-event' => 'events#stripe_event'
 end

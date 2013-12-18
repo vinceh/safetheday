@@ -20,6 +20,8 @@ class EventsController < ApplicationController
           invoice.stripe_invoice_id = response.id
           invoice.amount = response.total
           invoice.stripe_charge_id = response.charge
+          invoice.currency = response.currency
+          invoice.subscription_id = response.lines.data[0].plan.id
           invoice.save!
 
           ch = Stripe::Charge.retrieve(invoice.stripe_charge_id)
@@ -30,7 +32,7 @@ class EventsController < ApplicationController
           ch.metadata = meta
           ch.save
 
-          UserMailer.invoice(user).deliver
+          UserMailer.invoice(user, invoice).deliver
         when 'invoice.payment_failed'
           response = event.data.object
           user = User.find_by_stripe_customer_id(response.customer)
@@ -39,7 +41,7 @@ class EventsController < ApplicationController
         when 'charge.succeeded'
           response = event.data.object
           invoice = Invoice.find_by_stripe_charge_id(response.id)
-          invoice.fee = response.fee
+          invoice.stripe_fee = response.fee
           invoice.save!
       end
     end

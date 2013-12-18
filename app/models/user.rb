@@ -33,7 +33,6 @@ class User < ActiveRecord::Base
       self.card_type = token.card.type
       save
 
-      UserMailer.subscribed(self).deliver
       true
     rescue Stripe::CardError => e
       nil
@@ -67,7 +66,7 @@ class User < ActiveRecord::Base
   end
 
   def unsubscribe
-    self.subscription_id = nil
+    self.regional_subscription_id = nil
     if save!
       cu = Stripe::Customer.retrieve(stripe_customer_id)
       cu.cancel_subscription
