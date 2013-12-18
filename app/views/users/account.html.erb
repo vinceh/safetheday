@@ -24,6 +24,38 @@
         </div>
       </div>
 
+      <div class="options subsection">
+        <h3>
+          Subscription Options
+        </h3>
+
+        <div class="option">
+          <p>
+            Want more condoms?  Get a delivery every 2 weeks!
+          </p>
+          <a class="btn change">
+            get delivery <br/> every 2 weeks
+          </a>
+        </div>
+        <div class="option">
+          <% if current_user.subscription.shorthand == 'jour' %>
+            <p>
+              Want super thin luxury condoms? Upgrade to <span class="italic">The Adventurer</span>, $17/mo
+            </p>
+            <a class="btn change">
+              upgrade to <br/> The Adventurer
+            </a>
+          <% else %>
+            <p>
+              Don't need the luxury? Switch to <span class="italic">The Journeyman</span>, $10/mo
+            </p>
+            <a class="btn change">
+              switch to <br/> The Journeyman
+            </a>
+          <% end %>
+        </div>
+      </div>
+
       <div class="danger">
         <h3>Danger Zone!</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel dictum quam. Donec tincidunt lacus vitae elementum varius. </p>

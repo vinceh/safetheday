@@ -1,11 +1,11 @@
 s = Subscription.new
-s.name = "The Journeyman"
-s.description = "The most amazing condoms"
+s.name = "The Adventurer"
+s.description = "Luxury Condoms"
 s.save!
 
 r = RegionalSubscription.new
 r.subscription = s
-r.stripe_subscription_id = "12_ca"
+r.stripe_subscription_id = "24_ca"
 r.state = "BC"
 r.save!
 

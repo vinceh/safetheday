@@ -39,6 +39,10 @@ class User < ActiveRecord::Base
     end
   end
 
+  def subscription
+    regional_subscription.subscription
+  end
+
   def update_payment(stripe_token)
     self.regional_subscription = RegionalSubscription
                                     .where(state: billing_state,

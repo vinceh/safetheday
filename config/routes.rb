@@ -9,7 +9,7 @@ Safe::Application.routes.draw do
     post 'unsubscribe', :to => 'users#unsubscribe', :as => :unsubscribe
     post 'account/update_shipping', :to => 'users#update_shipping', :as => :account_update_shipping
     post 'account/update_payment', :to => 'users#update_payment', :as => :update_payment
-
+    post 'account/change_subscription', :to => 'users#change_subscription', :as => :change_subscription
   end
 
   root :to => "home#index"
