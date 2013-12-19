@@ -7,7 +7,7 @@
       </h3>
       <div class="sub-wrap">
         <div class="avatar">
-
+          <%= image_tag "cube.png" %>
         </div>
         <div class="content">
           <h4><%= @sub.name %></h4>
@@ -56,11 +56,23 @@
         </div>
       </div>
 
+      <a class="danger-link">
+        more options ↓
+      </a>
+
       <div class="danger">
         <h3>Danger Zone!</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel dictum quam. Donec tincidunt lacus vitae elementum varius. </p>
-        <%= link_to "Cancel Subscription", unsubscribe_path, :method => "POST", :confirm => "Are you sure you want to cancel your subscription?", :class => "btn cancel" %>
+        <a class="btn cancel">
+          Cancel Subscription
+        </a>
       </div>
+
+      <script type="text/javascript">
+        $('.danger-link').on('click', function() {
+          $('.danger').slideToggle();
+        });
+      </script>
     <% else %>
       <h3>
         Let's get you started again
@@ -68,4 +80,55 @@
     <% end %>
   </div>
 </div>
+
+<div class="modal-outer">
+  <div class="backwash"></div>
+  <div class="modal cancel-modal">
+    <h4>We hate to see you leave...</h4>
+    <p>But we'd love to know why!</p>
+    <%= form_tag unsubscribe_path, method: "POST" do %>
+      <div class="feedback-option">
+        <%= radio_button("cancel", "feedback", "Too expensive") %>
+        <%= label "cancel", "feedback", "Too expensive", value: "Too expensive" %>
+      </div>
+      <div class="feedback-option">
+        <%= radio_button("cancel", "feedback", "Dislike the product") %>
+        <%= label("cancel", "feedback", "Dislike the product", value: "Dislike the product") %>
+      </div>
+      <div class="feedback-option">
+        <%= radio_button("cancel", "feedback", "Unsatisfied with your service") %>
+        <%= label("cancel", "feedback", "Unsatisfied with your service", value: "Unsatisfied with your service") %>
+      </div>
+      <div class="feedback-option">
+        <%= radio_button("cancel", "feedback", "Receiving too many condoms") %>
+        <%= label("cancel", "feedback", "Receiving too many condoms", value: "Receiving too many condoms") %>
+      </div>
+      <div class="feedback-option">
+        <%= radio_button("cancel", "feedback", "Other") %>
+        <%= label("cancel", "feedback", "Other", value: "Other") %>
+      </div>
+      <%= text_area("cancel", "text_feedback") %>
+      <%= submit_tag "Cancel my subsciption" %> <a class="close-modal change-link">go back</a>
+    <% end %>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $('.cancel').on('click', function() {
+    $('.modal-outer').fadeIn(150, function() {
+      $('.cancel-modal').addClass('open');
+    });
+  });
+
+  $('.backwash, .close-modal').on('click', function() {
+    $('.cancel-modal').removeClass('open');
+    $('.modal-outer').fadeOut(150);
+  });
+
+  $('#cancel_feedback_other').on('change', function() {
+    $('#cancel_text_feedback').focus();
+  });
+</script>
+
+
 

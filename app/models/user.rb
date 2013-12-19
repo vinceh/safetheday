@@ -43,6 +43,24 @@ class User < ActiveRecord::Base
     regional_subscription.subscription
   end
 
+  def change_subscription(sub)
+    sub = Subscription.find_by_shorthand(sub)
+    self.regional_subscription = RegionalSubscription.where(state: billing_state,
+                                                            subscription_id: sub.id).first
+
+    begin
+      customer = Stripe::Customer.retrieve(self.stripe_customer_id)
+      customer.update_subscription(:plan => self.regional_subscription.stripe_subscription_id,
+                                   :prorate => false)
+
+      save
+
+      return sub
+    rescue Stripe::CardError => e
+      nil
+    end
+  end
+
   def update_payment(stripe_token)
     self.regional_subscription = RegionalSubscription
                                     .where(state: billing_state,

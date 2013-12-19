@@ -31,6 +31,18 @@ class UsersController < ApplicationController
   def unsubscribe
     current_user.unsubscribe
 
+    feed = Feedback.new
+
+    if params[:cancel][:feedback] == "Other"
+      feed.description = params[:cancel][:text_feedback]
+    else
+      feed.description = params[:cancel][:feedback]
+    end
+
+    feed.member_since = current_user.created_at
+    feed.subscription = current_user.subscription.name
+    feed.save!
+
     redirect_to user_root_path
   end
 
@@ -55,7 +67,9 @@ class UsersController < ApplicationController
   end
 
   def change_subscription
-    flash[:notice] = params[:sub]
+    sub = current_user.change_subscription(params[:sub])
+
+    flash[:notice] = "Subscription updated!  You will receive a box of #{sub.name} in your next shipment."
     redirect_to :action => :account
   end
 end
