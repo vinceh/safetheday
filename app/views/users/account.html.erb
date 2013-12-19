@@ -42,16 +42,16 @@
             <p>
               Want super thin luxury condoms? Upgrade to <span class="italic">The Adventurer</span>, $17/mo
             </p>
-            <a class="btn change">
-              upgrade to <br/> The Adventurer
-            </a>
+            <%= link_to change_subscription_path(sub: 'adv'), :method => "POST", :class => "btn change" do %>
+              switch to <br/> The Journeyman
+            <% end %>
           <% else %>
             <p>
               Don't need the luxury? Switch to <span class="italic">The Journeyman</span>, $10/mo
             </p>
-            <a class="btn change">
+            <%= link_to change_subscription_path(sub: 'jour'), :method => "POST", :class => "btn change" do %>
               switch to <br/> The Journeyman
-            </a>
+            <% end %>
           <% end %>
         </div>
       </div>

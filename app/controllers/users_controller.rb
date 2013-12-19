@@ -53,4 +53,9 @@ class UsersController < ApplicationController
       redirect_to :action => :payment
     end
   end
+
+  def change_subscription
+    flash[:notice] = params[:sub]
+    redirect_to :action => :account
+  end
 end
