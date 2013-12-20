@@ -1,13 +1,12 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
-ruby "1.9.3"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
-gem 'devise'
+gem 'devise', '~> 2.2.4'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
 # Gems used only for assets and not required
