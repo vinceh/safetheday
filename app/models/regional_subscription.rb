@@ -22,7 +22,7 @@ class RegionalSubscription < ActiveRecord::Base
   end
 
   def interval_words
-    stripe_object.interval_count.to_s + " " + stripe_object.interval.capitalize
+    stripe_object.interval_count.to_s + " " + stripe_object.interval.capitalize+(stripe_object.interval_count > 1 ? "s" : "" )
   end
 
   def fee

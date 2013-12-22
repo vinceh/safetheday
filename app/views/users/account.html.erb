@@ -28,14 +28,22 @@
         <h3>
           Subscription Options
         </h3>
-
         <div class="option">
-          <p>
-            Want more condoms?  Get a delivery every 2 weeks!
-          </p>
-          <a class="btn change">
-            get delivery <br/> every 2 weeks
-          </a>
+          <% if current_user.is_monthly? %>
+            <p>
+              Want more condoms?  Get a delivery every 2 weeks!
+            </p>
+            <%= link_to change_interval_path, :method => "POST", :class => "btn change" do %>
+              get delivery <br/> every 2 weeks
+            <% end %>
+          <% else %>
+            <p>
+              Want less condoms?  Get a delivery every month!
+            </p>
+            <%= link_to change_interval_path, :method => "POST", :class => "btn change" do %>
+              get delivery <br/> every month
+            <% end %>
+          <% end %>
         </div>
         <div class="option">
           <% if current_user.subscription.shorthand == 'jour' %>

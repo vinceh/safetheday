@@ -94,4 +94,34 @@ class User < ActiveRecord::Base
       cu.cancel_subscription
     end
   end
+
+  # really hackish way of doing this
+  # but if the stripe_subscription_id doesn't end in _bi then it's monthly
+  def is_monthly?
+    !regional_subscription.stripe_subscription_id.include?('bi')
+  end
+
+  def change_interval
+    current = regional_subscription.stripe_subscription_id
+
+    if is_monthly?
+      current = current + "_bi"
+    else
+      current.slice!("_bi")
+    end
+
+    self.regional_subscription = RegionalSubscription.where(stripe_subscription_id: current).first
+
+    begin
+      customer = Stripe::Customer.retrieve(self.stripe_customer_id)
+      customer.update_subscription(:plan => self.regional_subscription.stripe_subscription_id,
+                                   :prorate => false)
+
+      save
+
+      return self.regional_subscription
+    rescue Stripe::CardError => e
+      nil
+    end
+  end
 end

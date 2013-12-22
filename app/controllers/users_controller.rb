@@ -72,4 +72,11 @@ class UsersController < ApplicationController
     flash[:notice] = "Subscription updated!  You will receive a box of #{sub.name} in your next shipment."
     redirect_to :action => :account
   end
+
+  def change_interval
+    region_sub = current_user.change_interval
+
+    flash[:notice] = "Subscription updated!  You will receive a box every #{region_sub.interval_words}"
+    redirect_to :action => :account
+  end
 end

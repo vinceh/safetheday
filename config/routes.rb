@@ -10,6 +10,7 @@ Safe::Application.routes.draw do
     post 'account/update_shipping', :to => 'users#update_shipping', :as => :account_update_shipping
     post 'account/update_payment', :to => 'users#update_payment', :as => :update_payment
     post 'account/change_subscription', :to => 'users#change_subscription', :as => :change_subscription
+    post 'account/change_interval', :to => 'users#change_interval', :as => :change_interval
   end
 
   root :to => "home#index"

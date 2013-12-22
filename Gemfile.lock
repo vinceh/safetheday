@@ -136,7 +136,7 @@ DEPENDENCIES
   better_errors
   coffee-rails (~> 3.2.1)
   compass-rails
-  devise
+  devise (~> 2.2.4)
   jquery-rails
   pg
   rails (= 3.2.13)
