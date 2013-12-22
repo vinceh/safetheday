@@ -2,6 +2,8 @@
   <% content_for :head do %>
     <%= javascript_include_tag "http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js" %>
     <%= javascript_include_tag "https://js.stripe.com/v2/" %>
+    <%= javascript_include_tag "jquery.payment" %>
+
 
     <script type="text/javascript">
       Stripe.setPublishableKey('pk_test_h3DuEFi6li4dKSe8ZcfporXg');
@@ -34,6 +36,11 @@
 
         $name.attr('value', $('.billing-first').val()+" "+$('.billing-last').val());
       };
+
+      $(window).load(function() {
+        $('.card-number').payment('formatCardNumber');
+        $('.cvc').payment('formatCardCVC');
+      });
 
       $(document).ready(function() {
         $('#payment-form').validate({
