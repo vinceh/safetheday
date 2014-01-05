@@ -6,7 +6,11 @@ class AdminsController < ApplicationController
   before_filter :authenticate_admin!
 
   def pending_shipments
-    @invoices = Invoice.where(:shipped_on => nil).order("created_at ASC")
+    @invoices = Invoice.where(:shipped_on => nil).where("amount > 0").order("created_at ASC")
+  end
+
+  def shipped_subscription
+    @invoices = Invoice.where("invoices.shipped_on IS NOT NULL").where("amount > 0").order("shipped_on DESC")
   end
 
   def get_labels
@@ -62,9 +66,5 @@ class AdminsController < ApplicationController
     flash[:notice] = "Shipment Marked Successfully"
 
     redirect_to :action => :pending_shipments
-  end
-
-  def shipped_subscription
-    @invoices = Invoice.where("invoices.shipped_on IS NOT NULL").order("shipped_on DESC")
   end
 end
