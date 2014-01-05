@@ -5,27 +5,8 @@
 
 @import "compass/reset";
 @import "compass";
-
-@include font-face("ProximaNovaLight", font-files("ProximaNova-Light.otf"));
-@include font-face("ProximaNovaSemiBold", font-files("ProximaNova-Semibold.otf"));
-@include font-face("ProximaNovaRegular", font-files("ProximaNova-Regular.otf"));
-
-$error: #ff4c4f;
-$success: #61c478;
-$light-success: #B5F1B3;
-$change: #4597ca;
-
-@mixin font-regular {
-  font-family: "ProximaNovaRegular";
-}
-
-@mixin font-light {
-  font-family: "ProximaNovaLight";
-}
-
-@mixin font-semibold {
-  font-family: "ProximaNovaSemiBold";
-}
+@import "fonts";
+@import "colors";
 
 p {
   line-height: 1.6em;
@@ -61,6 +42,7 @@ a {
 }
 
 input[type="submit"], button, .btn {
+  outline: none;
   border: none;
   background-color: #333;
   @include font-semibold;

@@ -1,0 +1,27 @@
+<%= render "admin_side", :current => "shipped" %>
+
+<div class="contenter">
+  <div class="section">
+    <h1>Past Shipments</h1>
+  </div>
+  <div class="section">
+    <table>
+      <tr>
+        <th>Subscription</th>
+        <th>Shipped On</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+      <% @invoices.each do |i| %>
+        <tr>
+          <td><%= i.user.subscription.name %></td>
+          <td><%= i.shipped_on.strftime("%m/%d/%y")%></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

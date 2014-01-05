@@ -1,0 +1,119 @@
+@import "compass";
+@import "fonts";
+@import "colors";
+
+a {
+  color: $change;
+}
+
+.side-bar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #333;
+  .admin-logo {
+    text-align: center;
+    margin: 50px 0 50px;
+    img {
+      height: 100px;
+    }
+  }
+  .item {
+    color: white;
+    display: block;
+    padding: 20px 25px;
+    &:visited {
+      color: #eee;
+    }
+    &:hover, &.active {
+      background-color: #444;
+    }
+    &.active {
+    }
+  }
+  .logout-admin {
+    position: absolute;
+    bottom: 20px;
+    left: 25px;
+  }
+}
+
+.contenter {
+  margin-left: 250px;
+  h1:first-child {
+    @include font-regular;
+    font-size: 40px;
+    text-align: right;
+    color: #555;
+    @include text-shadow(0 2px 0 white);
+  }
+  .section {
+    padding: 30px;
+  }
+  table {
+    width: 100%;
+    tbody, tr {
+      width: 100%;
+    }
+    tr {
+      @include transition-property(background-color);
+      @include transition-duration(0.3s);
+      &:first-child {
+        border-bottom: 1px dashed #ccc;
+        &:hover {
+          background-color: transparent;
+          cursor: auto;
+        }
+      }
+      &:hover {
+        background-color: #eee;
+        cursor: pointer;
+      }
+    }
+
+    th {
+      width: 100%/4;
+      @include font-regular;
+      font-size: 18px;
+      &:last-child {
+        width: 75px;
+        text-align: center;
+      }
+    }
+    th, td {
+      padding: 15px;
+    }
+    td {
+      &:last-child {
+        text-align: center;
+      }
+      a {
+        font-size: 13px;
+        padding: 5px 10px;
+        @include font-light;
+      }
+    }
+  }
+}
+
+.mark-all {
+  color: $change;
+  font-size: 15px;
+  @include font-light;
+}
+
+.send-items {
+  text-align: right;
+  margin-top: 50px;
+  a, button {
+    padding: 10px 15px;
+    font-size: 18px;
+    margin-left: 15px;
+  }
+}
+
+.bulk-form {
+  display: none;
+}

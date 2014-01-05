@@ -1,0 +1,17 @@
+@import "compass";
+
+@include font-face("ProximaNovaLight", font-files("ProximaNova-Light.otf"));
+@include font-face("ProximaNovaSemiBold", font-files("ProximaNova-Semibold.otf"));
+@include font-face("ProximaNovaRegular", font-files("ProximaNova-Regular.otf"));
+
+@mixin font-regular {
+  font-family: "ProximaNovaRegular";
+}
+
+@mixin font-light {
+  font-family: "ProximaNovaLight";
+}
+
+@mixin font-semibold {
+  font-family: "ProximaNovaSemiBold";
+}

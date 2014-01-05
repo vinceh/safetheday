@@ -1,3 +1,10 @@
+task :admin => :environment do
+  newuser = Admin.new({ :email => 'admin@safe.com',
+                        :password => 'Mspudding5611',
+                        :password_confirmation => 'Mspudding5611'})
+  newuser.save!
+end
+
 task :seeder => :environment do
   3.times do
     i = Invoice.new

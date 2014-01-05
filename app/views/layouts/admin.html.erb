@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Safe</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+  <%= csrf_meta_tags %>
+
+  <%= yield :head %>
+</head>
+<body>
+
+<% if flash[:notice] %>
+  <div class="success-flash">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+
+<%= yield %>
+
+</body>
+</html>

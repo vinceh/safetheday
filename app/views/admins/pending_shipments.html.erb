@@ -1,0 +1,92 @@
+<%= render "admin_side", :current => "pending" %>
+
+<div class="contenter">
+  <div class="section">
+    <h1>Pending Shipments</h1>
+  </div>
+  <div class="section">
+    <table class="pending-items">
+      <tr>
+        <th>Subscription</th>
+        <th>Days Active</th>
+        <th>New Sub</th>
+        <th>Actions</th>
+        <th>
+          <a class="mark-all">check all</a>
+        </th>
+      </tr>
+      <% @invoices.each do |i| %>
+        <tr class="pending-item" data-id="<%= i.id %>">
+          <td><%= i.user.subscription.name %></td>
+          <td><%= (Time.now.to_date - i.created_at.to_date).to_i %></td>
+          <td><%= (i.created_at.to_date - i.created_at.to_date).to_i %></td>
+          <td>
+            <%= link_to admin_mark_path(i.id), :method => "POST", :class => "btn mark-ship" do %>
+              Mark Shipped
+            <% end %>
+          </td>
+          <td>
+            <input type="checkbox">
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+  <div class="section send-items">
+    <button class="btn change get-labels">Download Labels</button>
+    <button class="btn cancel bulk-ship">Mark Shipped</button>
+
+    <%= form_tag bulk_mark_path, :method => "POST", :class => "bulk-form" do %>
+      <%= hidden_field_tag 'items' %>
+    <% end %>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $('.mark-all').on('click', function() {
+    $('.pending-items').find("input[type='checkbox']").prop('checked', true);
+  });
+
+  $('.pending-item').on('click', function() {
+    var $input = $(this).find("input[type='checkbox']");
+    $input.prop('checked', !$input.prop('checked'));
+  });
+
+  $('.get-labels').on('click', function() {
+    var url = '/labels?items=';
+    var items = $('.pending-items').find('input[type="checkbox"]:checked');
+
+    if (items.length == 0) {
+      alert('Select at least 1 pending shipment');
+      return false;
+    }
+
+    items.each(function(index, element) {
+      url = url + $(this).parents('.pending-item').attr('data-id') + ','
+    });
+
+    url = url.slice(0, -1);
+
+    window.location.href = url;
+  });
+
+  $('.bulk-ship').on('click', function() {
+    var ids = '';
+    var items = $('.pending-items').find('input[type="checkbox"]:checked');
+
+    if (items.length == 0) {
+      alert('Select at least 1 pending shipment');
+      return false;
+    }
+
+    items.each(function(index, element) {
+      ids = ids + $(this).parents('.pending-item').attr('data-id') + ','
+    });
+
+    ids = ids.slice(0, -1);
+
+    var $form = $('.bulk-form');
+    $form.children('input').val(ids);
+    $form.submit();
+  });
+</script>

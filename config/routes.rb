@@ -1,4 +1,14 @@
 Safe::Application.routes.draw do
+  devise_for :admins do
+    get 'pending', :to => 'admins#pending_shipments', :as => :admin_root
+    get 'shipped', :to => 'admins#shipped_subscription', :as => :admin_shipped
+    get 'numbers', :to => 'admins#numbers', :as => :admin_numbers
+
+    post 'mark-shipped/:id', :to => 'admins#mark_shipped', :as => :admin_mark
+    post 'bulk-mark', :to => 'admins#bulk_mark', :as => :bulk_mark
+    get 'labels', :to => 'admins#get_labels', :as => :get_labels
+  end
+
   devise_for :users do
     get 'account/settings', :to => 'devise/registrations#edit', :as => :edit_user_registration
     get 'account', :to => 'users#account', :as => :user_root

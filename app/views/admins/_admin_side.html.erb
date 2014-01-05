@@ -1,0 +1,10 @@
+<div class="side-bar">
+  <div class="admin-logo">
+    <%= image_tag "admin-logo.png" %>
+  </div>
+  <%= link_to "Pending Shipments", admin_root_path, :class => "item #{'active' if current == 'pending'}" %>
+  <%= link_to "Past Shipments", admin_shipped_path, :class => "item #{'active' if current == 'shipped'}" %>
+  <%= link_to "Numbers", admin_numbers_path, :class => "item #{'active' if current == 'numbers'}" %>
+
+  <%= link_to "LOGOUT", destroy_admin_session_path, :method => "DELETE", :class => "logout-admin" %>
+</div>
