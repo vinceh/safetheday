@@ -24,6 +24,13 @@ class AdminsController < ApplicationController
     # Setting the titles
     titles = sheet.row(0)
     titles.push("First Name")
+    titles.push("Last Name")
+    titles.push("Address Line 1")
+    titles.push("Address Line 2")
+    titles.push("City")
+    titles.push("Province")
+    titles.push("Country")
+    titles.push("Postal Code")
 
     # Write the data
     x = 1
@@ -35,8 +42,22 @@ class AdminsController < ApplicationController
 
       if user.shipping_same
         row.push(invoice.user.billing_first_name)
+        row.push(invoice.user.billing_last_name)
+        row.push(invoice.user.billing_address_one)
+        row.push(invoice.user.billing_address_two)
+        row.push(invoice.user.billing_city)
+        row.push(invoice.user.billing_state)
+        row.push(invoice.user.billing_country)
+        row.push(invoice.user.billing_zipcode)
       else
         row.push(invoice.user.shipping_first_name)
+        row.push(invoice.user.shipping_last_name)
+        row.push(invoice.user.shipping_address_one)
+        row.push(invoice.user.shipping_address_two)
+        row.push(invoice.user.shipping_city)
+        row.push(invoice.user.shipping_state)
+        row.push(invoice.user.shipping_country)
+        row.push(invoice.user.shipping_zipcode)
       end
 
       x = x + 1
