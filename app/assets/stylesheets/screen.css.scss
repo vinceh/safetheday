@@ -773,7 +773,7 @@ a.light {
 
 .chooser {
   position: relative;
-  width: 1050px;
+  width: 1120px;
   .backwash {
     position: absolute;
     left: 0;
@@ -816,9 +816,12 @@ a.light {
     float: left;
     width: 355px;
     @include box-sizing(border-box);
-    margin-left: 110px;
+    margin-left: 65px;
     position: relative;
     text-align: center;
+    &:first-child {
+      margin-left: 165px;
+    }
     button {
       margin-top: 35px;
       width: 80%;
