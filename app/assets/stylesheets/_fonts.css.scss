@@ -3,6 +3,7 @@
 @include font-face("ProximaNovaLight", font-files("ProximaNova-Light.otf"));
 @include font-face("ProximaNovaSemiBold", font-files("ProximaNova-Semibold.otf"));
 @include font-face("ProximaNovaRegular", font-files("ProximaNova-Regular.otf"));
+@include font-face("Quicksand", font-files("Quicksand-Light.otf"));
 
 @mixin font-regular {
   font-family: "ProximaNovaRegular";
@@ -14,4 +15,8 @@
 
 @mixin font-semibold {
   font-family: "ProximaNovaSemiBold";
+}
+
+@mixin font-quicksand {
+  font-family: "Quicksand";
 }

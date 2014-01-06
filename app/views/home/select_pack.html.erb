@@ -1,7 +1,94 @@
-Select the pack you want!
+<div class="container chooser">
+  <div class="backwash"></div>
+  <div class="title">
+    <h1>Your Adventure Awaits.</h1>
+    <p>seize that opportunity and be the man</p>
+    <%= image_tag "mustache.png" %>
+  </div>
+  <div class="selections">
+    <div class="selection">
+      <div class="avatar-wrap">
+        <div class="avatar-inner">
+          <h3>
+            The Journeyman
+          </h3>
+          <div class="avatar">
+            <%= image_tag "cube.png" %>
+          </div>
+        </div>
+        <div class="price">
+          CA $10.99/mo <br/>
+          <span>S&H incl.</span>
+        </div>
+      </div>
 
-<%= session[:cart] %>
+      <button>
+        Select
+      </button>
 
-<% @subs.each do |s| %>
-  <%= link_to s.name, add_pack_path(s.id) %>
-<% end %>
+      <div class="powers">
+        <p>
+          12 condoms a month
+        </p>
+        <p>
+          11 high quality Durex condoms
+        </p>
+        <p>
+          1 premium Okamoto 003 World's Thinnest Condom
+        </p>
+        <p>
+          A great starter pack for admirable men that appreciate simplicity
+        </p>
+        <p>
+          Comes in a slick & discreet box; you won't be ashamed to put it on your night stand
+        </p>
+
+      </div>
+    </div>
+    <div class="selection">
+      <div class="avatar-wrap">
+        <div class="avatar-inner">
+          <h3>
+            The Adventurer
+          </h3>
+          <div class="avatar">
+            <%= image_tag "cube.png" %>
+          </div>
+        </div>
+        <div class="price">
+          CA $14.99/mo <br/>
+          <span>S&H incl.</span>
+        </div>
+      </div>
+
+      <button>
+        Select
+      </button>
+
+      <div class="powers">
+        <p>
+          12 premium Okamoto 003 World's Thinnest Condom a month
+        </p>
+        <p>
+          Japan's #1 selling condom brand
+        </p>
+        <p>
+          You won't even know it's there, and yet it's safe for your piece of mind
+        </p>
+        <p>
+          Comes in a slick & discreet box; you won't be ashamed to put it on your night stand
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  body {
+    background: url(https://d1a3f4spazzrp4.cloudfront.net/web-fresh/home/heros/home-hero-1-1440-900.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+</style>

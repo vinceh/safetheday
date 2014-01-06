@@ -66,6 +66,7 @@ class AdminsController < ApplicationController
     data = StringIO.new ''
     book.write data
 
+    # Send it back to the client as an attachment
     send_data data.string, :type => 'application/excel', :disposition => 'attachment', :filename => 'labels.xls'
   end
 
