@@ -14,41 +14,41 @@
 
 @font-face {
   font-family: "ProximaNovaLight";
-  src: url(/assets/ProximaNova-Light.otf) format('opentype');
+  src: url(/assets/ProximaNova-Light-b26d8534a06b8f48486cc142e2b27b74.otf) format('opentype');
 }
 
 @font-face {
   font-family: "ProximaNovaSemiBold";
-  src: url(/assets/ProximaNova-Semibold.otf) format('opentype');
+  src: url(/assets/ProximaNova-Semibold-d1c38a33f2c7dc94441feebfc7c95b26.otf) format('opentype');
 }
 
 @font-face {
   font-family: "ProximaNovaRegular";
-  src: url(/assets/ProximaNova-Regular.otf) format('opentype');
+  src: url(/assets/ProximaNova-Regular-dbc2a57755327488c2b77177c03a9d00.otf) format('opentype');
 }
 
 @font-face {
   font-family: "Quicksand";
-  src: url(/assets/Quicksand-Light.otf) format('opentype');
+  src: url(/assets/Quicksand-Light-f6fbce4f079713e1579103b1e5f3a02b.otf) format('opentype');
 }
 @font-face {
   font-family: "ProximaNovaLight";
-  src: url(/assets/ProximaNova-Light.otf) format('opentype');
+  src: url(/assets/ProximaNova-Light-b26d8534a06b8f48486cc142e2b27b74.otf) format('opentype');
 }
 
 @font-face {
   font-family: "ProximaNovaSemiBold";
-  src: url(/assets/ProximaNova-Semibold.otf) format('opentype');
+  src: url(/assets/ProximaNova-Semibold-d1c38a33f2c7dc94441feebfc7c95b26.otf) format('opentype');
 }
 
 @font-face {
   font-family: "ProximaNovaRegular";
-  src: url(/assets/ProximaNova-Regular.otf) format('opentype');
+  src: url(/assets/ProximaNova-Regular-dbc2a57755327488c2b77177c03a9d00.otf) format('opentype');
 }
 
 @font-face {
   font-family: "Quicksand";
-  src: url(/assets/Quicksand-Light.otf) format('opentype');
+  src: url(/assets/Quicksand-Light-f6fbce4f079713e1579103b1e5f3a02b.otf) format('opentype');
 }
 
 /* line 5, ../../app/assets/stylesheets/admin.css.scss */
@@ -272,22 +272,22 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 @font-face {
   font-family: "ProximaNovaLight";
-  src: url(/assets/ProximaNova-Light.otf) format('opentype');
+  src: url(/assets/ProximaNova-Light-b26d8534a06b8f48486cc142e2b27b74.otf) format('opentype');
 }
 
 @font-face {
   font-family: "ProximaNovaSemiBold";
-  src: url(/assets/ProximaNova-Semibold.otf) format('opentype');
+  src: url(/assets/ProximaNova-Semibold-d1c38a33f2c7dc94441feebfc7c95b26.otf) format('opentype');
 }
 
 @font-face {
   font-family: "ProximaNovaRegular";
-  src: url(/assets/ProximaNova-Regular.otf) format('opentype');
+  src: url(/assets/ProximaNova-Regular-dbc2a57755327488c2b77177c03a9d00.otf) format('opentype');
 }
 
 @font-face {
   font-family: "Quicksand";
-  src: url(/assets/Quicksand-Light.otf) format('opentype');
+  src: url(/assets/Quicksand-Light-f6fbce4f079713e1579103b1e5f3a02b.otf) format('opentype');
 }
 
 /* line 12, ../../app/assets/stylesheets/screen.css.scss */
@@ -1302,17 +1302,18 @@ a.light:hover {
 /* line 816, ../../app/assets/stylesheets/screen.css.scss */
 .selections .selection {
   float: left;
-  width: 355px;
+  width: 375px;
+  padding: 20px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  margin-left: 110px;
+  margin-left: 100px;
   position: relative;
   text-align: center;
 }
-/* line 823, ../../app/assets/stylesheets/screen.css.scss */
+/* line 824, ../../app/assets/stylesheets/screen.css.scss */
 .selections .selection button {
-  margin-top: 35px;
+  margin-top: 30px;
   width: 80%;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -1326,14 +1327,14 @@ a.light:hover {
   border: 1px solid #777;
   color: #eee;
 }
-/* line 833, ../../app/assets/stylesheets/screen.css.scss */
+/* line 834, ../../app/assets/stylesheets/screen.css.scss */
 .selections .selection button:hover {
   background-color: #111;
 }
-/* line 837, ../../app/assets/stylesheets/screen.css.scss */
+/* line 838, ../../app/assets/stylesheets/screen.css.scss */
 .selections .selection .avatar-wrap {
   position: relative;
-  background-color: #e6e6e6;
+  background-color: white;
   color: white;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -1341,13 +1342,8 @@ a.light:hover {
   -o-border-radius: 5px;
   border-radius: 5px;
   background-attachment: fixed;
-  overflow: hidden;
 }
-/* line 844, ../../app/assets/stylesheets/screen.css.scss */
-.selections .selection .avatar-wrap .backwash {
-  background-color: white;
-}
-/* line 848, ../../app/assets/stylesheets/screen.css.scss */
+/* line 845, ../../app/assets/stylesheets/screen.css.scss */
 .selections .selection .avatar-wrap:before, .selections .selection .avatar-wrap:after {
   z-index: -1;
   position: absolute;
@@ -1367,7 +1363,7 @@ a.light:hover {
   -o-transform: rotate(-4deg);
   transform: rotate(-4deg);
 }
-/* line 862, ../../app/assets/stylesheets/screen.css.scss */
+/* line 859, ../../app/assets/stylesheets/screen.css.scss */
 .selections .selection .avatar-wrap:after {
   -webkit-transform: rotate(4deg);
   -moz-transform: rotate(4deg);
@@ -1377,47 +1373,46 @@ a.light:hover {
   right: 10px;
   left: auto;
 }
-/* line 867, ../../app/assets/stylesheets/screen.css.scss */
+/* line 864, ../../app/assets/stylesheets/screen.css.scss */
 .selections .selection .avatar-wrap .avatar-inner {
   margin: 10px;
+  border-bottom: 1px dashed #e6e6e6;
   position: relative;
 }
-/* line 871, ../../app/assets/stylesheets/screen.css.scss */
+/* line 869, ../../app/assets/stylesheets/screen.css.scss */
 .selections .selection .avatar-wrap .price {
-  text-shadow: 0 1px 0 white;
-  padding: 15px 0 10px;
+  text-shadow: none;
+  padding: 10px;
   color: #4597ca;
   line-height: 1.4em;
   font-size: 20px;
   font-family: "ProximaNovaRegular";
   text-align: center;
-  background-color: #ddd;
 }
-/* line 880, ../../app/assets/stylesheets/screen.css.scss */
+/* line 877, ../../app/assets/stylesheets/screen.css.scss */
 .selections .selection .avatar-wrap .price span {
   font-family: "ProximaNovaLight";
   color: #777;
   font-size: 16px;
 }
-/* line 887, ../../app/assets/stylesheets/screen.css.scss */
+/* line 884, ../../app/assets/stylesheets/screen.css.scss */
 .selections .selection h3 {
   text-align: center;
   padding-top: 30px;
   font-family: "ProximaNovaSemiBold";
-  text-shadow: 0 1px 0 white;
-  font-size: 28px;
+  font-size: 25px;
   color: #333;
 }
-/* line 895, ../../app/assets/stylesheets/screen.css.scss */
+/* line 891, ../../app/assets/stylesheets/screen.css.scss */
 .selections .selection .avatar {
   text-align: center;
 }
-/* line 897, ../../app/assets/stylesheets/screen.css.scss */
+/* line 893, ../../app/assets/stylesheets/screen.css.scss */
 .selections .selection .avatar img {
   height: 200px;
   margin: 15px 0;
 }
-/* line 902, ../../app/assets/stylesheets/screen.css.scss */
+/* line 898, ../../app/assets/stylesheets/screen.css.scss */
 .selections .selection h4 {
   font-size: 20px;
   margin-bottom: 20px;
@@ -1425,19 +1420,19 @@ a.light:hover {
   padding-bottom: 15px;
   color: #555;
 }
-/* line 909, ../../app/assets/stylesheets/screen.css.scss */
+/* line 905, ../../app/assets/stylesheets/screen.css.scss */
 .selections .selection p {
   font-size: 15px;
-  padding-bottom: 17px;
-  margin-bottom: 17px;
-  border-bottom: 1px solid #444;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  border-bottom: 1px dashed #444;
   color: #ddd;
 }
-/* line 915, ../../app/assets/stylesheets/screen.css.scss */
+/* line 911, ../../app/assets/stylesheets/screen.css.scss */
 .selections .selection p:last-child {
   border-bottom: none;
 }
-/* line 919, ../../app/assets/stylesheets/screen.css.scss */
+/* line 915, ../../app/assets/stylesheets/screen.css.scss */
 .selections .selection .powers {
   padding: 30px 20px;
 }

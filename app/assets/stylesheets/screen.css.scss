@@ -814,14 +814,13 @@ a.light {
   margin-top: 50px;
   .selection {
     float: left;
-    width: 375px;
-    padding: 20px;
+    width: 355px;
     @include box-sizing(border-box);
-    margin-left: 100px;
+    margin-left: 110px;
     position: relative;
     text-align: center;
     button {
-      margin-top: 30px;
+      margin-top: 35px;
       width: 80%;
       @include box-sizing(border-box);
       padding: 13px 30px;
@@ -836,11 +835,14 @@ a.light {
     }
     .avatar-wrap {
       position: relative;
-      @include box-shadow(inset 0 0 50px #444);
-      background-image: url("greyback.png");
+      background-color: #e6e6e6;
       color: white;
       @include border-radius(5px);
       background-attachment: fixed;
+      overflow: hidden;
+      .backwash {
+        background-color: white;
+      }
       &:before, &:after
       {
         z-index: -1;
@@ -863,17 +865,17 @@ a.light {
       }
       .avatar-inner {
         margin: 10px;
-        border-bottom: 1px dashed #e6e6e6;
         position: relative;
       }
       .price {
-        @include text-shadow(none);
-        padding: 10px;
+        @include text-shadow(0 1px 0 white);
+        padding: 15px 0 10px;
         color: $change;
         line-height: 1.4em;
         font-size: 20px;
         @include font-regular;
         text-align: center;
+        background-color: #ddd;
         span {
           @include font-light;
           color: #777;
@@ -885,7 +887,8 @@ a.light {
       text-align: center;
       padding-top: 30px;
       @include font-semibold;
-      font-size: 25px;
+      @include text-shadow(0 1px 0 white);
+      font-size: 28px;
       color: #333;
     }
     .avatar {
@@ -904,9 +907,9 @@ a.light {
     }
     p {
       font-size: 15px;
-      padding-bottom: 15px;
-      margin-bottom: 15px;
-      border-bottom: 1px dashed #444;
+      padding-bottom: 17px;
+      margin-bottom: 17px;
+      border-bottom: 1px solid #444;
       color: #ddd;
       &:last-child {
         border-bottom: none;
