@@ -2,10 +2,13 @@ class UsersController < ApplicationController
   protect_from_forgery
 
   before_filter :authenticate_user!
+  before_filter :check_new
 
   def account
-    @sub = current_user.regional_subscription
-    @stripe_customer = Stripe::Customer.retrieve(current_user.stripe_customer_id)
+    if current_user.regional_subscription
+      @sub = current_user.regional_subscription
+      @stripe_customer = Stripe::Customer.retrieve(current_user.stripe_customer_id)
+    end
   end
 
   def payment

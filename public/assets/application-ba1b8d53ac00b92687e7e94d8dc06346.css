@@ -14,41 +14,41 @@
 
 @font-face {
   font-family: "ProximaNovaLight";
-  src: url(/assets/ProximaNova-Light.otf) format('opentype');
+  src: url(/assets/ProximaNova-Light-b26d8534a06b8f48486cc142e2b27b74.otf) format('opentype');
 }
 
 @font-face {
   font-family: "ProximaNovaSemiBold";
-  src: url(/assets/ProximaNova-Semibold.otf) format('opentype');
+  src: url(/assets/ProximaNova-Semibold-d1c38a33f2c7dc94441feebfc7c95b26.otf) format('opentype');
 }
 
 @font-face {
   font-family: "ProximaNovaRegular";
-  src: url(/assets/ProximaNova-Regular.otf) format('opentype');
+  src: url(/assets/ProximaNova-Regular-dbc2a57755327488c2b77177c03a9d00.otf) format('opentype');
 }
 
 @font-face {
   font-family: "Quicksand";
-  src: url(/assets/Quicksand-Light.otf) format('opentype');
+  src: url(/assets/Quicksand-Light-f6fbce4f079713e1579103b1e5f3a02b.otf) format('opentype');
 }
 @font-face {
   font-family: "ProximaNovaLight";
-  src: url(/assets/ProximaNova-Light.otf) format('opentype');
+  src: url(/assets/ProximaNova-Light-b26d8534a06b8f48486cc142e2b27b74.otf) format('opentype');
 }
 
 @font-face {
   font-family: "ProximaNovaSemiBold";
-  src: url(/assets/ProximaNova-Semibold.otf) format('opentype');
+  src: url(/assets/ProximaNova-Semibold-d1c38a33f2c7dc94441feebfc7c95b26.otf) format('opentype');
 }
 
 @font-face {
   font-family: "ProximaNovaRegular";
-  src: url(/assets/ProximaNova-Regular.otf) format('opentype');
+  src: url(/assets/ProximaNova-Regular-dbc2a57755327488c2b77177c03a9d00.otf) format('opentype');
 }
 
 @font-face {
   font-family: "Quicksand";
-  src: url(/assets/Quicksand-Light.otf) format('opentype');
+  src: url(/assets/Quicksand-Light-f6fbce4f079713e1579103b1e5f3a02b.otf) format('opentype');
 }
 
 /* line 5, ../../app/assets/stylesheets/admin.css.scss */
@@ -272,22 +272,22 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 @font-face {
   font-family: "ProximaNovaLight";
-  src: url(/assets/ProximaNova-Light.otf) format('opentype');
+  src: url(/assets/ProximaNova-Light-b26d8534a06b8f48486cc142e2b27b74.otf) format('opentype');
 }
 
 @font-face {
   font-family: "ProximaNovaSemiBold";
-  src: url(/assets/ProximaNova-Semibold.otf) format('opentype');
+  src: url(/assets/ProximaNova-Semibold-d1c38a33f2c7dc94441feebfc7c95b26.otf) format('opentype');
 }
 
 @font-face {
   font-family: "ProximaNovaRegular";
-  src: url(/assets/ProximaNova-Regular.otf) format('opentype');
+  src: url(/assets/ProximaNova-Regular-dbc2a57755327488c2b77177c03a9d00.otf) format('opentype');
 }
 
 @font-face {
   font-family: "Quicksand";
-  src: url(/assets/Quicksand-Light.otf) format('opentype');
+  src: url(/assets/Quicksand-Light-f6fbce4f079713e1579103b1e5f3a02b.otf) format('opentype');
 }
 
 /* line 12, ../../app/assets/stylesheets/screen.css.scss */
@@ -521,80 +521,72 @@ a.light.special-select:visited {
 .header a img {
   height: 30px;
   opacity: 0.6;
-  -webkit-transition-property: opacity;
-  -moz-transition-property: opacity;
-  -o-transition-property: opacity;
-  transition-property: opacity;
-  -webkit-transition-duration: 0.3s;
-  -moz-transition-duration: 0.3s;
-  -o-transition-duration: 0.3s;
-  transition-duration: 0.3s;
 }
-/* line 195, ../../app/assets/stylesheets/screen.css.scss */
+/* line 193, ../../app/assets/stylesheets/screen.css.scss */
 .header a img:hover {
   opacity: 1;
 }
-/* line 200, ../../app/assets/stylesheets/screen.css.scss */
+/* line 198, ../../app/assets/stylesheets/screen.css.scss */
 .header a {
   font-size: 13px;
 }
-/* line 203, ../../app/assets/stylesheets/screen.css.scss */
+/* line 201, ../../app/assets/stylesheets/screen.css.scss */
 .header .right-links {
   float: right;
   position: relative;
   top: 7px;
 }
-/* line 207, ../../app/assets/stylesheets/screen.css.scss */
+/* line 205, ../../app/assets/stylesheets/screen.css.scss */
 .header .right-links a {
   margin-left: 30px;
 }
-/* line 211, ../../app/assets/stylesheets/screen.css.scss */
+/* line 209, ../../app/assets/stylesheets/screen.css.scss */
 .header .backwash {
   position: absolute;
   opacity: 0.1;
   background-color: #bbb;
 }
-/* line 216, ../../app/assets/stylesheets/screen.css.scss */
+/* line 214, ../../app/assets/stylesheets/screen.css.scss */
 .header .container {
   position: relative;
 }
-/* line 219, ../../app/assets/stylesheets/screen.css.scss */
+/* line 217, ../../app/assets/stylesheets/screen.css.scss */
 .header .light {
   color: #777;
 }
-/* line 222, ../../app/assets/stylesheets/screen.css.scss */
+/* line 220, ../../app/assets/stylesheets/screen.css.scss */
 .header.dark {
   border-bottom: 1px solid #aaa;
 }
-/* line 224, ../../app/assets/stylesheets/screen.css.scss */
+/* line 222, ../../app/assets/stylesheets/screen.css.scss */
 .header.dark .backwash {
   position: absolute;
   opacity: 0.1;
   background-color: black;
 }
-/* line 229, ../../app/assets/stylesheets/screen.css.scss */
+/* line 227, ../../app/assets/stylesheets/screen.css.scss */
 .header.dark .light {
   color: #aaa;
 }
 
-/* line 235, ../../app/assets/stylesheets/screen.css.scss */
+/* line 233, ../../app/assets/stylesheets/screen.css.scss */
 .footer {
   background-color: #161616;
   height: 50px;
   position: relative;
 }
-/* line 239, ../../app/assets/stylesheets/screen.css.scss */
+/* line 237, ../../app/assets/stylesheets/screen.css.scss */
 .footer .content {
   position: relative;
   top: 17px;
   text-align: center;
 }
-/* line 244, ../../app/assets/stylesheets/screen.css.scss */
+/* line 242, ../../app/assets/stylesheets/screen.css.scss */
 .footer .light {
   color: #ccc;
 }
 
-/* line 249, ../../app/assets/stylesheets/screen.css.scss */
+/* line 247, ../../app/assets/stylesheets/screen.css.scss */
 .landing {
   height: 1000px;
   background-image: url(https://d1a3f4spazzrp4.cloudfront.net/web-fresh/home/heros/home-hero-3-1440-900.jpg);
@@ -604,32 +596,32 @@ a.light.special-select:visited {
   background-attachment: fixed;
 }
 
-/* line 258, ../../app/assets/stylesheets/screen.css.scss */
+/* line 256, ../../app/assets/stylesheets/screen.css.scss */
 .container {
   width: 960px;
   margin: 0 auto;
 }
 
-/* line 263, ../../app/assets/stylesheets/screen.css.scss */
+/* line 261, ../../app/assets/stylesheets/screen.css.scss */
 .container {
   display: table;
 }
 
-/* line 267, ../../app/assets/stylesheets/screen.css.scss */
+/* line 265, ../../app/assets/stylesheets/screen.css.scss */
 #payment-form, .user-form {
   float: right;
   margin: 100px 0 200px;
 }
-/* line 270, ../../app/assets/stylesheets/screen.css.scss */
+/* line 268, ../../app/assets/stylesheets/screen.css.scss */
 #payment-form h3, .user-form h3 {
   margin: 40px 0 20px;
   width: 472px;
 }
-/* line 273, ../../app/assets/stylesheets/screen.css.scss */
+/* line 271, ../../app/assets/stylesheets/screen.css.scss */
 #payment-form h3 .same-billing, .user-form h3 .same-billing {
   float: right;
 }
-/* line 275, ../../app/assets/stylesheets/screen.css.scss */
+/* line 273, ../../app/assets/stylesheets/screen.css.scss */
 #payment-form h3 .same-billing label, .user-form h3 .same-billing label {
   margin-left: 5px;
   position: relative;
@@ -638,14 +630,14 @@ a.light.special-select:visited {
   font-size: 16px;
   font-family: "ProximaNovaLight";
 }
-/* line 284, ../../app/assets/stylesheets/screen.css.scss */
+/* line 282, ../../app/assets/stylesheets/screen.css.scss */
 #payment-form h3 .required-text, .user-form h3 .required-text {
   float: right;
   font-size: 16px;
   font-family: "ProximaNovaLight";
   color: #888;
 }
-/* line 289, ../../app/assets/stylesheets/screen.css.scss */
+/* line 287, ../../app/assets/stylesheets/screen.css.scss */
 #payment-form h3 .required-text span, .user-form h3 .required-text span {
   font-size: 21px;
   font-family: "ProximaNovaSemiBold";
@@ -654,96 +646,96 @@ a.light.special-select:visited {
   top: 5px;
   margin-right: 3px;
 }
-/* line 298, ../../app/assets/stylesheets/screen.css.scss */
+/* line 296, ../../app/assets/stylesheets/screen.css.scss */
 #payment-form h3 img, .user-form h3 img {
   position: relative;
   top: 1px;
   height: 19px;
 }
-/* line 304, ../../app/assets/stylesheets/screen.css.scss */
+/* line 302, ../../app/assets/stylesheets/screen.css.scss */
 #payment-form .payment-errors, .user-form .payment-errors {
   color: #ff4c4f;
   margin-bottom: 10px;
 }
-/* line 308, ../../app/assets/stylesheets/screen.css.scss */
+/* line 306, ../../app/assets/stylesheets/screen.css.scss */
 #payment-form .shipping-info, .user-form .shipping-info {
   display: none;
 }
-/* line 311, ../../app/assets/stylesheets/screen.css.scss */
+/* line 309, ../../app/assets/stylesheets/screen.css.scss */
 #payment-form .field-help, .user-form .field-help {
   margin-top: -3px;
   font-size: 13px;
   margin-bottom: 10px;
   color: #888;
 }
-/* line 318, ../../app/assets/stylesheets/screen.css.scss */
+/* line 316, ../../app/assets/stylesheets/screen.css.scss */
 #payment-form .form-row input, .user-form .form-row input {
   display: inline-block;
   width: auto;
   margin: 0;
   margin-bottom: 10px;
 }
-/* line 325, ../../app/assets/stylesheets/screen.css.scss */
+/* line 323, ../../app/assets/stylesheets/screen.css.scss */
 #payment-form .form-row.credit-date span, .user-form .form-row.credit-date span {
   margin: 0 5px;
 }
-/* line 328, ../../app/assets/stylesheets/screen.css.scss */
+/* line 326, ../../app/assets/stylesheets/screen.css.scss */
 #payment-form .form-row.credit-date select, .user-form .form-row.credit-date select {
   width: 224px;
 }
-/* line 334, ../../app/assets/stylesheets/screen.css.scss */
+/* line 332, ../../app/assets/stylesheets/screen.css.scss */
 #payment-form .form-row.city-info input:first-child, .user-form .form-row.city-info input:first-child {
   width: 226px;
 }
-/* line 337, ../../app/assets/stylesheets/screen.css.scss */
+/* line 335, ../../app/assets/stylesheets/screen.css.scss */
 #payment-form .form-row.city-info input select, .user-form .form-row.city-info input select {
   width: 72px;
 }
-/* line 340, ../../app/assets/stylesheets/screen.css.scss */
+/* line 338, ../../app/assets/stylesheets/screen.css.scss */
 #payment-form .form-row.city-info input:last-child, .user-form .form-row.city-info input:last-child {
   width: 122px;
 }
-/* line 346, ../../app/assets/stylesheets/screen.css.scss */
+/* line 344, ../../app/assets/stylesheets/screen.css.scss */
 #payment-form select, .user-form select {
   margin-bottom: 10px;
 }
-/* line 348, ../../app/assets/stylesheets/screen.css.scss */
+/* line 346, ../../app/assets/stylesheets/screen.css.scss */
 #payment-form select.country, .user-form select.country {
   display: block;
   width: 472px;
 }
-/* line 353, ../../app/assets/stylesheets/screen.css.scss */
+/* line 351, ../../app/assets/stylesheets/screen.css.scss */
 #payment-form p, .user-form p {
   width: 450px;
   font-size: 14px;
   color: #888;
 }
-/* line 358, ../../app/assets/stylesheets/screen.css.scss */
+/* line 356, ../../app/assets/stylesheets/screen.css.scss */
 #payment-form input, .user-form input {
   display: block;
   width: 450px;
   margin-bottom: 10px;
 }
-/* line 362, ../../app/assets/stylesheets/screen.css.scss */
+/* line 360, ../../app/assets/stylesheets/screen.css.scss */
 #payment-form input.cvc, .user-form input.cvc {
   width: 100px;
 }
-/* line 365, ../../app/assets/stylesheets/screen.css.scss */
+/* line 363, ../../app/assets/stylesheets/screen.css.scss */
 #payment-form input[type="text"], .user-form input[type="text"] {
   background-image: url("ast.png");
   background-repeat: no-repeat;
   background-position: right center;
 }
-/* line 369, ../../app/assets/stylesheets/screen.css.scss */
+/* line 367, ../../app/assets/stylesheets/screen.css.scss */
 #payment-form input[type="text"].not-required, .user-form input[type="text"].not-required {
   background-image: none;
 }
-/* line 373, ../../app/assets/stylesheets/screen.css.scss */
+/* line 371, ../../app/assets/stylesheets/screen.css.scss */
 #payment-form input[type="checkbox"], #payment-form input[type="submit"], .user-form input[type="checkbox"], .user-form input[type="submit"] {
   display: inline;
   width: auto;
 }
-/* line 378, ../../app/assets/stylesheets/screen.css.scss */
+/* line 376, ../../app/assets/stylesheets/screen.css.scss */
 #payment-form input[type="submit"], .user-form input[type="submit"] {
   margin-top: 20px;
   color: #eee;
@@ -751,41 +743,41 @@ a.light.special-select:visited {
   font-family: "ProximaNovaSemiBold";
   font-size: 21px;
 }
-/* line 385, ../../app/assets/stylesheets/screen.css.scss */
+/* line 383, ../../app/assets/stylesheets/screen.css.scss */
 #payment-form .terms, .user-form .terms {
   margin-top: 20px;
 }
 
-/* line 390, ../../app/assets/stylesheets/screen.css.scss */
+/* line 388, ../../app/assets/stylesheets/screen.css.scss */
 .update-payment {
   display: none;
   margin-bottom: 50px !important;
 }
-/* line 393, ../../app/assets/stylesheets/screen.css.scss */
+/* line 391, ../../app/assets/stylesheets/screen.css.scss */
 .update-payment input[type='submit'] {
   font-size: 15px !important;
   padding: 12px 20px !important;
 }
 
-/* line 399, ../../app/assets/stylesheets/screen.css.scss */
+/* line 397, ../../app/assets/stylesheets/screen.css.scss */
 .update-shipping {
   display: none;
 }
-/* line 401, ../../app/assets/stylesheets/screen.css.scss */
+/* line 399, ../../app/assets/stylesheets/screen.css.scss */
 .update-shipping input[type='submit'] {
   font-size: 15px;
   padding: 12px 20px;
 }
-/* line 405, ../../app/assets/stylesheets/screen.css.scss */
+/* line 403, ../../app/assets/stylesheets/screen.css.scss */
 .update-shipping h3 {
   margin-bottom: 0 !important;
 }
-/* line 408, ../../app/assets/stylesheets/screen.css.scss */
+/* line 406, ../../app/assets/stylesheets/screen.css.scss */
 .update-shipping .show {
   display: block;
 }
 
-/* line 413, ../../app/assets/stylesheets/screen.css.scss */
+/* line 411, ../../app/assets/stylesheets/screen.css.scss */
 .hider {
   color: #4597ca;
   font-family: "ProximaNovaLight";
@@ -795,12 +787,12 @@ a.light.special-select:visited {
   position: relative;
   bottom: 3px;
 }
-/* line 421, ../../app/assets/stylesheets/screen.css.scss */
+/* line 419, ../../app/assets/stylesheets/screen.css.scss */
 .hider:hover {
   cursor: pointer;
 }
 
-/* line 426, ../../app/assets/stylesheets/screen.css.scss */
+/* line 424, ../../app/assets/stylesheets/screen.css.scss */
 .canceller {
   color: #4597ca;
   font-family: "ProximaNovaLight";
@@ -808,35 +800,35 @@ a.light.special-select:visited {
   margin-left: 15px;
   line-height: 24px;
 }
-/* line 432, ../../app/assets/stylesheets/screen.css.scss */
+/* line 430, ../../app/assets/stylesheets/screen.css.scss */
 .canceller:hover {
   cursor: pointer;
 }
 
-/* line 437, ../../app/assets/stylesheets/screen.css.scss */
+/* line 435, ../../app/assets/stylesheets/screen.css.scss */
 .user-form {
   float: none;
   margin-top: 0;
 }
-/* line 440, ../../app/assets/stylesheets/screen.css.scss */
+/* line 438, ../../app/assets/stylesheets/screen.css.scss */
 .user-form .same-billing {
   margin-top: 15px;
   float: none !important;
 }
 
-/* line 446, ../../app/assets/stylesheets/screen.css.scss */
+/* line 444, ../../app/assets/stylesheets/screen.css.scss */
 .error-field {
   border: 1px solid #ff7151 !important;
 }
 
-/* line 450, ../../app/assets/stylesheets/screen.css.scss */
+/* line 448, ../../app/assets/stylesheets/screen.css.scss */
 .left-panel {
   width: 250px;
   float: left;
   margin-top: 175px;
   padding-bottom: 100px;
 }
-/* line 455, ../../app/assets/stylesheets/screen.css.scss */
+/* line 453, ../../app/assets/stylesheets/screen.css.scss */
 .left-panel .item {
   padding: 18px 30px;
   display: block;
@@ -851,26 +843,26 @@ a.light.special-select:visited {
   -o-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
-/* line 462, ../../app/assets/stylesheets/screen.css.scss */
+/* line 460, ../../app/assets/stylesheets/screen.css.scss */
 .left-panel .item:visited {
   color: #777;
 }
-/* line 465, ../../app/assets/stylesheets/screen.css.scss */
+/* line 463, ../../app/assets/stylesheets/screen.css.scss */
 .left-panel .item.active, .left-panel .item:hover {
   border-right: 3px solid #333;
   color: #111;
 }
-/* line 469, ../../app/assets/stylesheets/screen.css.scss */
+/* line 467, ../../app/assets/stylesheets/screen.css.scss */
 .left-panel .item:hover {
   cursor: pointer;
 }
 
-/* line 475, ../../app/assets/stylesheets/screen.css.scss */
+/* line 473, ../../app/assets/stylesheets/screen.css.scss */
 .update-wrap {
   display: none;
 }
 
-/* line 479, ../../app/assets/stylesheets/screen.css.scss */
+/* line 477, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel {
   padding-top: 175px;
   padding-bottom: 200px;
@@ -878,7 +870,7 @@ a.light.special-select:visited {
   width: 660px;
   float: right;
 }
-/* line 485, ../../app/assets/stylesheets/screen.css.scss */
+/* line 483, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel .sub-wrap {
   margin-top: 30px;
   display: table;
@@ -891,7 +883,7 @@ a.light.special-select:visited {
   -o-border-radius: 3px;
   border-radius: 3px;
 }
-/* line 493, ../../app/assets/stylesheets/screen.css.scss */
+/* line 491, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel .sub-wrap:before, .right-panel .sub-wrap:after {
   z-index: -1;
   position: absolute;
@@ -911,7 +903,7 @@ a.light.special-select:visited {
   -o-transform: rotate(-2deg);
   transform: rotate(-2deg);
 }
-/* line 507, ../../app/assets/stylesheets/screen.css.scss */
+/* line 505, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel .sub-wrap:after {
   -webkit-transform: rotate(2deg);
   -moz-transform: rotate(2deg);
@@ -921,108 +913,108 @@ a.light.special-select:visited {
   right: 10px;
   left: auto;
 }
-/* line 512, ../../app/assets/stylesheets/screen.css.scss */
+/* line 510, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel .sub-wrap .avatar, .right-panel .sub-wrap .content {
   float: left;
 }
-/* line 515, ../../app/assets/stylesheets/screen.css.scss */
+/* line 513, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel .sub-wrap .avatar {
   width: 185px;
   height: 1px;
 }
-/* line 518, ../../app/assets/stylesheets/screen.css.scss */
+/* line 516, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel .sub-wrap .avatar img {
   height: 175px;
 }
-/* line 522, ../../app/assets/stylesheets/screen.css.scss */
+/* line 520, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel .sub-wrap p, .right-panel .sub-wrap h4 {
   text-shadow: 1px 1px white;
 }
-/* line 525, ../../app/assets/stylesheets/screen.css.scss */
+/* line 523, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel .sub-wrap .content {
   width: 387px;
   padding-left: 30px;
 }
-/* line 528, ../../app/assets/stylesheets/screen.css.scss */
+/* line 526, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel .sub-wrap .content p {
   font-size: 18px;
   line-height: 1em;
 }
-/* line 531, ../../app/assets/stylesheets/screen.css.scss */
+/* line 529, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel .sub-wrap .content p.sub {
   font-size: 16px;
   color: #888;
 }
-/* line 536, ../../app/assets/stylesheets/screen.css.scss */
+/* line 534, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel .sub-wrap .content .line-item {
   margin: 25px 0;
 }
-/* line 538, ../../app/assets/stylesheets/screen.css.scss */
+/* line 536, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel .sub-wrap .content .line-item:last-child {
   margin-bottom: 0;
 }
-/* line 544, ../../app/assets/stylesheets/screen.css.scss */
+/* line 542, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel .change-sub {
   margin-top: 20px;
 }
-/* line 546, ../../app/assets/stylesheets/screen.css.scss */
+/* line 544, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel .change-sub a {
   padding: 15px 25px;
   display: inline-block;
   font-size: 18px;
 }
-/* line 552, ../../app/assets/stylesheets/screen.css.scss */
+/* line 550, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel .danger {
   padding: 20px;
   background-color: #f1f1f1;
   display: none;
   margin-top: 30px;
 }
-/* line 557, ../../app/assets/stylesheets/screen.css.scss */
+/* line 555, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel .danger h3 {
   margin-bottom: 15px;
 }
-/* line 560, ../../app/assets/stylesheets/screen.css.scss */
+/* line 558, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel .danger p {
   width: 75%;
 }
-/* line 563, ../../app/assets/stylesheets/screen.css.scss */
+/* line 561, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel .danger a {
   margin-top: 15px;
   padding: 10px 15px;
   display: inline-block;
   font-size: 15px;
 }
-/* line 571, ../../app/assets/stylesheets/screen.css.scss */
+/* line 569, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel.address-settings #payment-form {
   margin-top: 0;
   float: none;
 }
-/* line 574, ../../app/assets/stylesheets/screen.css.scss */
+/* line 572, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel.address-settings #payment-form .title {
   margin-top: 0;
 }
-/* line 577, ../../app/assets/stylesheets/screen.css.scss */
+/* line 575, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel.address-settings #payment-form input[type='submit'] {
   padding: 15px 25px;
   display: inline-block;
   font-size: 18px;
 }
-/* line 583, ../../app/assets/stylesheets/screen.css.scss */
+/* line 581, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel.address-settings .current-card {
   margin-bottom: 50px;
   font-family: "ProximaNovaSemiBold";
   color: #333;
 }
-/* line 587, ../../app/assets/stylesheets/screen.css.scss */
+/* line 585, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel.address-settings .current-card h3 {
   margin-bottom: 30px;
 }
-/* line 590, ../../app/assets/stylesheets/screen.css.scss */
+/* line 588, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel.address-settings .current-card img {
   position: relative;
 }
-/* line 593, ../../app/assets/stylesheets/screen.css.scss */
+/* line 591, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel.address-settings .current-card .card-wrap {
   -webkit-box-shadow: inset 0 0 10px #dddddd;
   -moz-box-shadow: inset 0 0 10px #dddddd;
@@ -1036,54 +1028,54 @@ a.light.special-select:visited {
   zoom: 1;
   *display: inline;
 }
-/* line 599, ../../app/assets/stylesheets/screen.css.scss */
+/* line 597, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel.address-settings .current-card .card-type {
   font-size: 22px;
   margin-left: 5px;
   position: relative;
   bottom: 15px;
 }
-/* line 605, ../../app/assets/stylesheets/screen.css.scss */
+/* line 603, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel.address-settings .current-card .current-wrap {
   font-family: "ProximaNovaLight";
   color: #777;
 }
-/* line 608, ../../app/assets/stylesheets/screen.css.scss */
+/* line 606, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel.address-settings .current-card .current-wrap h3 {
   margin-top: 50px;
 }
-/* line 610, ../../app/assets/stylesheets/screen.css.scss */
+/* line 608, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel.address-settings .current-card .current-wrap h3:first-child {
   margin-top: 0;
 }
-/* line 614, ../../app/assets/stylesheets/screen.css.scss */
+/* line 612, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel.address-settings .current-card .current-wrap .billing {
   margin-bottom: 50px;
 }
-/* line 617, ../../app/assets/stylesheets/screen.css.scss */
+/* line 615, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel.address-settings .current-card .current-wrap .account-item {
   width: 65%;
   display: table;
   margin: 15px 0;
 }
-/* line 621, ../../app/assets/stylesheets/screen.css.scss */
+/* line 619, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel.address-settings .current-card .current-wrap .account-item div {
   float: left;
   width: 50%;
   color: #999;
 }
-/* line 625, ../../app/assets/stylesheets/screen.css.scss */
+/* line 623, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel.address-settings .current-card .current-wrap .account-item div:last-child {
   font-family: "ProximaNovaLight";
   font-weight: bold;
   color: #555;
 }
 
-/* line 637, ../../app/assets/stylesheets/screen.css.scss */
+/* line 635, ../../app/assets/stylesheets/screen.css.scss */
 .invoices {
   margin-top: 30px;
 }
-/* line 639, ../../app/assets/stylesheets/screen.css.scss */
+/* line 637, ../../app/assets/stylesheets/screen.css.scss */
 .invoices .invoice-wrap {
   padding: 20px 25px;
   display: table;
@@ -1102,69 +1094,69 @@ a.light.special-select:visited {
   -o-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
-/* line 648, ../../app/assets/stylesheets/screen.css.scss */
+/* line 646, ../../app/assets/stylesheets/screen.css.scss */
 .invoices .invoice-wrap:last-child {
   border-bottom: 0;
 }
-/* line 651, ../../app/assets/stylesheets/screen.css.scss */
+/* line 649, ../../app/assets/stylesheets/screen.css.scss */
 .invoices .invoice-wrap:hover {
   cursor: pointer;
   background-color: #f6f6f6;
   color: #333;
 }
-/* line 656, ../../app/assets/stylesheets/screen.css.scss */
+/* line 654, ../../app/assets/stylesheets/screen.css.scss */
 .invoices .invoice-wrap .desc {
   float: left;
 }
-/* line 658, ../../app/assets/stylesheets/screen.css.scss */
+/* line 656, ../../app/assets/stylesheets/screen.css.scss */
 .invoices .invoice-wrap .desc .state {
   color: #ff4c4f;
 }
-/* line 660, ../../app/assets/stylesheets/screen.css.scss */
+/* line 658, ../../app/assets/stylesheets/screen.css.scss */
 .invoices .invoice-wrap .desc .state.shipped {
   color: #61c478;
 }
-/* line 665, ../../app/assets/stylesheets/screen.css.scss */
+/* line 663, ../../app/assets/stylesheets/screen.css.scss */
 .invoices .invoice-wrap .price {
   float: right;
 }
 
-/* line 671, ../../app/assets/stylesheets/screen.css.scss */
+/* line 669, ../../app/assets/stylesheets/screen.css.scss */
 .invoice-header {
   height: 5px;
   background-color: #333;
   position: relative;
 }
 
-/* line 677, ../../app/assets/stylesheets/screen.css.scss */
+/* line 675, ../../app/assets/stylesheets/screen.css.scss */
 .invoice-container {
   width: 800px;
   margin: 0 auto;
   padding-bottom: 100px;
 }
-/* line 681, ../../app/assets/stylesheets/screen.css.scss */
+/* line 679, ../../app/assets/stylesheets/screen.css.scss */
 .invoice-container .logo-image {
   text-align: center;
   margin-top: 80px;
 }
-/* line 684, ../../app/assets/stylesheets/screen.css.scss */
+/* line 682, ../../app/assets/stylesheets/screen.css.scss */
 .invoice-container .logo-image img {
   width: 125px;
 }
-/* line 688, ../../app/assets/stylesheets/screen.css.scss */
+/* line 686, ../../app/assets/stylesheets/screen.css.scss */
 .invoice-container .content-wrap {
   margin-top: 80px;
 }
-/* line 690, ../../app/assets/stylesheets/screen.css.scss */
+/* line 688, ../../app/assets/stylesheets/screen.css.scss */
 .invoice-container .content-wrap .billed-to {
   position: relative;
   line-height: 1.4em;
 }
-/* line 692, ../../app/assets/stylesheets/screen.css.scss */
+/* line 690, ../../app/assets/stylesheets/screen.css.scss */
 .invoice-container .content-wrap .billed-to .bold {
   margin-bottom: 10px;
 }
-/* line 696, ../../app/assets/stylesheets/screen.css.scss */
+/* line 694, ../../app/assets/stylesheets/screen.css.scss */
 .invoice-container .content-wrap .billed-to .invoice-number {
   position: absolute;
   right: 0;
@@ -1172,15 +1164,15 @@ a.light.special-select:visited {
   text-align: right;
   color: #aaa;
 }
-/* line 702, ../../app/assets/stylesheets/screen.css.scss */
+/* line 700, ../../app/assets/stylesheets/screen.css.scss */
 .invoice-container .content-wrap .billed-to .invoice-number .bold {
   margin-top: 5px;
 }
-/* line 707, ../../app/assets/stylesheets/screen.css.scss */
+/* line 705, ../../app/assets/stylesheets/screen.css.scss */
 .invoice-container .content-wrap .amount-wrap {
   margin-top: 80px;
 }
-/* line 709, ../../app/assets/stylesheets/screen.css.scss */
+/* line 707, ../../app/assets/stylesheets/screen.css.scss */
 .invoice-container .content-wrap .amount-wrap h3 {
   font-size: 16px;
   color: #aaa;
@@ -1188,19 +1180,19 @@ a.light.special-select:visited {
   padding: 15px;
   margin-bottom: 5px;
 }
-/* line 712, ../../app/assets/stylesheets/screen.css.scss */
+/* line 710, ../../app/assets/stylesheets/screen.css.scss */
 .invoice-container .content-wrap .amount-wrap h3 span {
   float: right;
 }
-/* line 719, ../../app/assets/stylesheets/screen.css.scss */
+/* line 717, ../../app/assets/stylesheets/screen.css.scss */
 .invoice-container .content-wrap .amount-wrap .item {
   padding: 15px;
 }
-/* line 721, ../../app/assets/stylesheets/screen.css.scss */
+/* line 719, ../../app/assets/stylesheets/screen.css.scss */
 .invoice-container .content-wrap .amount-wrap .item span {
   float: right;
 }
-/* line 725, ../../app/assets/stylesheets/screen.css.scss */
+/* line 723, ../../app/assets/stylesheets/screen.css.scss */
 .invoice-container .content-wrap .amount-wrap .total {
   margin-top: 5px;
   padding: 15px;
@@ -1208,7 +1200,7 @@ a.light.special-select:visited {
   border-top: 1px dashed #ccc;
   font-size: 20px;
 }
-/* line 734, ../../app/assets/stylesheets/screen.css.scss */
+/* line 732, ../../app/assets/stylesheets/screen.css.scss */
 .invoice-container p {
   margin-top: 100px;
   margin-bottom: 100px;
@@ -1218,7 +1210,7 @@ a.light.special-select:visited {
   font-size: 14px;
 }
 
-/* line 744, ../../app/assets/stylesheets/screen.css.scss */
+/* line 742, ../../app/assets/stylesheets/screen.css.scss */
 .success-flash {
   margin: 0 auto;
   text-align: center;
@@ -1231,49 +1223,49 @@ a.light.special-select:visited {
   border: 1px solid #aaa;
 }
 
-/* line 756, ../../app/assets/stylesheets/screen.css.scss */
+/* line 754, ../../app/assets/stylesheets/screen.css.scss */
 .edit-user-form {
   margin-top: 30px;
 }
-/* line 758, ../../app/assets/stylesheets/screen.css.scss */
+/* line 756, ../../app/assets/stylesheets/screen.css.scss */
 .edit-user-form label {
   margin: 15px 10px;
   display: block;
 }
-/* line 762, ../../app/assets/stylesheets/screen.css.scss */
+/* line 760, ../../app/assets/stylesheets/screen.css.scss */
 .edit-user-form input {
   display: block;
   margin-bottom: 5px;
 }
-/* line 765, ../../app/assets/stylesheets/screen.css.scss */
+/* line 763, ../../app/assets/stylesheets/screen.css.scss */
 .edit-user-form input[type='submit'] {
   margin-top: 30px;
   font-size: 15px;
   padding: 12px 20px;
 }
 
-/* line 773, ../../app/assets/stylesheets/screen.css.scss */
+/* line 771, ../../app/assets/stylesheets/screen.css.scss */
 .subsection {
   margin-top: 50px;
 }
 
-/* line 778, ../../app/assets/stylesheets/screen.css.scss */
+/* line 776, ../../app/assets/stylesheets/screen.css.scss */
 .options .option {
   display: table;
   width: 100%;
   padding: 35px 0;
   border-bottom: 1px dashed #ddd;
 }
-/* line 783, ../../app/assets/stylesheets/screen.css.scss */
+/* line 781, ../../app/assets/stylesheets/screen.css.scss */
 .options .option:last-child {
   border-bottom: 0;
 }
-/* line 786, ../../app/assets/stylesheets/screen.css.scss */
+/* line 784, ../../app/assets/stylesheets/screen.css.scss */
 .options .option p {
   float: left;
   width: 250px;
 }
-/* line 790, ../../app/assets/stylesheets/screen.css.scss */
+/* line 788, ../../app/assets/stylesheets/screen.css.scss */
 .options .option a {
   margin-top: -2px;
   text-align: center;
@@ -1285,7 +1277,7 @@ a.light.special-select:visited {
   line-height: 1.33em;
 }
 
-/* line 803, ../../app/assets/stylesheets/screen.css.scss */
+/* line 801, ../../app/assets/stylesheets/screen.css.scss */
 .modal-outer, .backwash {
   position: fixed;
   left: 0;
@@ -1294,11 +1286,11 @@ a.light.special-select:visited {
   height: 100%;
 }
 
-/* line 811, ../../app/assets/stylesheets/screen.css.scss */
+/* line 809, ../../app/assets/stylesheets/screen.css.scss */
 .modal-outer {
   display: none;
 }
-/* line 813, ../../app/assets/stylesheets/screen.css.scss */
+/* line 811, ../../app/assets/stylesheets/screen.css.scss */
 .modal-outer .modal {
   position: relative;
   top: -100%;
@@ -1318,20 +1310,20 @@ a.light.special-select:visited {
   -o-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
-/* line 825, ../../app/assets/stylesheets/screen.css.scss */
+/* line 823, ../../app/assets/stylesheets/screen.css.scss */
 .modal-outer .modal.open {
   top: 50%;
 }
 
-/* line 832, ../../app/assets/stylesheets/screen.css.scss */
+/* line 830, ../../app/assets/stylesheets/screen.css.scss */
 .cancel-modal h4 {
   margin-bottom: 10px;
 }
-/* line 835, ../../app/assets/stylesheets/screen.css.scss */
+/* line 833, ../../app/assets/stylesheets/screen.css.scss */
 .cancel-modal .feedback-option {
   margin: 15px 0;
 }
-/* line 838, ../../app/assets/stylesheets/screen.css.scss */
+/* line 836, ../../app/assets/stylesheets/screen.css.scss */
 .cancel-modal textarea {
   width: 100%;
   height: 75px;
@@ -1346,27 +1338,27 @@ a.light.special-select:visited {
   line-height: 1.4em;
   color: #555;
 }
-/* line 850, ../../app/assets/stylesheets/screen.css.scss */
+/* line 848, ../../app/assets/stylesheets/screen.css.scss */
 .cancel-modal input[type="submit"] {
   padding: 10px 15px;
   margin-right: 10px;
   margin-top: 25px;
 }
 
-/* line 857, ../../app/assets/stylesheets/screen.css.scss */
+/* line 855, ../../app/assets/stylesheets/screen.css.scss */
 .backwash {
   background-color: black;
   opacity: 0.9;
 }
 
-/* line 862, ../../app/assets/stylesheets/screen.css.scss */
+/* line 860, ../../app/assets/stylesheets/screen.css.scss */
 .chooser {
   position: relative;
   width: 1120px;
   padding-bottom: 75px;
   margin-top: 47px;
 }
-/* line 867, ../../app/assets/stylesheets/screen.css.scss */
+/* line 865, ../../app/assets/stylesheets/screen.css.scss */
 .chooser .backwash {
   position: absolute;
   left: 0;
@@ -1376,12 +1368,12 @@ a.light.special-select:visited {
   background-color: black;
   opacity: 0.6;
 }
-/* line 876, ../../app/assets/stylesheets/screen.css.scss */
+/* line 874, ../../app/assets/stylesheets/screen.css.scss */
 .chooser .title {
   position: relative;
   text-align: center;
 }
-/* line 879, ../../app/assets/stylesheets/screen.css.scss */
+/* line 877, ../../app/assets/stylesheets/screen.css.scss */
 .chooser .title h1 {
   font-family: "Quicksand";
   color: #eee;
@@ -1389,7 +1381,7 @@ a.light.special-select:visited {
   margin-top: 75px;
   font-size: 60px;
 }
-/* line 886, ../../app/assets/stylesheets/screen.css.scss */
+/* line 884, ../../app/assets/stylesheets/screen.css.scss */
 .chooser .title p {
   text-align: center;
   margin-top: 5px;
@@ -1397,19 +1389,19 @@ a.light.special-select:visited {
   font-family: "ProximaNovaLight";
   color: #888;
 }
-/* line 893, ../../app/assets/stylesheets/screen.css.scss */
+/* line 891, ../../app/assets/stylesheets/screen.css.scss */
 .chooser .title img {
   height: 30px;
   margin-top: 10px;
   opacity: 0.4;
 }
 
-/* line 902, ../../app/assets/stylesheets/screen.css.scss */
+/* line 900, ../../app/assets/stylesheets/screen.css.scss */
 .selections {
   display: table;
   margin-top: 50px;
 }
-/* line 905, ../../app/assets/stylesheets/screen.css.scss */
+/* line 903, ../../app/assets/stylesheets/screen.css.scss */
 .selections .selection {
   float: left;
   width: 345px;
@@ -1420,11 +1412,11 @@ a.light.special-select:visited {
   position: relative;
   text-align: center;
 }
-/* line 912, ../../app/assets/stylesheets/screen.css.scss */
+/* line 910, ../../app/assets/stylesheets/screen.css.scss */
 .selections .selection:first-child {
   margin-left: 165px;
 }
-/* line 915, ../../app/assets/stylesheets/screen.css.scss */
+/* line 913, ../../app/assets/stylesheets/screen.css.scss */
 .selections .selection .select-btn {
   display: -moz-inline-stack;
   display: inline-block;
@@ -1446,11 +1438,11 @@ a.light.special-select:visited {
   border: 1px solid #777;
   color: #eee;
 }
-/* line 926, ../../app/assets/stylesheets/screen.css.scss */
+/* line 924, ../../app/assets/stylesheets/screen.css.scss */
 .selections .selection .select-btn:hover {
   background-color: #111;
 }
-/* line 930, ../../app/assets/stylesheets/screen.css.scss */
+/* line 928, ../../app/assets/stylesheets/screen.css.scss */
 .selections .selection .avatar-wrap {
   position: relative;
   background-color: #e6e6e6;
@@ -1459,11 +1451,11 @@ a.light.special-select:visited {
   overflow: hidden;
   margin: 15px;
 }
-/* line 937, ../../app/assets/stylesheets/screen.css.scss */
+/* line 935, ../../app/assets/stylesheets/screen.css.scss */
 .selections .selection .avatar-wrap .backwash {
   background-color: white;
 }
-/* line 941, ../../app/assets/stylesheets/screen.css.scss */
+/* line 939, ../../app/assets/stylesheets/screen.css.scss */
 .selections .selection .avatar-wrap:before, .selections .selection .avatar-wrap:after {
   z-index: -1;
   position: absolute;
@@ -1483,7 +1475,7 @@ a.light.special-select:visited {
   -o-transform: rotate(-4deg);
   transform: rotate(-4deg);
 }
-/* line 955, ../../app/assets/stylesheets/screen.css.scss */
+/* line 953, ../../app/assets/stylesheets/screen.css.scss */
 .selections .selection .avatar-wrap:after {
   -webkit-transform: rotate(4deg);
   -moz-transform: rotate(4deg);
@@ -1493,12 +1485,12 @@ a.light.special-select:visited {
   right: 10px;
   left: auto;
 }
-/* line 960, ../../app/assets/stylesheets/screen.css.scss */
+/* line 958, ../../app/assets/stylesheets/screen.css.scss */
 .selections .selection .avatar-wrap .avatar-inner {
   margin: 10px;
   position: relative;
 }
-/* line 964, ../../app/assets/stylesheets/screen.css.scss */
+/* line 962, ../../app/assets/stylesheets/screen.css.scss */
 .selections .selection .avatar-wrap .price {
   text-shadow: 0 1px 0 white;
   padding: 15px 0 10px;
@@ -1510,13 +1502,13 @@ a.light.special-select:visited {
   background-color: #ddd;
   border-top: 1px dashed #666;
 }
-/* line 974, ../../app/assets/stylesheets/screen.css.scss */
+/* line 972, ../../app/assets/stylesheets/screen.css.scss */
 .selections .selection .avatar-wrap .price span {
   font-family: "ProximaNovaLight";
   color: #777;
   font-size: 16px;
 }
-/* line 981, ../../app/assets/stylesheets/screen.css.scss */
+/* line 979, ../../app/assets/stylesheets/screen.css.scss */
 .selections .selection h3 {
   text-align: center;
   padding-top: 30px;
@@ -1525,16 +1517,16 @@ a.light.special-select:visited {
   font-size: 28px;
   color: #333;
 }
-/* line 989, ../../app/assets/stylesheets/screen.css.scss */
+/* line 987, ../../app/assets/stylesheets/screen.css.scss */
 .selections .selection .avatar {
   text-align: center;
 }
-/* line 991, ../../app/assets/stylesheets/screen.css.scss */
+/* line 989, ../../app/assets/stylesheets/screen.css.scss */
 .selections .selection .avatar img {
   height: 200px;
   margin: 15px 0;
 }
-/* line 996, ../../app/assets/stylesheets/screen.css.scss */
+/* line 994, ../../app/assets/stylesheets/screen.css.scss */
 .selections .selection h4 {
   font-size: 20px;
   margin-bottom: 20px;
@@ -1542,27 +1534,27 @@ a.light.special-select:visited {
   padding-bottom: 15px;
   color: #555;
 }
-/* line 1003, ../../app/assets/stylesheets/screen.css.scss */
+/* line 1001, ../../app/assets/stylesheets/screen.css.scss */
 .selections .selection p {
   font-size: 15px;
   padding-bottom: 17px;
   margin-bottom: 17px;
   color: #ddd;
 }
-/* line 1009, ../../app/assets/stylesheets/screen.css.scss */
+/* line 1007, ../../app/assets/stylesheets/screen.css.scss */
 .selections .selection p:last-child {
   border-bottom: none;
 }
-/* line 1013, ../../app/assets/stylesheets/screen.css.scss */
+/* line 1011, ../../app/assets/stylesheets/screen.css.scss */
 .selections .selection .powers {
   padding: 30px 20px;
 }
 
-/* line 1019, ../../app/assets/stylesheets/screen.css.scss */
+/* line 1017, ../../app/assets/stylesheets/screen.css.scss */
 .static {
   margin-bottom: 100px;
 }
-/* line 1021, ../../app/assets/stylesheets/screen.css.scss */
+/* line 1019, ../../app/assets/stylesheets/screen.css.scss */
 .static h1 {
   font-family: "Quicksand";
   font-size: 80px;
@@ -1572,12 +1564,12 @@ a.light.special-select:visited {
   text-shadow: 0 1px 0 white;
 }
 
-/* line 1032, ../../app/assets/stylesheets/screen.css.scss */
+/* line 1030, ../../app/assets/stylesheets/screen.css.scss */
 .legal .sections {
   display: table;
   width: 100%;
 }
-/* line 1035, ../../app/assets/stylesheets/screen.css.scss */
+/* line 1033, ../../app/assets/stylesheets/screen.css.scss */
 .legal .sections .item {
   float: left;
   width: 49.5%;
@@ -1597,62 +1589,62 @@ a.light.special-select:visited {
   -o-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
-/* line 1045, ../../app/assets/stylesheets/screen.css.scss */
+/* line 1043, ../../app/assets/stylesheets/screen.css.scss */
 .legal .sections .item:first-child {
   margin-left: 0;
 }
-/* line 1048, ../../app/assets/stylesheets/screen.css.scss */
+/* line 1046, ../../app/assets/stylesheets/screen.css.scss */
 .legal .sections .item.active {
   background-color: #222;
   color: #eee;
 }
-/* line 1051, ../../app/assets/stylesheets/screen.css.scss */
+/* line 1049, ../../app/assets/stylesheets/screen.css.scss */
 .legal .sections .item.active:hover {
   background-color: #222;
   color: #eee;
 }
-/* line 1056, ../../app/assets/stylesheets/screen.css.scss */
+/* line 1054, ../../app/assets/stylesheets/screen.css.scss */
 .legal .sections .item:hover {
   cursor: pointer;
   background-color: #ddd;
 }
-/* line 1062, ../../app/assets/stylesheets/screen.css.scss */
+/* line 1060, ../../app/assets/stylesheets/screen.css.scss */
 .legal .content {
   display: none;
 }
-/* line 1064, ../../app/assets/stylesheets/screen.css.scss */
+/* line 1062, ../../app/assets/stylesheets/screen.css.scss */
 .legal .content h2 {
   font-family: "ProximaNovaSemiBold";
   color: #333;
   font-size: 30px;
   margin: 40px;
 }
-/* line 1070, ../../app/assets/stylesheets/screen.css.scss */
+/* line 1068, ../../app/assets/stylesheets/screen.css.scss */
 .legal .content h3 {
   margin: 40px;
   color: #444;
 }
-/* line 1074, ../../app/assets/stylesheets/screen.css.scss */
+/* line 1072, ../../app/assets/stylesheets/screen.css.scss */
 .legal .content p {
   margin-bottom: 30px;
 }
-/* line 1078, ../../app/assets/stylesheets/screen.css.scss */
+/* line 1076, ../../app/assets/stylesheets/screen.css.scss */
 .legal .content table {
   width: 100%;
   margin-bottom: 10px;
 }
-/* line 1081, ../../app/assets/stylesheets/screen.css.scss */
+/* line 1079, ../../app/assets/stylesheets/screen.css.scss */
 .legal .content table tr th, .legal .content table tr td {
   border: 1px solid #aaa;
   padding: 20px;
   width: 25%;
 }
-/* line 1085, ../../app/assets/stylesheets/screen.css.scss */
+/* line 1083, ../../app/assets/stylesheets/screen.css.scss */
 .legal .content table tr th:last-child, .legal .content table tr td:last-child {
   font-weight: bold;
   color: #444;
 }
-/* line 1090, ../../app/assets/stylesheets/screen.css.scss */
+/* line 1088, ../../app/assets/stylesheets/screen.css.scss */
 .legal .content table tr:first-child th {
   font-weight: bold;
 }

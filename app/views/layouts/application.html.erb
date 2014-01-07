@@ -18,9 +18,15 @@
       <%= image_tag "safesquarelogo.png" %>
     <% end %>
     <div class="right-links">
-      <%= link_to "ACCOUNT", user_root_path, :class => "light" %>
+      <% if current_user && current_user.stripe_customer_id %>
+        <%= link_to "ACCOUNT", user_root_path, :class => "light" %>
+      <% end %>
       <% if current_user %>
         <%= link_to "LOGOUT", destroy_user_session_path, :method => "DELETE", :class => "light" %>
+      <% end%>
+
+      <% if !current_user || !current_user.regional_subscription %>
+        <%= link_to "START", select_pack_path, :class => "light special-select" %>
       <% end %>
     </div>
   </div>

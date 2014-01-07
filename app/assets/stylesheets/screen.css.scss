@@ -166,6 +166,14 @@ a.light {
   &:hover {
     text-decoration: underline;
   }
+  &.special-select {
+    color: $change !important;
+    padding: 5px;
+    line-height: 1em;
+    &:visited {
+      color: $change !important;
+    }
+  }
 }
 
 .header {
@@ -181,6 +189,8 @@ a.light {
     img {
       height: 30px;
       opacity: 0.6;
+      @include transition-property(opacity);
+      @include transition-duration(0.3s);
       &:hover {
         opacity: 1;
       }
@@ -733,9 +743,13 @@ a.light {
 .success-flash {
   margin: 0 auto;
   text-align: center;
-  padding: 15px;
+  padding: 9px;
   background-color: $light-success;
   margin-bottom: -46px;
+  position: relative;
+  top: 29px;
+  width: 500px;
+  border: 1px solid #aaa;
 }
 
 .edit-user-form {
@@ -916,7 +930,6 @@ a.light {
       position: relative;
       background-color: #e6e6e6;
       color: white;
-      @include border-radius(5px);
       background-attachment: fixed;
       overflow: hidden;
       margin: 15px;
@@ -956,6 +969,7 @@ a.light {
         @include font-regular;
         text-align: center;
         background-color: #ddd;
+        border-top: 1px dashed #666;
         span {
           @include font-light;
           color: #777;

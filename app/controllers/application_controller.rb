@@ -26,4 +26,10 @@ class ApplicationController < ActionController::Base
       redirect_to user_root_path
     end
   end
+
+  def check_new
+    if !current_user.stripe_customer_id
+      redirect_to select_pack_path
+    end
+  end
 end
