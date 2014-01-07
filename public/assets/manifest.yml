@@ -27,8 +27,12 @@ corners.png: corners-dfd691bfb7471c48d4f346a3b0b7b805.png
 corners/index.png: corners-dfd691bfb7471c48d4f346a3b0b7b805.png
 cube.png: cube-4115f84354929c4279f605179835d7e4.png
 cube/index.png: cube-4115f84354929c4279f605179835d7e4.png
+grayvintage.png: grayvintage-93fd03f40a02e9699271416d26951a6a.png
+grayvintage/index.png: grayvintage-93fd03f40a02e9699271416d26951a6a.png
 greyback.png: greyback-4eca031d6a11d41fb304ae8408015b60.png
 greyback/index.png: greyback-4eca031d6a11d41fb304ae8408015b60.png
+light_grey.png: light_grey-98fdcba028f5494af49c0ee610590506.png
+light_grey/index.png: light_grey-98fdcba028f5494af49c0ee610590506.png
 lock.png: lock-2c8da4dd187b7e78da72428b8979cafc.png
 lock/index.png: lock-2c8da4dd187b7e78da72428b8979cafc.png
 logo_with_text.png: logo_with_text-1e7dbad66ea17720ddfc1fddab4aa33f.png
@@ -47,7 +51,7 @@ square_bg.png: square_bg-0764c822233d662f34eea185adf44e9d.png
 square_bg/index.png: square_bg-0764c822233d662f34eea185adf44e9d.png
 application.js: application-d536b9c367f15cd30fa618dc466bfc89.js
 application/index.js: application-d536b9c367f15cd30fa618dc466bfc89.js
-application.css: application-f275bd59450d5e8f6982e7e22a277afb.css
-application/index.css: application-f275bd59450d5e8f6982e7e22a277afb.css
+application.css: application-0d87cd37d798076c806a8dbd293484e0.css
+application/index.css: application-0d87cd37d798076c806a8dbd293484e0.css
 jquery.min.map: jquery.min-6336c5bca4c709e809647cdfcb484d0a.map
 jquery/index.min.map: jquery.min-6336c5bca4c709e809647cdfcb484d0a.map
