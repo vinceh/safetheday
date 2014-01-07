@@ -14,41 +14,41 @@
 
 @font-face {
   font-family: "ProximaNovaLight";
-  src: url(/assets/ProximaNova-Light.otf) format('opentype');
+  src: url(/assets/ProximaNova-Light-b26d8534a06b8f48486cc142e2b27b74.otf) format('opentype');
 }
 
 @font-face {
   font-family: "ProximaNovaSemiBold";
-  src: url(/assets/ProximaNova-Semibold.otf) format('opentype');
+  src: url(/assets/ProximaNova-Semibold-d1c38a33f2c7dc94441feebfc7c95b26.otf) format('opentype');
 }
 
 @font-face {
   font-family: "ProximaNovaRegular";
-  src: url(/assets/ProximaNova-Regular.otf) format('opentype');
+  src: url(/assets/ProximaNova-Regular-dbc2a57755327488c2b77177c03a9d00.otf) format('opentype');
 }
 
 @font-face {
   font-family: "Quicksand";
-  src: url(/assets/Quicksand-Light.otf) format('opentype');
+  src: url(/assets/Quicksand-Light-f6fbce4f079713e1579103b1e5f3a02b.otf) format('opentype');
 }
 @font-face {
   font-family: "ProximaNovaLight";
-  src: url(/assets/ProximaNova-Light.otf) format('opentype');
+  src: url(/assets/ProximaNova-Light-b26d8534a06b8f48486cc142e2b27b74.otf) format('opentype');
 }
 
 @font-face {
   font-family: "ProximaNovaSemiBold";
-  src: url(/assets/ProximaNova-Semibold.otf) format('opentype');
+  src: url(/assets/ProximaNova-Semibold-d1c38a33f2c7dc94441feebfc7c95b26.otf) format('opentype');
 }
 
 @font-face {
   font-family: "ProximaNovaRegular";
-  src: url(/assets/ProximaNova-Regular.otf) format('opentype');
+  src: url(/assets/ProximaNova-Regular-dbc2a57755327488c2b77177c03a9d00.otf) format('opentype');
 }
 
 @font-face {
   font-family: "Quicksand";
-  src: url(/assets/Quicksand-Light.otf) format('opentype');
+  src: url(/assets/Quicksand-Light-f6fbce4f079713e1579103b1e5f3a02b.otf) format('opentype');
 }
 
 /* line 5, ../../app/assets/stylesheets/admin.css.scss */
@@ -272,22 +272,22 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 @font-face {
   font-family: "ProximaNovaLight";
-  src: url(/assets/ProximaNova-Light.otf) format('opentype');
+  src: url(/assets/ProximaNova-Light-b26d8534a06b8f48486cc142e2b27b74.otf) format('opentype');
 }
 
 @font-face {
   font-family: "ProximaNovaSemiBold";
-  src: url(/assets/ProximaNova-Semibold.otf) format('opentype');
+  src: url(/assets/ProximaNova-Semibold-d1c38a33f2c7dc94441feebfc7c95b26.otf) format('opentype');
 }
 
 @font-face {
   font-family: "ProximaNovaRegular";
-  src: url(/assets/ProximaNova-Regular.otf) format('opentype');
+  src: url(/assets/ProximaNova-Regular-dbc2a57755327488c2b77177c03a9d00.otf) format('opentype');
 }
 
 @font-face {
   font-family: "Quicksand";
-  src: url(/assets/Quicksand-Light.otf) format('opentype');
+  src: url(/assets/Quicksand-Light-f6fbce4f079713e1579103b1e5f3a02b.otf) format('opentype');
 }
 
 /* line 12, ../../app/assets/stylesheets/screen.css.scss */
@@ -465,100 +465,79 @@ h4 {
 
 /* line 146, ../../app/assets/stylesheets/screen.css.scss */
 body {
-  padding-top: 47px;
   font-family: "ProximaNovaLight";
   color: #777;
   background-color: #fcfcfc;
 }
 
-/* line 153, ../../app/assets/stylesheets/screen.css.scss */
+/* line 152, ../../app/assets/stylesheets/screen.css.scss */
 a.light {
-  color: #555;
+  color: #aaa;
   text-decoration: none;
 }
-/* line 156, ../../app/assets/stylesheets/screen.css.scss */
+/* line 155, ../../app/assets/stylesheets/screen.css.scss */
 a.light:visited {
-  color: #777;
+  color: #aaa;
 }
-/* line 159, ../../app/assets/stylesheets/screen.css.scss */
+/* line 158, ../../app/assets/stylesheets/screen.css.scss */
 a.light:hover {
   text-decoration: underline;
 }
 
-/* line 164, ../../app/assets/stylesheets/screen.css.scss */
+/* line 163, ../../app/assets/stylesheets/screen.css.scss */
 .header {
   padding: 15px 0;
-  border-bottom: 1px solid #777;
+  border-bottom: 1px solid #aaa;
   position: absolute;
   top: 0;
   width: 100%;
   z-index: 999;
 }
-/* line 171, ../../app/assets/stylesheets/screen.css.scss */
+/* line 170, ../../app/assets/stylesheets/screen.css.scss */
 .header a {
   font-size: 13px;
 }
-/* line 174, ../../app/assets/stylesheets/screen.css.scss */
+/* line 173, ../../app/assets/stylesheets/screen.css.scss */
 .header .right-links {
   float: right;
 }
-/* line 176, ../../app/assets/stylesheets/screen.css.scss */
+/* line 175, ../../app/assets/stylesheets/screen.css.scss */
 .header .right-links a {
   margin-left: 30px;
 }
-/* line 180, ../../app/assets/stylesheets/screen.css.scss */
-.header .backwash {
-  position: absolute;
-  opacity: 0.1;
-  background-color: #aaa;
-}
-/* line 185, ../../app/assets/stylesheets/screen.css.scss */
-.header .container {
-  position: relative;
-}
 
-/* line 190, ../../app/assets/stylesheets/screen.css.scss */
+/* line 181, ../../app/assets/stylesheets/screen.css.scss */
 .footer {
-  background-color: #161616;
-  height: 50px;
-}
-/* line 193, ../../app/assets/stylesheets/screen.css.scss */
-.footer .content {
-  position: relative;
-  top: 17px;
-  text-align: center;
-}
-/* line 198, ../../app/assets/stylesheets/screen.css.scss */
-.footer .light {
-  color: #ccc;
+  background-color: #222;
+  height: 150px;
 }
 
-/* line 203, ../../app/assets/stylesheets/screen.css.scss */
+/* line 186, ../../app/assets/stylesheets/screen.css.scss */
 .container {
   width: 960px;
   margin: 0 auto;
 }
 
-/* line 208, ../../app/assets/stylesheets/screen.css.scss */
+/* line 191, ../../app/assets/stylesheets/screen.css.scss */
 .container {
   display: table;
 }
 
-/* line 212, ../../app/assets/stylesheets/screen.css.scss */
+/* line 195, ../../app/assets/stylesheets/screen.css.scss */
 #payment-form, .user-form {
   float: right;
   margin: 100px 0 200px;
 }
-/* line 215, ../../app/assets/stylesheets/screen.css.scss */
+/* line 198, ../../app/assets/stylesheets/screen.css.scss */
 #payment-form h3, .user-form h3 {
   margin: 40px 0 20px;
   width: 472px;
 }
-/* line 218, ../../app/assets/stylesheets/screen.css.scss */
+/* line 201, ../../app/assets/stylesheets/screen.css.scss */
 #payment-form h3 .same-billing, .user-form h3 .same-billing {
   float: right;
 }
-/* line 220, ../../app/assets/stylesheets/screen.css.scss */
+/* line 203, ../../app/assets/stylesheets/screen.css.scss */
 #payment-form h3 .same-billing label, .user-form h3 .same-billing label {
   margin-left: 5px;
   position: relative;
@@ -567,14 +546,14 @@ a.light:hover {
   font-size: 16px;
   font-family: "ProximaNovaLight";
 }
-/* line 229, ../../app/assets/stylesheets/screen.css.scss */
+/* line 212, ../../app/assets/stylesheets/screen.css.scss */
 #payment-form h3 .required-text, .user-form h3 .required-text {
   float: right;
   font-size: 16px;
   font-family: "ProximaNovaLight";
   color: #888;
 }
-/* line 234, ../../app/assets/stylesheets/screen.css.scss */
+/* line 217, ../../app/assets/stylesheets/screen.css.scss */
 #payment-form h3 .required-text span, .user-form h3 .required-text span {
   font-size: 21px;
   font-family: "ProximaNovaSemiBold";
@@ -583,96 +562,96 @@ a.light:hover {
   top: 5px;
   margin-right: 3px;
 }
-/* line 243, ../../app/assets/stylesheets/screen.css.scss */
+/* line 226, ../../app/assets/stylesheets/screen.css.scss */
 #payment-form h3 img, .user-form h3 img {
   position: relative;
   top: 1px;
   height: 19px;
 }
-/* line 249, ../../app/assets/stylesheets/screen.css.scss */
+/* line 232, ../../app/assets/stylesheets/screen.css.scss */
 #payment-form .payment-errors, .user-form .payment-errors {
   color: #ff4c4f;
   margin-bottom: 10px;
 }
-/* line 253, ../../app/assets/stylesheets/screen.css.scss */
+/* line 236, ../../app/assets/stylesheets/screen.css.scss */
 #payment-form .shipping-info, .user-form .shipping-info {
   display: none;
 }
-/* line 256, ../../app/assets/stylesheets/screen.css.scss */
+/* line 239, ../../app/assets/stylesheets/screen.css.scss */
 #payment-form .field-help, .user-form .field-help {
   margin-top: -3px;
   font-size: 13px;
   margin-bottom: 10px;
   color: #888;
 }
-/* line 263, ../../app/assets/stylesheets/screen.css.scss */
+/* line 246, ../../app/assets/stylesheets/screen.css.scss */
 #payment-form .form-row input, .user-form .form-row input {
   display: inline-block;
   width: auto;
   margin: 0;
   margin-bottom: 10px;
 }
-/* line 270, ../../app/assets/stylesheets/screen.css.scss */
+/* line 253, ../../app/assets/stylesheets/screen.css.scss */
 #payment-form .form-row.credit-date span, .user-form .form-row.credit-date span {
   margin: 0 5px;
 }
-/* line 273, ../../app/assets/stylesheets/screen.css.scss */
+/* line 256, ../../app/assets/stylesheets/screen.css.scss */
 #payment-form .form-row.credit-date select, .user-form .form-row.credit-date select {
   width: 224px;
 }
-/* line 279, ../../app/assets/stylesheets/screen.css.scss */
+/* line 262, ../../app/assets/stylesheets/screen.css.scss */
 #payment-form .form-row.city-info input:first-child, .user-form .form-row.city-info input:first-child {
   width: 226px;
 }
-/* line 282, ../../app/assets/stylesheets/screen.css.scss */
+/* line 265, ../../app/assets/stylesheets/screen.css.scss */
 #payment-form .form-row.city-info input select, .user-form .form-row.city-info input select {
   width: 72px;
 }
-/* line 285, ../../app/assets/stylesheets/screen.css.scss */
+/* line 268, ../../app/assets/stylesheets/screen.css.scss */
 #payment-form .form-row.city-info input:last-child, .user-form .form-row.city-info input:last-child {
   width: 122px;
 }
-/* line 291, ../../app/assets/stylesheets/screen.css.scss */
+/* line 274, ../../app/assets/stylesheets/screen.css.scss */
 #payment-form select, .user-form select {
   margin-bottom: 10px;
 }
-/* line 293, ../../app/assets/stylesheets/screen.css.scss */
+/* line 276, ../../app/assets/stylesheets/screen.css.scss */
 #payment-form select.country, .user-form select.country {
   display: block;
   width: 472px;
 }
-/* line 298, ../../app/assets/stylesheets/screen.css.scss */
+/* line 281, ../../app/assets/stylesheets/screen.css.scss */
 #payment-form p, .user-form p {
   width: 450px;
   font-size: 14px;
   color: #888;
 }
-/* line 303, ../../app/assets/stylesheets/screen.css.scss */
+/* line 286, ../../app/assets/stylesheets/screen.css.scss */
 #payment-form input, .user-form input {
   display: block;
   width: 450px;
   margin-bottom: 10px;
 }
-/* line 307, ../../app/assets/stylesheets/screen.css.scss */
+/* line 290, ../../app/assets/stylesheets/screen.css.scss */
 #payment-form input.cvc, .user-form input.cvc {
   width: 100px;
 }
-/* line 310, ../../app/assets/stylesheets/screen.css.scss */
+/* line 293, ../../app/assets/stylesheets/screen.css.scss */
 #payment-form input[type="text"], .user-form input[type="text"] {
   background-image: url("ast.png");
   background-repeat: no-repeat;
   background-position: right center;
 }
-/* line 314, ../../app/assets/stylesheets/screen.css.scss */
+/* line 297, ../../app/assets/stylesheets/screen.css.scss */
 #payment-form input[type="text"].not-required, .user-form input[type="text"].not-required {
   background-image: none;
 }
-/* line 318, ../../app/assets/stylesheets/screen.css.scss */
+/* line 301, ../../app/assets/stylesheets/screen.css.scss */
 #payment-form input[type="checkbox"], #payment-form input[type="submit"], .user-form input[type="checkbox"], .user-form input[type="submit"] {
   display: inline;
   width: auto;
 }
-/* line 323, ../../app/assets/stylesheets/screen.css.scss */
+/* line 306, ../../app/assets/stylesheets/screen.css.scss */
 #payment-form input[type="submit"], .user-form input[type="submit"] {
   margin-top: 20px;
   color: #eee;
@@ -680,41 +659,41 @@ a.light:hover {
   font-family: "ProximaNovaSemiBold";
   font-size: 21px;
 }
-/* line 330, ../../app/assets/stylesheets/screen.css.scss */
+/* line 313, ../../app/assets/stylesheets/screen.css.scss */
 #payment-form .terms, .user-form .terms {
   margin-top: 20px;
 }
 
-/* line 335, ../../app/assets/stylesheets/screen.css.scss */
+/* line 318, ../../app/assets/stylesheets/screen.css.scss */
 .update-payment {
   display: none;
   margin-bottom: 50px !important;
 }
-/* line 338, ../../app/assets/stylesheets/screen.css.scss */
+/* line 321, ../../app/assets/stylesheets/screen.css.scss */
 .update-payment input[type='submit'] {
   font-size: 15px !important;
   padding: 12px 20px !important;
 }
 
-/* line 344, ../../app/assets/stylesheets/screen.css.scss */
+/* line 327, ../../app/assets/stylesheets/screen.css.scss */
 .update-shipping {
   display: none;
 }
-/* line 346, ../../app/assets/stylesheets/screen.css.scss */
+/* line 329, ../../app/assets/stylesheets/screen.css.scss */
 .update-shipping input[type='submit'] {
   font-size: 15px;
   padding: 12px 20px;
 }
-/* line 350, ../../app/assets/stylesheets/screen.css.scss */
+/* line 333, ../../app/assets/stylesheets/screen.css.scss */
 .update-shipping h3 {
   margin-bottom: 0 !important;
 }
-/* line 353, ../../app/assets/stylesheets/screen.css.scss */
+/* line 336, ../../app/assets/stylesheets/screen.css.scss */
 .update-shipping .show {
   display: block;
 }
 
-/* line 358, ../../app/assets/stylesheets/screen.css.scss */
+/* line 341, ../../app/assets/stylesheets/screen.css.scss */
 .hider {
   color: #4597ca;
   font-family: "ProximaNovaLight";
@@ -724,12 +703,12 @@ a.light:hover {
   position: relative;
   bottom: 3px;
 }
-/* line 366, ../../app/assets/stylesheets/screen.css.scss */
+/* line 349, ../../app/assets/stylesheets/screen.css.scss */
 .hider:hover {
   cursor: pointer;
 }
 
-/* line 371, ../../app/assets/stylesheets/screen.css.scss */
+/* line 354, ../../app/assets/stylesheets/screen.css.scss */
 .canceller {
   color: #4597ca;
   font-family: "ProximaNovaLight";
@@ -737,35 +716,35 @@ a.light:hover {
   margin-left: 15px;
   line-height: 24px;
 }
-/* line 377, ../../app/assets/stylesheets/screen.css.scss */
+/* line 360, ../../app/assets/stylesheets/screen.css.scss */
 .canceller:hover {
   cursor: pointer;
 }
 
-/* line 382, ../../app/assets/stylesheets/screen.css.scss */
+/* line 365, ../../app/assets/stylesheets/screen.css.scss */
 .user-form {
   float: none;
   margin-top: 0;
 }
-/* line 385, ../../app/assets/stylesheets/screen.css.scss */
+/* line 368, ../../app/assets/stylesheets/screen.css.scss */
 .user-form .same-billing {
   margin-top: 15px;
   float: none !important;
 }
 
-/* line 391, ../../app/assets/stylesheets/screen.css.scss */
+/* line 374, ../../app/assets/stylesheets/screen.css.scss */
 .error-field {
   border: 1px solid #ff7151 !important;
 }
 
-/* line 395, ../../app/assets/stylesheets/screen.css.scss */
+/* line 378, ../../app/assets/stylesheets/screen.css.scss */
 .left-panel {
   width: 250px;
   float: left;
   margin-top: 175px;
   padding-bottom: 100px;
 }
-/* line 400, ../../app/assets/stylesheets/screen.css.scss */
+/* line 383, ../../app/assets/stylesheets/screen.css.scss */
 .left-panel .item {
   padding: 18px 30px;
   display: block;
@@ -780,26 +759,26 @@ a.light:hover {
   -o-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
-/* line 407, ../../app/assets/stylesheets/screen.css.scss */
+/* line 390, ../../app/assets/stylesheets/screen.css.scss */
 .left-panel .item:visited {
   color: #777;
 }
-/* line 410, ../../app/assets/stylesheets/screen.css.scss */
+/* line 393, ../../app/assets/stylesheets/screen.css.scss */
 .left-panel .item.active, .left-panel .item:hover {
   border-right: 3px solid #333;
   color: #111;
 }
-/* line 414, ../../app/assets/stylesheets/screen.css.scss */
+/* line 397, ../../app/assets/stylesheets/screen.css.scss */
 .left-panel .item:hover {
   cursor: pointer;
 }
 
-/* line 420, ../../app/assets/stylesheets/screen.css.scss */
+/* line 403, ../../app/assets/stylesheets/screen.css.scss */
 .update-wrap {
   display: none;
 }
 
-/* line 424, ../../app/assets/stylesheets/screen.css.scss */
+/* line 407, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel {
   padding-top: 175px;
   padding-bottom: 200px;
@@ -807,7 +786,7 @@ a.light:hover {
   width: 660px;
   float: right;
 }
-/* line 430, ../../app/assets/stylesheets/screen.css.scss */
+/* line 413, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel .sub-wrap {
   margin-top: 30px;
   display: table;
@@ -820,7 +799,7 @@ a.light:hover {
   -o-border-radius: 3px;
   border-radius: 3px;
 }
-/* line 438, ../../app/assets/stylesheets/screen.css.scss */
+/* line 421, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel .sub-wrap:before, .right-panel .sub-wrap:after {
   z-index: -1;
   position: absolute;
@@ -840,7 +819,7 @@ a.light:hover {
   -o-transform: rotate(-2deg);
   transform: rotate(-2deg);
 }
-/* line 452, ../../app/assets/stylesheets/screen.css.scss */
+/* line 435, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel .sub-wrap:after {
   -webkit-transform: rotate(2deg);
   -moz-transform: rotate(2deg);
@@ -850,108 +829,108 @@ a.light:hover {
   right: 10px;
   left: auto;
 }
-/* line 457, ../../app/assets/stylesheets/screen.css.scss */
+/* line 440, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel .sub-wrap .avatar, .right-panel .sub-wrap .content {
   float: left;
 }
-/* line 460, ../../app/assets/stylesheets/screen.css.scss */
+/* line 443, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel .sub-wrap .avatar {
   width: 185px;
   height: 1px;
 }
-/* line 463, ../../app/assets/stylesheets/screen.css.scss */
+/* line 446, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel .sub-wrap .avatar img {
   height: 175px;
 }
-/* line 467, ../../app/assets/stylesheets/screen.css.scss */
+/* line 450, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel .sub-wrap p, .right-panel .sub-wrap h4 {
   text-shadow: 1px 1px white;
 }
-/* line 470, ../../app/assets/stylesheets/screen.css.scss */
+/* line 453, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel .sub-wrap .content {
   width: 387px;
   padding-left: 30px;
 }
-/* line 473, ../../app/assets/stylesheets/screen.css.scss */
+/* line 456, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel .sub-wrap .content p {
   font-size: 18px;
   line-height: 1em;
 }
-/* line 476, ../../app/assets/stylesheets/screen.css.scss */
+/* line 459, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel .sub-wrap .content p.sub {
   font-size: 16px;
   color: #888;
 }
-/* line 481, ../../app/assets/stylesheets/screen.css.scss */
+/* line 464, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel .sub-wrap .content .line-item {
   margin: 25px 0;
 }
-/* line 483, ../../app/assets/stylesheets/screen.css.scss */
+/* line 466, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel .sub-wrap .content .line-item:last-child {
   margin-bottom: 0;
 }
-/* line 489, ../../app/assets/stylesheets/screen.css.scss */
+/* line 472, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel .change-sub {
   margin-top: 20px;
 }
-/* line 491, ../../app/assets/stylesheets/screen.css.scss */
+/* line 474, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel .change-sub a {
   padding: 15px 25px;
   display: inline-block;
   font-size: 18px;
 }
-/* line 497, ../../app/assets/stylesheets/screen.css.scss */
+/* line 480, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel .danger {
   padding: 20px;
   background-color: #f1f1f1;
   display: none;
   margin-top: 30px;
 }
-/* line 502, ../../app/assets/stylesheets/screen.css.scss */
+/* line 485, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel .danger h3 {
   margin-bottom: 15px;
 }
-/* line 505, ../../app/assets/stylesheets/screen.css.scss */
+/* line 488, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel .danger p {
   width: 75%;
 }
-/* line 508, ../../app/assets/stylesheets/screen.css.scss */
+/* line 491, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel .danger a {
   margin-top: 15px;
   padding: 10px 15px;
   display: inline-block;
   font-size: 15px;
 }
-/* line 516, ../../app/assets/stylesheets/screen.css.scss */
+/* line 499, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel.address-settings #payment-form {
   margin-top: 0;
   float: none;
 }
-/* line 519, ../../app/assets/stylesheets/screen.css.scss */
+/* line 502, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel.address-settings #payment-form .title {
   margin-top: 0;
 }
-/* line 522, ../../app/assets/stylesheets/screen.css.scss */
+/* line 505, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel.address-settings #payment-form input[type='submit'] {
   padding: 15px 25px;
   display: inline-block;
   font-size: 18px;
 }
-/* line 528, ../../app/assets/stylesheets/screen.css.scss */
+/* line 511, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel.address-settings .current-card {
   margin-bottom: 50px;
   font-family: "ProximaNovaSemiBold";
   color: #333;
 }
-/* line 532, ../../app/assets/stylesheets/screen.css.scss */
+/* line 515, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel.address-settings .current-card h3 {
   margin-bottom: 30px;
 }
-/* line 535, ../../app/assets/stylesheets/screen.css.scss */
+/* line 518, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel.address-settings .current-card img {
   position: relative;
 }
-/* line 538, ../../app/assets/stylesheets/screen.css.scss */
+/* line 521, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel.address-settings .current-card .card-wrap {
   -webkit-box-shadow: inset 0 0 10px #dddddd;
   -moz-box-shadow: inset 0 0 10px #dddddd;
@@ -965,54 +944,54 @@ a.light:hover {
   zoom: 1;
   *display: inline;
 }
-/* line 544, ../../app/assets/stylesheets/screen.css.scss */
+/* line 527, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel.address-settings .current-card .card-type {
   font-size: 22px;
   margin-left: 5px;
   position: relative;
   bottom: 15px;
 }
-/* line 550, ../../app/assets/stylesheets/screen.css.scss */
+/* line 533, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel.address-settings .current-card .current-wrap {
   font-family: "ProximaNovaLight";
   color: #777;
 }
-/* line 553, ../../app/assets/stylesheets/screen.css.scss */
+/* line 536, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel.address-settings .current-card .current-wrap h3 {
   margin-top: 50px;
 }
-/* line 555, ../../app/assets/stylesheets/screen.css.scss */
+/* line 538, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel.address-settings .current-card .current-wrap h3:first-child {
   margin-top: 0;
 }
-/* line 559, ../../app/assets/stylesheets/screen.css.scss */
+/* line 542, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel.address-settings .current-card .current-wrap .billing {
   margin-bottom: 50px;
 }
-/* line 562, ../../app/assets/stylesheets/screen.css.scss */
+/* line 545, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel.address-settings .current-card .current-wrap .account-item {
   width: 65%;
   display: table;
   margin: 15px 0;
 }
-/* line 566, ../../app/assets/stylesheets/screen.css.scss */
+/* line 549, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel.address-settings .current-card .current-wrap .account-item div {
   float: left;
   width: 50%;
   color: #999;
 }
-/* line 570, ../../app/assets/stylesheets/screen.css.scss */
+/* line 553, ../../app/assets/stylesheets/screen.css.scss */
 .right-panel.address-settings .current-card .current-wrap .account-item div:last-child {
   font-family: "ProximaNovaLight";
   font-weight: bold;
   color: #555;
 }
 
-/* line 582, ../../app/assets/stylesheets/screen.css.scss */
+/* line 565, ../../app/assets/stylesheets/screen.css.scss */
 .invoices {
   margin-top: 30px;
 }
-/* line 584, ../../app/assets/stylesheets/screen.css.scss */
+/* line 567, ../../app/assets/stylesheets/screen.css.scss */
 .invoices .invoice-wrap {
   padding: 20px 25px;
   display: table;
@@ -1031,68 +1010,67 @@ a.light:hover {
   -o-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
-/* line 593, ../../app/assets/stylesheets/screen.css.scss */
+/* line 576, ../../app/assets/stylesheets/screen.css.scss */
 .invoices .invoice-wrap:last-child {
   border-bottom: 0;
 }
-/* line 596, ../../app/assets/stylesheets/screen.css.scss */
+/* line 579, ../../app/assets/stylesheets/screen.css.scss */
 .invoices .invoice-wrap:hover {
   cursor: pointer;
   background-color: #f6f6f6;
   color: #333;
 }
-/* line 601, ../../app/assets/stylesheets/screen.css.scss */
+/* line 584, ../../app/assets/stylesheets/screen.css.scss */
 .invoices .invoice-wrap .desc {
   float: left;
 }
-/* line 603, ../../app/assets/stylesheets/screen.css.scss */
+/* line 586, ../../app/assets/stylesheets/screen.css.scss */
 .invoices .invoice-wrap .desc .state {
   color: #ff4c4f;
 }
-/* line 605, ../../app/assets/stylesheets/screen.css.scss */
+/* line 588, ../../app/assets/stylesheets/screen.css.scss */
 .invoices .invoice-wrap .desc .state.shipped {
   color: #61c478;
 }
-/* line 610, ../../app/assets/stylesheets/screen.css.scss */
+/* line 593, ../../app/assets/stylesheets/screen.css.scss */
 .invoices .invoice-wrap .price {
   float: right;
 }
 
-/* line 616, ../../app/assets/stylesheets/screen.css.scss */
+/* line 599, ../../app/assets/stylesheets/screen.css.scss */
 .invoice-header {
   height: 5px;
   background-color: #333;
-  position: relative;
 }
 
-/* line 622, ../../app/assets/stylesheets/screen.css.scss */
+/* line 604, ../../app/assets/stylesheets/screen.css.scss */
 .invoice-container {
   width: 800px;
   margin: 0 auto;
 }
-/* line 625, ../../app/assets/stylesheets/screen.css.scss */
+/* line 607, ../../app/assets/stylesheets/screen.css.scss */
 .invoice-container .logo-image {
   text-align: center;
   margin-top: 80px;
 }
-/* line 628, ../../app/assets/stylesheets/screen.css.scss */
+/* line 610, ../../app/assets/stylesheets/screen.css.scss */
 .invoice-container .logo-image img {
   width: 125px;
 }
-/* line 632, ../../app/assets/stylesheets/screen.css.scss */
+/* line 614, ../../app/assets/stylesheets/screen.css.scss */
 .invoice-container .content-wrap {
   margin-top: 80px;
 }
-/* line 634, ../../app/assets/stylesheets/screen.css.scss */
+/* line 616, ../../app/assets/stylesheets/screen.css.scss */
 .invoice-container .content-wrap .billed-to {
   position: relative;
   line-height: 1.4em;
 }
-/* line 636, ../../app/assets/stylesheets/screen.css.scss */
+/* line 618, ../../app/assets/stylesheets/screen.css.scss */
 .invoice-container .content-wrap .billed-to .bold {
   margin-bottom: 10px;
 }
-/* line 640, ../../app/assets/stylesheets/screen.css.scss */
+/* line 622, ../../app/assets/stylesheets/screen.css.scss */
 .invoice-container .content-wrap .billed-to .invoice-number {
   position: absolute;
   right: 0;
@@ -1100,15 +1078,15 @@ a.light:hover {
   text-align: right;
   color: #aaa;
 }
-/* line 646, ../../app/assets/stylesheets/screen.css.scss */
+/* line 628, ../../app/assets/stylesheets/screen.css.scss */
 .invoice-container .content-wrap .billed-to .invoice-number .bold {
   margin-top: 5px;
 }
-/* line 651, ../../app/assets/stylesheets/screen.css.scss */
+/* line 633, ../../app/assets/stylesheets/screen.css.scss */
 .invoice-container .content-wrap .amount-wrap {
   margin-top: 80px;
 }
-/* line 653, ../../app/assets/stylesheets/screen.css.scss */
+/* line 635, ../../app/assets/stylesheets/screen.css.scss */
 .invoice-container .content-wrap .amount-wrap h3 {
   font-size: 16px;
   color: #aaa;
@@ -1116,19 +1094,19 @@ a.light:hover {
   padding: 15px;
   margin-bottom: 5px;
 }
-/* line 656, ../../app/assets/stylesheets/screen.css.scss */
+/* line 638, ../../app/assets/stylesheets/screen.css.scss */
 .invoice-container .content-wrap .amount-wrap h3 span {
   float: right;
 }
-/* line 663, ../../app/assets/stylesheets/screen.css.scss */
+/* line 645, ../../app/assets/stylesheets/screen.css.scss */
 .invoice-container .content-wrap .amount-wrap .item {
   padding: 15px;
 }
-/* line 665, ../../app/assets/stylesheets/screen.css.scss */
+/* line 647, ../../app/assets/stylesheets/screen.css.scss */
 .invoice-container .content-wrap .amount-wrap .item span {
   float: right;
 }
-/* line 669, ../../app/assets/stylesheets/screen.css.scss */
+/* line 651, ../../app/assets/stylesheets/screen.css.scss */
 .invoice-container .content-wrap .amount-wrap .total {
   margin-top: 5px;
   padding: 15px;
@@ -1136,7 +1114,7 @@ a.light:hover {
   border-top: 1px dashed #ccc;
   font-size: 20px;
 }
-/* line 678, ../../app/assets/stylesheets/screen.css.scss */
+/* line 660, ../../app/assets/stylesheets/screen.css.scss */
 .invoice-container p {
   margin-top: 100px;
   margin-bottom: 100px;
@@ -1146,7 +1124,7 @@ a.light:hover {
   font-size: 14px;
 }
 
-/* line 688, ../../app/assets/stylesheets/screen.css.scss */
+/* line 670, ../../app/assets/stylesheets/screen.css.scss */
 .success-flash {
   margin: 0 auto;
   text-align: center;
@@ -1155,49 +1133,49 @@ a.light:hover {
   margin-bottom: -46px;
 }
 
-/* line 696, ../../app/assets/stylesheets/screen.css.scss */
+/* line 678, ../../app/assets/stylesheets/screen.css.scss */
 .edit-user-form {
   margin-top: 30px;
 }
-/* line 698, ../../app/assets/stylesheets/screen.css.scss */
+/* line 680, ../../app/assets/stylesheets/screen.css.scss */
 .edit-user-form label {
   margin: 15px 10px;
   display: block;
 }
-/* line 702, ../../app/assets/stylesheets/screen.css.scss */
+/* line 684, ../../app/assets/stylesheets/screen.css.scss */
 .edit-user-form input {
   display: block;
   margin-bottom: 5px;
 }
-/* line 705, ../../app/assets/stylesheets/screen.css.scss */
+/* line 687, ../../app/assets/stylesheets/screen.css.scss */
 .edit-user-form input[type='submit'] {
   margin-top: 30px;
   font-size: 15px;
   padding: 12px 20px;
 }
 
-/* line 713, ../../app/assets/stylesheets/screen.css.scss */
+/* line 695, ../../app/assets/stylesheets/screen.css.scss */
 .subsection {
   margin-top: 50px;
 }
 
-/* line 718, ../../app/assets/stylesheets/screen.css.scss */
+/* line 700, ../../app/assets/stylesheets/screen.css.scss */
 .options .option {
   display: table;
   width: 100%;
   padding: 35px 0;
   border-bottom: 1px dashed #ddd;
 }
-/* line 723, ../../app/assets/stylesheets/screen.css.scss */
+/* line 705, ../../app/assets/stylesheets/screen.css.scss */
 .options .option:last-child {
   border-bottom: 0;
 }
-/* line 726, ../../app/assets/stylesheets/screen.css.scss */
+/* line 708, ../../app/assets/stylesheets/screen.css.scss */
 .options .option p {
   float: left;
   width: 250px;
 }
-/* line 730, ../../app/assets/stylesheets/screen.css.scss */
+/* line 712, ../../app/assets/stylesheets/screen.css.scss */
 .options .option a {
   margin-top: -2px;
   text-align: center;
@@ -1209,7 +1187,7 @@ a.light:hover {
   line-height: 1.33em;
 }
 
-/* line 743, ../../app/assets/stylesheets/screen.css.scss */
+/* line 725, ../../app/assets/stylesheets/screen.css.scss */
 .modal-outer, .backwash {
   position: fixed;
   left: 0;
@@ -1218,11 +1196,11 @@ a.light:hover {
   height: 100%;
 }
 
-/* line 751, ../../app/assets/stylesheets/screen.css.scss */
+/* line 733, ../../app/assets/stylesheets/screen.css.scss */
 .modal-outer {
   display: none;
 }
-/* line 753, ../../app/assets/stylesheets/screen.css.scss */
+/* line 735, ../../app/assets/stylesheets/screen.css.scss */
 .modal-outer .modal {
   position: relative;
   top: -100%;
@@ -1242,20 +1220,20 @@ a.light:hover {
   -o-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
-/* line 765, ../../app/assets/stylesheets/screen.css.scss */
+/* line 747, ../../app/assets/stylesheets/screen.css.scss */
 .modal-outer .modal.open {
   top: 50%;
 }
 
-/* line 772, ../../app/assets/stylesheets/screen.css.scss */
+/* line 754, ../../app/assets/stylesheets/screen.css.scss */
 .cancel-modal h4 {
   margin-bottom: 10px;
 }
-/* line 775, ../../app/assets/stylesheets/screen.css.scss */
+/* line 757, ../../app/assets/stylesheets/screen.css.scss */
 .cancel-modal .feedback-option {
   margin: 15px 0;
 }
-/* line 778, ../../app/assets/stylesheets/screen.css.scss */
+/* line 760, ../../app/assets/stylesheets/screen.css.scss */
 .cancel-modal textarea {
   width: 100%;
   height: 75px;
@@ -1270,26 +1248,25 @@ a.light:hover {
   line-height: 1.4em;
   color: #555;
 }
-/* line 790, ../../app/assets/stylesheets/screen.css.scss */
+/* line 772, ../../app/assets/stylesheets/screen.css.scss */
 .cancel-modal input[type="submit"] {
   padding: 10px 15px;
   margin-right: 10px;
   margin-top: 25px;
 }
 
-/* line 797, ../../app/assets/stylesheets/screen.css.scss */
+/* line 779, ../../app/assets/stylesheets/screen.css.scss */
 .backwash {
   background-color: black;
   opacity: 0.9;
 }
 
-/* line 802, ../../app/assets/stylesheets/screen.css.scss */
+/* line 784, ../../app/assets/stylesheets/screen.css.scss */
 .chooser {
   position: relative;
   width: 1120px;
-  padding-bottom: 75px;
 }
-/* line 806, ../../app/assets/stylesheets/screen.css.scss */
+/* line 787, ../../app/assets/stylesheets/screen.css.scss */
 .chooser .backwash {
   position: absolute;
   left: 0;
@@ -1299,20 +1276,20 @@ a.light:hover {
   background-color: black;
   opacity: 0.6;
 }
-/* line 815, ../../app/assets/stylesheets/screen.css.scss */
+/* line 796, ../../app/assets/stylesheets/screen.css.scss */
 .chooser .title {
   position: relative;
   text-align: center;
 }
-/* line 818, ../../app/assets/stylesheets/screen.css.scss */
+/* line 799, ../../app/assets/stylesheets/screen.css.scss */
 .chooser .title h1 {
   font-family: "Quicksand";
   color: #eee;
   text-align: center;
-  margin-top: 75px;
+  margin-top: 120px;
   font-size: 60px;
 }
-/* line 825, ../../app/assets/stylesheets/screen.css.scss */
+/* line 806, ../../app/assets/stylesheets/screen.css.scss */
 .chooser .title p {
   text-align: center;
   margin-top: 5px;
@@ -1320,19 +1297,19 @@ a.light:hover {
   font-family: "ProximaNovaLight";
   color: #888;
 }
-/* line 832, ../../app/assets/stylesheets/screen.css.scss */
+/* line 813, ../../app/assets/stylesheets/screen.css.scss */
 .chooser .title img {
   height: 30px;
   margin-top: 10px;
   opacity: 0.4;
 }
 
-/* line 841, ../../app/assets/stylesheets/screen.css.scss */
+/* line 822, ../../app/assets/stylesheets/screen.css.scss */
 .selections {
   display: table;
   margin-top: 50px;
 }
-/* line 844, ../../app/assets/stylesheets/screen.css.scss */
+/* line 825, ../../app/assets/stylesheets/screen.css.scss */
 .selections .selection {
   float: left;
   width: 345px;
@@ -1343,11 +1320,11 @@ a.light:hover {
   position: relative;
   text-align: center;
 }
-/* line 851, ../../app/assets/stylesheets/screen.css.scss */
+/* line 832, ../../app/assets/stylesheets/screen.css.scss */
 .selections .selection:first-child {
   margin-left: 165px;
 }
-/* line 854, ../../app/assets/stylesheets/screen.css.scss */
+/* line 835, ../../app/assets/stylesheets/screen.css.scss */
 .selections .selection button {
   margin-top: 35px;
   width: 80%;
@@ -1363,11 +1340,11 @@ a.light:hover {
   border: 1px solid #777;
   color: #eee;
 }
-/* line 864, ../../app/assets/stylesheets/screen.css.scss */
+/* line 845, ../../app/assets/stylesheets/screen.css.scss */
 .selections .selection button:hover {
   background-color: #111;
 }
-/* line 868, ../../app/assets/stylesheets/screen.css.scss */
+/* line 849, ../../app/assets/stylesheets/screen.css.scss */
 .selections .selection .avatar-wrap {
   position: relative;
   background-color: #e6e6e6;
@@ -1380,11 +1357,11 @@ a.light:hover {
   background-attachment: fixed;
   overflow: hidden;
 }
-/* line 875, ../../app/assets/stylesheets/screen.css.scss */
+/* line 856, ../../app/assets/stylesheets/screen.css.scss */
 .selections .selection .avatar-wrap .backwash {
   background-color: white;
 }
-/* line 879, ../../app/assets/stylesheets/screen.css.scss */
+/* line 860, ../../app/assets/stylesheets/screen.css.scss */
 .selections .selection .avatar-wrap:before, .selections .selection .avatar-wrap:after {
   z-index: -1;
   position: absolute;
@@ -1404,7 +1381,7 @@ a.light:hover {
   -o-transform: rotate(-4deg);
   transform: rotate(-4deg);
 }
-/* line 893, ../../app/assets/stylesheets/screen.css.scss */
+/* line 874, ../../app/assets/stylesheets/screen.css.scss */
 .selections .selection .avatar-wrap:after {
   -webkit-transform: rotate(4deg);
   -moz-transform: rotate(4deg);
@@ -1414,12 +1391,12 @@ a.light:hover {
   right: 10px;
   left: auto;
 }
-/* line 898, ../../app/assets/stylesheets/screen.css.scss */
+/* line 879, ../../app/assets/stylesheets/screen.css.scss */
 .selections .selection .avatar-wrap .avatar-inner {
   margin: 10px;
   position: relative;
 }
-/* line 902, ../../app/assets/stylesheets/screen.css.scss */
+/* line 883, ../../app/assets/stylesheets/screen.css.scss */
 .selections .selection .avatar-wrap .price {
   text-shadow: 0 1px 0 white;
   padding: 15px 0 10px;
@@ -1430,13 +1407,13 @@ a.light:hover {
   text-align: center;
   background-color: #ddd;
 }
-/* line 911, ../../app/assets/stylesheets/screen.css.scss */
+/* line 892, ../../app/assets/stylesheets/screen.css.scss */
 .selections .selection .avatar-wrap .price span {
   font-family: "ProximaNovaLight";
   color: #777;
   font-size: 16px;
 }
-/* line 918, ../../app/assets/stylesheets/screen.css.scss */
+/* line 899, ../../app/assets/stylesheets/screen.css.scss */
 .selections .selection h3 {
   text-align: center;
   padding-top: 30px;
@@ -1445,16 +1422,16 @@ a.light:hover {
   font-size: 28px;
   color: #333;
 }
-/* line 926, ../../app/assets/stylesheets/screen.css.scss */
+/* line 907, ../../app/assets/stylesheets/screen.css.scss */
 .selections .selection .avatar {
   text-align: center;
 }
-/* line 928, ../../app/assets/stylesheets/screen.css.scss */
+/* line 909, ../../app/assets/stylesheets/screen.css.scss */
 .selections .selection .avatar img {
   height: 200px;
   margin: 15px 0;
 }
-/* line 933, ../../app/assets/stylesheets/screen.css.scss */
+/* line 914, ../../app/assets/stylesheets/screen.css.scss */
 .selections .selection h4 {
   font-size: 20px;
   margin-bottom: 20px;
@@ -1462,27 +1439,23 @@ a.light:hover {
   padding-bottom: 15px;
   color: #555;
 }
-/* line 940, ../../app/assets/stylesheets/screen.css.scss */
+/* line 921, ../../app/assets/stylesheets/screen.css.scss */
 .selections .selection p {
   font-size: 15px;
   padding-bottom: 17px;
   margin-bottom: 17px;
   color: #ddd;
 }
-/* line 946, ../../app/assets/stylesheets/screen.css.scss */
+/* line 927, ../../app/assets/stylesheets/screen.css.scss */
 .selections .selection p:last-child {
   border-bottom: none;
 }
-/* line 950, ../../app/assets/stylesheets/screen.css.scss */
+/* line 931, ../../app/assets/stylesheets/screen.css.scss */
 .selections .selection .powers {
   padding: 30px 20px;
 }
 
-/* line 956, ../../app/assets/stylesheets/screen.css.scss */
-.static {
-  margin-bottom: 100px;
-}
-/* line 958, ../../app/assets/stylesheets/screen.css.scss */
+/* line 938, ../../app/assets/stylesheets/screen.css.scss */
 .static h1 {
   font-family: "Quicksand";
   font-size: 80px;
@@ -1492,12 +1465,12 @@ a.light:hover {
   text-shadow: 0 1px 0 white;
 }
 
-/* line 969, ../../app/assets/stylesheets/screen.css.scss */
+/* line 949, ../../app/assets/stylesheets/screen.css.scss */
 .legal .sections {
   display: table;
   width: 100%;
 }
-/* line 972, ../../app/assets/stylesheets/screen.css.scss */
+/* line 952, ../../app/assets/stylesheets/screen.css.scss */
 .legal .sections .item {
   float: left;
   width: 49.5%;
@@ -1517,62 +1490,62 @@ a.light:hover {
   -o-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
-/* line 982, ../../app/assets/stylesheets/screen.css.scss */
+/* line 962, ../../app/assets/stylesheets/screen.css.scss */
 .legal .sections .item:first-child {
   margin-left: 0;
 }
-/* line 985, ../../app/assets/stylesheets/screen.css.scss */
+/* line 965, ../../app/assets/stylesheets/screen.css.scss */
 .legal .sections .item.active {
   background-color: #222;
   color: #eee;
 }
-/* line 988, ../../app/assets/stylesheets/screen.css.scss */
+/* line 968, ../../app/assets/stylesheets/screen.css.scss */
 .legal .sections .item.active:hover {
   background-color: #222;
   color: #eee;
 }
-/* line 993, ../../app/assets/stylesheets/screen.css.scss */
+/* line 973, ../../app/assets/stylesheets/screen.css.scss */
 .legal .sections .item:hover {
   cursor: pointer;
   background-color: #ddd;
 }
-/* line 999, ../../app/assets/stylesheets/screen.css.scss */
+/* line 979, ../../app/assets/stylesheets/screen.css.scss */
 .legal .content {
   display: none;
 }
-/* line 1001, ../../app/assets/stylesheets/screen.css.scss */
+/* line 981, ../../app/assets/stylesheets/screen.css.scss */
 .legal .content h2 {
   font-family: "ProximaNovaSemiBold";
   color: #333;
   font-size: 30px;
   margin: 40px;
 }
-/* line 1007, ../../app/assets/stylesheets/screen.css.scss */
+/* line 987, ../../app/assets/stylesheets/screen.css.scss */
 .legal .content h3 {
   margin: 40px;
   color: #444;
 }
-/* line 1011, ../../app/assets/stylesheets/screen.css.scss */
+/* line 991, ../../app/assets/stylesheets/screen.css.scss */
 .legal .content p {
   margin-bottom: 30px;
 }
-/* line 1015, ../../app/assets/stylesheets/screen.css.scss */
+/* line 995, ../../app/assets/stylesheets/screen.css.scss */
 .legal .content table {
   width: 100%;
   margin-bottom: 10px;
 }
-/* line 1018, ../../app/assets/stylesheets/screen.css.scss */
+/* line 998, ../../app/assets/stylesheets/screen.css.scss */
 .legal .content table tr th, .legal .content table tr td {
   border: 1px solid #aaa;
   padding: 20px;
   width: 25%;
 }
-/* line 1022, ../../app/assets/stylesheets/screen.css.scss */
+/* line 1002, ../../app/assets/stylesheets/screen.css.scss */
 .legal .content table tr th:last-child, .legal .content table tr td:last-child {
   font-weight: bold;
   color: #444;
 }
-/* line 1027, ../../app/assets/stylesheets/screen.css.scss */
+/* line 1007, ../../app/assets/stylesheets/screen.css.scss */
 .legal .content table tr:first-child th {
   font-weight: bold;
 }

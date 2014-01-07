@@ -12,9 +12,10 @@
 <body>
 
 <div class="header">
+  <div class="backwash"></div>
   <div class="container">
     <div class="right-links">
-      <%= link_to "MY ACCOUNT", user_root_path, :class => "light" %>
+      <%= link_to "SIGN IN", user_root_path, :class => "light" %>
       <% if current_user %>
         <%= link_to "LOGOUT", destroy_user_session_path, :method => "DELETE", :class => "light" %>
       <% end %>
@@ -29,6 +30,12 @@
 <% end %>
 
 <%= yield %>
+
+<div class="footer">
+  <div class="content">
+    <%= link_to "LEGAL", legal_path, :class => "light" %>
+  </div>
+</div>
 
 </body>
 </html>
