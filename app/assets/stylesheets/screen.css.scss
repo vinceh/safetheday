@@ -157,17 +157,30 @@ a.light {
 }
 
 .header {
-  padding: 15px 0;
   border-bottom: 1px solid #aaa;
   position: absolute;
   top: 0;
   width: 100%;
   z-index: 999;
+  height: 47px;
+  a {
+    position: relative;
+    top: 9px;
+    img {
+      height: 30px;
+      opacity: 0.6;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
   a {
     font-size: 13px;
   }
   .right-links {
     float: right;
+    position: relative;
+    top: 7px;
     a {
       margin-left: 30px;
     }
@@ -821,6 +834,7 @@ a.light {
   position: relative;
   width: 1120px;
   padding-bottom: 75px;
+  margin-top: 47px;
   .backwash {
     position: absolute;
     left: 0;
@@ -837,7 +851,7 @@ a.light {
       @include font-quicksand;
       color: #eee;
       text-align: center;
-      margin-top: 120px;
+      margin-top: 75px;
       font-size: 60px;
     }
     p {

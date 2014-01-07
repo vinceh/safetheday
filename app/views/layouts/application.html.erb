@@ -14,6 +14,9 @@
 <div class="header">
   <div class="backwash"></div>
   <div class="container">
+    <%= link_to root_url do %>
+      <%= image_tag "safesquarelogo.png" %>
+    <% end %>
     <div class="right-links">
       <%= link_to "ACCOUNT", user_root_path, :class => "light" %>
       <% if current_user %>

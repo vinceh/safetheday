@@ -37,11 +37,15 @@ mustache.png: mustache-1e806de110f64ba4aca20fbc95ca4b4a.png
 mustache/index.png: mustache-1e806de110f64ba4aca20fbc95ca4b4a.png
 rails.png: rails-a3386665c05a2d82f711a4aaa72d247c.png
 rails/index.png: rails-a3386665c05a2d82f711a4aaa72d247c.png
+safelogo.png: safelogo-0425e4b1d338dd2023ca26a900ee3e57.png
+safelogo/index.png: safelogo-0425e4b1d338dd2023ca26a900ee3e57.png
+safesquarelogo.png: safesquarelogo-220470eee05f9a843f64972b5e030975.png
+safesquarelogo/index.png: safesquarelogo-220470eee05f9a843f64972b5e030975.png
 square_bg.png: square_bg-0764c822233d662f34eea185adf44e9d.png
 square_bg/index.png: square_bg-0764c822233d662f34eea185adf44e9d.png
 application.js: application-d536b9c367f15cd30fa618dc466bfc89.js
 application/index.js: application-d536b9c367f15cd30fa618dc466bfc89.js
-application.css: application-34cdad55415fc2d9d3b78f8803d51eb4.css
-application/index.css: application-34cdad55415fc2d9d3b78f8803d51eb4.css
+application.css: application-a4c9a4d383c34a29eb6b8168074be1cd.css
+application/index.css: application-a4c9a4d383c34a29eb6b8168074be1cd.css
 jquery.min.map: jquery.min-6336c5bca4c709e809647cdfcb484d0a.map
 jquery/index.min.map: jquery.min-6336c5bca4c709e809647cdfcb484d0a.map
