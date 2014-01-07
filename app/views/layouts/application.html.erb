@@ -15,7 +15,7 @@
   <div class="backwash"></div>
   <div class="container">
     <div class="right-links">
-      <%= link_to "SIGN IN", user_root_path, :class => "light" %>
+      <%= link_to "ACCOUNT", user_root_path, :class => "light" %>
       <% if current_user %>
         <%= link_to "LOGOUT", destroy_user_session_path, :method => "DELETE", :class => "light" %>
       <% end %>

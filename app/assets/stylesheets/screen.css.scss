@@ -47,7 +47,7 @@ input[type="submit"], button, .btn {
   background-color: #333;
   @include font-semibold;
   color: #eee;
-  @include box-shadow(3px 3px 0 #888);
+  border: 1px solid #777;
   margin: 0;
   @include transition-property(background-color);
   @include transition-duration(0.3s);
@@ -56,11 +56,8 @@ input[type="submit"], button, .btn {
     background-color: #222;
   }
   &:active {
-    position: relative;
-    top: 1px;
-    left: 1px;
     background-color: #222;
-    @include box-shadow(2px 2px 0 #888);
+    @include box-shadow(inset 0 2px 1px #555);
   }
   &:disabled {
     color: #999;
@@ -143,17 +140,16 @@ h4 {
 }
 
 body {
-  padding-top: 47px;
   @include font-light;
   color: #777;
   background-color: #fcfcfc;
 }
 
 a.light {
-  color: #555;
+  color: #999;
   text-decoration: none;
   &:visited {
-    color: #777;
+    color: #999;
   }
   &:hover {
     text-decoration: underline;
@@ -162,7 +158,7 @@ a.light {
 
 .header {
   padding: 15px 0;
-  border-bottom: 1px solid #777;
+  border-bottom: 1px solid #aaa;
   position: absolute;
   top: 0;
   width: 100%;
@@ -179,10 +175,24 @@ a.light {
   .backwash {
     position: absolute;
     opacity: 0.1;
-    background-color: #aaa;
+    background-color: #bbb;
   }
   .container {
     position: relative;
+  }
+  .light {
+    color: #777;
+  }
+  &.dark {
+    border-bottom: 1px solid #aaa;
+    .backwash {
+      position: absolute;
+      opacity: 0.1;
+      background-color: black;
+    }
+    .light {
+      color: #aaa;
+    }
   }
 }
 
@@ -197,6 +207,15 @@ a.light {
   .light {
     color: #ccc;
   }
+}
+
+.landing {
+  height: 1000px;
+  background-image: url(https://d1a3f4spazzrp4.cloudfront.net/web-fresh/home/heros/home-hero-3-1440-900.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 .container {
@@ -818,7 +837,7 @@ a.light {
       @include font-quicksand;
       color: #eee;
       text-align: center;
-      margin-top: 75px;
+      margin-top: 120px;
       font-size: 60px;
     }
     p {
@@ -871,6 +890,7 @@ a.light {
       @include border-radius(5px);
       background-attachment: fixed;
       overflow: hidden;
+      margin: 15px;
       .backwash {
         background-color: white;
       }
@@ -958,7 +978,7 @@ a.light {
     @include font-quicksand;
     font-size: 80px;
     text-align: center;
-    margin: 75px 0;
+    margin: 120px 0 75px;
     color: #333;
     @include text-shadow(0 1px 0 white);
   }
