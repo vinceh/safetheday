@@ -45,7 +45,7 @@ square_bg.png: square_bg-0764c822233d662f34eea185adf44e9d.png
 square_bg/index.png: square_bg-0764c822233d662f34eea185adf44e9d.png
 application.js: application-d536b9c367f15cd30fa618dc466bfc89.js
 application/index.js: application-d536b9c367f15cd30fa618dc466bfc89.js
-application.css: application-a4c9a4d383c34a29eb6b8168074be1cd.css
-application/index.css: application-a4c9a4d383c34a29eb6b8168074be1cd.css
+application.css: application-8af79a586116a060a9a5d23081e82dcb.css
+application/index.css: application-8af79a586116a060a9a5d23081e82dcb.css
 jquery.min.map: jquery.min-6336c5bca4c709e809647cdfcb484d0a.map
 jquery/index.min.map: jquery.min-6336c5bca4c709e809647cdfcb484d0a.map

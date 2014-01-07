@@ -139,6 +139,18 @@ h4 {
   color: #333;
 }
 
+.body-wrap {
+  min-height:100%;
+  position:relative;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -50px;
+}
+
+html, body {
+  height: 100%;
+}
+
 body {
   @include font-light;
   color: #777;
