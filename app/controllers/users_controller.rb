@@ -13,7 +13,7 @@ class UsersController < ApplicationController
   end
 
   def history
-    @invoices = current_user.invoices.order('created_at DESC')
+    @invoices = current_user.invoices.order('created_at DESC').where("invoices.amount > 0")
   end
 
   def invoice

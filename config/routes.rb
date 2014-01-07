@@ -32,4 +32,6 @@ Safe::Application.routes.draw do
 
   # Stripe Webhook
   post 'stripe-event' => 'events#stripe_event'
+
+  get "legal" => "home#legal", :as => :legal
 end
