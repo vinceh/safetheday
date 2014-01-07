@@ -37,9 +37,11 @@ mustache.png: mustache-1e806de110f64ba4aca20fbc95ca4b4a.png
 mustache/index.png: mustache-1e806de110f64ba4aca20fbc95ca4b4a.png
 rails.png: rails-a3386665c05a2d82f711a4aaa72d247c.png
 rails/index.png: rails-a3386665c05a2d82f711a4aaa72d247c.png
+square_bg.png: square_bg-0764c822233d662f34eea185adf44e9d.png
+square_bg/index.png: square_bg-0764c822233d662f34eea185adf44e9d.png
 application.js: application-d536b9c367f15cd30fa618dc466bfc89.js
 application/index.js: application-d536b9c367f15cd30fa618dc466bfc89.js
-application.css: application-bbc530f81d114ce7812f60884ae12b7d.css
-application/index.css: application-bbc530f81d114ce7812f60884ae12b7d.css
+application.css: application-a03e7f4eaa0106020135a6d2ae285b2f.css
+application/index.css: application-a03e7f4eaa0106020135a6d2ae285b2f.css
 jquery.min.map: jquery.min-6336c5bca4c709e809647cdfcb484d0a.map
 jquery/index.min.map: jquery.min-6336c5bca4c709e809647cdfcb484d0a.map
