@@ -1,17 +1,16 @@
-<h2>Sign in</h2>
+<div class="registration">
+  <% if flash[:alert] %>
+    <div class="devise-error"><%= flash[:alert]%></div>
+  <% end %>
 
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+  <h2>Sign in</h2>
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+  <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+    <%= f.email_field :email, :autofocus => true, :placeholder => "You Email" %>
+    <%= f.password_field :password, :placeholder => "• • • • • • • • • •" %>
 
-  <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
-  <% end -%>
+    <div><%= f.submit "Sign in" %></div>
+  <% end %>
 
-  <div><%= f.submit "Sign in" %></div>
-<% end %>
-
-<%= render "users/shared/links" %>
+  <%= render "users/shared/links" %>
+</div>

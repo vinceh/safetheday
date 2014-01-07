@@ -18,9 +18,7 @@
       <%= image_tag "safesquarelogo.png" %>
     <% end %>
     <div class="right-links">
-      <% if current_user && current_user.stripe_customer_id %>
-        <%= link_to "ACCOUNT", user_root_path, :class => "light" %>
-      <% end %>
+      <%= link_to "ACCOUNT", user_root_path, :class => "light" %>
       <% if current_user %>
         <%= link_to "LOGOUT", destroy_user_session_path, :method => "DELETE", :class => "light" %>
       <% end%>

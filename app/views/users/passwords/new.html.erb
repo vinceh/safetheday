@@ -1,12 +1,14 @@
-<h2>Forgot your password?</h2>
 
-<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
-  <%= devise_error_messages! %>
+<div class="registration">
+  <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
+    <div class="devise-error"><%= devise_error_messages! %></div>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+    <h2>Forgot password?</h2>
 
-  <div><%= f.submit "Send me reset password instructions" %></div>
-<% end %>
+    <%= f.email_field :email, :autofocus => true, :placeholder => "Your Email" %>
 
-<%= render "users/shared/links" %>
+    <div><%= f.submit "Submit" %></div>
+  <% end %>
+
+  <%= render "users/shared/links" %>
+</div>
