@@ -1,7 +1,52 @@
 <div class="landing">
+  <div class="unit active" data-src="https://d1a3f4spazzrp4.cloudfront.net/web-fresh/home/heros/home-hero-5-1440-900.jpg">
+    <div class="content container">
+      <h1><div class="backwash"></div><span>THE OPPORTUNITY IS YOURS</span></h1> <br/>
+      <%= link_to "GET STARTED", select_pack_path %>
+    </div>
+  </div>
+  <div class="unit" data-src="https://d1a3f4spazzrp4.cloudfront.net/web-fresh/home/heros/home-hero-6-1440-900.jpg">
+    <div class="content container">
+      <h1><div class="backwash"></div><span>SEIZE THE MOMENT</span></h1> <br/>
+      <%= link_to "GET STARTED", select_pack_path %>
+    </div>
+  </div>
+  <div class="unit" data-src="https://d1a3f4spazzrp4.cloudfront.net/web-fresh/home/heros/home-hero-2-1440-900.jpg">
+    <div class="content container">
+      <h1><div class="backwash"></div><span>TAKE IT TO THE STARS</span></h1> <br/>
+      <%= link_to "GET STARTED", select_pack_path %>
+    </div>
+  </div>
 
+  <div class="landing-buttons">
+    <div class="selector active" data-target="0"></div>
+    <div class="selector" data-target="1"></div>
+    <div class="selector" data-target="2"></div>
+  </div>
 </div>
 
 <script type="text/javascript">
   $('.header').addClass('dark');
+
+  $('.unit').each(function() {
+    $(this).css('background-image', 'url("'+$(this).attr('data-src')+'")');
+  });
+
+  $('.selector').on('click', function() {
+    $origin = $('.unit.active');
+    $unit = $($('.unit').get(parseInt($(this).attr('data-target'))));
+    $unit.css('left', '100%');
+    $unit.addClass('transition');
+    $unit.animate({
+      'left': '0'
+    }, 400, function() {
+      $origin.removeClass('active');
+      $unit.removeClass('transition');
+      $unit.addClass('active');
+    });
+    $('.selector.active').removeClass('active');
+    $(this).addClass('active');
+
+
+  });
 </script>

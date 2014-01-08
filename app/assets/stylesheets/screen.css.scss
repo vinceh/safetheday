@@ -236,6 +236,7 @@ a.light {
   background-color: #161616;
   height: 50px;
   position: relative;
+  z-index: 999;
   .content {
     position: relative;
     top: 17px;
@@ -247,12 +248,96 @@ a.light {
 }
 
 .landing {
-  height: 1000px;
-  background-image: url(https://d1a3f4spazzrp4.cloudfront.net/web-fresh/home/heros/home-hero-3-1440-900.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  .landing-buttons {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    z-index: 999;
+    margin-left: -43px;
+    .selector {
+      background-color: $change;
+      margin-right: 20px;
+      width: 13px;
+      height: 13px;
+      @include inline-block;
+      @include border-radius(99px);
+      @include transition-property(background-color);
+      @include transition-duration(0.3s);
+      &:last-child {
+        margin-right: 0;
+      }
+      &:hover {
+        cursor: pointer;
+        background-color: $change-dark;
+      }
+      &.active {
+        background-color: white;
+        &:hover {
+          cursor: default;
+          background-color: white;
+        }
+      }
+    }
+  }
+  .unit {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: 10;
+    &.transition {
+      z-index: 12;
+    }
+    &.active {
+      z-index: 11;
+    }
+    .content {
+      text-align: left;
+      position: relative;
+      top: 50%;
+      h1 {
+        @include font-quicksand;
+        font-size: 50px;
+        color: white;
+        margin-bottom: 30px;
+        position: relative;
+        display: inline-block;
+        padding: 10px 15px;
+        .backwash {
+          position: absolute;
+          opacity: 0.35;
+        }
+        span {
+          position: relative;
+        }
+      }
+      a {
+        padding: 10px 15px;
+        font-size: 20px;
+        background-color: $change;
+        color: white;
+        @include transition-property(background-color);
+        @include transition-duration(0.3s);
+        &:hover {
+          background-color: $change-dark;
+          color: white;
+        }
+      }
+    }
+  }
 }
 
 .container {
