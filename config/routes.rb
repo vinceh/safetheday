@@ -30,8 +30,10 @@ Safe::Application.routes.draw do
   get "checkout" => "payments#checkout", :as => :checkout
   post "checkout" => "payments#checkout", :as => :customer_payment
 
+  # static
+  get "legal" => "home#legal", :as => :legal
+  get "faq" => "home#faq", :as => :faq
+
   # Stripe Webhook
   post 'stripe-event' => 'events#stripe_event'
-
-  get "legal" => "home#legal", :as => :legal
 end

@@ -31,7 +31,7 @@
         <div class="option">
           <% if current_user.is_monthly? %>
             <p>
-              Want more condoms?  Get a delivery every 2 weeks!
+              Need more? Good for you! Get your box delivered every 2 weeks.
             </p>
             <%= link_to change_interval_path, :method => "POST", :class => "btn change" do %>
               get delivery <br/> every 2 weeks
@@ -48,7 +48,7 @@
         <div class="option">
           <% if current_user.subscription.shorthand == 'jour' %>
             <p>
-              Want super thin luxury condoms? Upgrade to <span class="italic">The Adventurer</span>, $17/mo
+              Do you seek the ultimate pleasure? Upgrade to <span class="italic">The Adventurer</span>, $17/mo
             </p>
             <%= link_to change_subscription_path(sub: 'adv'), :method => "POST", :class => "btn change" do %>
               switch to <br/> The Adventurer
@@ -69,8 +69,8 @@
       </a>
 
       <div class="danger">
-        <h3>Danger Zone!</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel dictum quam. Donec tincidunt lacus vitae elementum varius. </p>
+        <h3>Hold that thought.</h3>
+        <p>Buying condoms suck. But not getting laid suck even more. We understand why you have to go, but hope to see you back soon! </p>
         <a class="btn cancel">
           Cancel Subscription
         </a>

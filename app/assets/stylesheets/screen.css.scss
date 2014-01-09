@@ -237,6 +237,17 @@ a.light {
   height: 50px;
   position: relative;
   z-index: 999;
+  span {
+    font-size: 25px;
+    background-color: #ddd;
+    @include border-radius(5px);
+    height: 3px;
+    width: 3px;
+    margin: 0 3px 0 2px;
+    @include inline-block;
+    position: relative;
+    bottom: 1px;
+  }
   .content {
     position: relative;
     top: 17px;
@@ -259,7 +270,7 @@ a.light {
     bottom: 100px;
     left: 50%;
     z-index: 999;
-    margin-left: -43px;
+    margin-left: -40px;
     .selector {
       background-color: $change;
       margin-right: 20px;
@@ -1111,6 +1122,25 @@ a.light {
     color: #333;
     @include text-shadow(0 1px 0 white);
   }
+  .content {
+    h2 {
+      @include font-semibold;
+      color: #333;
+      font-size: 30px;
+      margin: 40px 0 40px 0;
+    }
+  }
+}
+
+.faq {
+  h3 {
+    @include font-regular;
+    color: #444;
+    font-size: 20px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+  margin-bottom: 100px;
 }
 
 .legal {
@@ -1146,12 +1176,6 @@ a.light {
   }
   .content {
     display: none;
-    h2 {
-      @include font-semibold;
-      color: #333;
-      font-size: 30px;
-      margin: 40px;
-    }
     h3 {
       margin: 40px;
       color: #444;
