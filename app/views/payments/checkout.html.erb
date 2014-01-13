@@ -94,7 +94,7 @@
 
     <div class="payment-errors"></div>
 
-    <input type="text" size="20" data-stripe="number" placeholder="Card Number" name="card-number" required/>
+    <input class="card-number" type="text" size="20" data-stripe="number" placeholder="Card Number" name="card-number" required/>
     <div class="field-help">The 16 digits on the front of the card</div>
 
     <div class="form-row credit-date">
@@ -119,7 +119,7 @@
   </div>
 
   <input type="text" size="4" data-stripe="cvc" placeholder="CVC Code" class="cvc" name="cvc-code" required/>
-  <div class="field-help">Last 3 digits on back of card</div>
+  <div class="field-help" class="cvc">Last 3 digits on back of card</div>
 
   <h3>Billing Information</h3>
   <%= f.text_field :billing_first_name, :placeholder => "First Name", :required => true, :class => "billing-first"  %>
@@ -172,5 +172,10 @@
     else {
       $('.shipping-info').show();
     }
+  });
+
+  $(window).load(function() {
+    $('.card-number').payment('formatCardNumber');
+    $('.cvc').payment('formatCardCVC');
   });
 </script>

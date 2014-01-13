@@ -27,6 +27,8 @@ corners.png: corners-dfd691bfb7471c48d4f346a3b0b7b805.png
 corners/index.png: corners-dfd691bfb7471c48d4f346a3b0b7b805.png
 cube.png: cube-4115f84354929c4279f605179835d7e4.png
 cube/index.png: cube-4115f84354929c4279f605179835d7e4.png
+facebook-icon.png: facebook-icon-89aeed8f8f562daa1b3d2e61bed40557.png
+facebook-icon/index.png: facebook-icon-89aeed8f8f562daa1b3d2e61bed40557.png
 grayvintage.png: grayvintage-93fd03f40a02e9699271416d26951a6a.png
 grayvintage/index.png: grayvintage-93fd03f40a02e9699271416d26951a6a.png
 greyback.png: greyback-4eca031d6a11d41fb304ae8408015b60.png
@@ -37,6 +39,8 @@ lock.png: lock-2c8da4dd187b7e78da72428b8979cafc.png
 lock/index.png: lock-2c8da4dd187b7e78da72428b8979cafc.png
 logo_with_text.png: logo_with_text-1e7dbad66ea17720ddfc1fddab4aa33f.png
 logo_with_text/index.png: logo_with_text-1e7dbad66ea17720ddfc1fddab4aa33f.png
+mail-icon.png: mail-icon-3cf80ef1769b185db33b3ed156ac07f2.png
+mail-icon/index.png: mail-icon-3cf80ef1769b185db33b3ed156ac07f2.png
 mustache.png: mustache-1e806de110f64ba4aca20fbc95ca4b4a.png
 mustache/index.png: mustache-1e806de110f64ba4aca20fbc95ca4b4a.png
 pattern.png: pattern-f3c1acc627169c2fc1c63e97bcfda4ba.png
@@ -49,9 +53,11 @@ safesquarelogo.png: safesquarelogo-220470eee05f9a843f64972b5e030975.png
 safesquarelogo/index.png: safesquarelogo-220470eee05f9a843f64972b5e030975.png
 square_bg.png: square_bg-0764c822233d662f34eea185adf44e9d.png
 square_bg/index.png: square_bg-0764c822233d662f34eea185adf44e9d.png
+twitter-icon.png: twitter-icon-9a323404f003f14d93f0fdb9f8773887.png
+twitter-icon/index.png: twitter-icon-9a323404f003f14d93f0fdb9f8773887.png
 application.js: application-d536b9c367f15cd30fa618dc466bfc89.js
 application/index.js: application-d536b9c367f15cd30fa618dc466bfc89.js
-application.css: application-98a214fd24256e8274cc8b9254b89dc0.css
-application/index.css: application-98a214fd24256e8274cc8b9254b89dc0.css
+application.css: application-0de181c7459a5ac8a2433119383c2a14.css
+application/index.css: application-0de181c7459a5ac8a2433119383c2a14.css
 jquery.min.map: jquery.min-6336c5bca4c709e809647cdfcb484d0a.map
 jquery/index.min.map: jquery.min-6336c5bca4c709e809647cdfcb484d0a.map

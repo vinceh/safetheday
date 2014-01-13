@@ -6,11 +6,12 @@ class AdminsController < ApplicationController
   before_filter :authenticate_admin!
 
   def pending_shipments
-    @invoices = Invoice.where(:shipped_on => nil).where("amount > 0").order("created_at ASC")
+    @invoices = Invoice.where(:shipped_on => nil).where("amount > 0 or free_month = true").order("created_at ASC")
   end
 
   def shipped_subscription
     @invoices = Invoice.where("invoices.shipped_on IS NOT NULL").where("amount > 0").order("shipped_on DESC")
+    @invoices << Invoice.where("invoices.shipped_on IS NOT NULL").where(:free_month => true).order("created_at DESC")
   end
 
   def get_labels

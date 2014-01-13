@@ -92,6 +92,8 @@ input, select {
   outline: none;
   font-size: 16px;
   color: #333;
+  @include transition-property(background-color, border);
+  @include transition-duration(0.3s);
   &[type='text'], &[type='email'], &[type='password'] {
     margin: 0;
     padding: 10px;
@@ -1252,6 +1254,126 @@ a.light {
     margin-top: 8px;
     &:first-child {
       margin-top: 0;
+    }
+  }
+}
+
+
+.free-meter {
+  border: 1px solid #aaa;
+  background-color: white;
+  display: table;
+  width: 100%;
+  @include box-sizing(border-box);
+  padding: 30px;
+  .free-content {
+    float: left;
+    h3 {
+      width: 170px;
+      text-align: center;
+      @include font-quicksand;
+      margin-top: 10px;
+      span {
+        display: block;
+        font-size: 100px;
+        @include font-semibold;
+        margin-bottom: 10px;
+        color: #111;
+      }
+      font-size: 20px;
+    }
+  }
+  .free-wrapper {
+    width: 100%;
+    float: right;
+    width: 395px;
+  }
+  .small-safe {
+    width: 75px;
+    height: 28px;
+    float: left;
+    @include border-radius(2px);
+    margin-right: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+    &:nth-child(5n) {
+      margin-right: 0;
+    }
+    img {
+      margin-top: 6px;
+      height: 15px;
+      opacity: 0.2;
+    }
+  }
+  .black-safe {
+    background-color: #333;
+  }
+  .grey-safe {
+    background-color: #eee;
+  }
+}
+
+.referral-content-wrap {
+  margin-top: 50px;
+  p {
+    margin-top: 30px;
+  }
+  input {
+    margin-top: 30px;
+    width: 100%;
+    @include box-sizing(border-box);
+    background-color: #eee;
+    color: #555;
+  }
+}
+
+.share-wrap {
+  margin-top: 30px;
+  display: table;
+  width: 100%;
+  a {
+    display: block;
+    margin-right: 3%;
+    float: left;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  .share-box {
+    padding: 15px;
+    border: 1px solid #ddd;
+    width: 206px;
+    color: #666;
+    @include box-sizing(border-box);
+    text-align: center;
+    @include transition-property(background-color, border);
+    @include transition-duration(0.3s);
+    height: 65px;
+    &:hover {
+      background-color: white;
+      border: 1px solid #aaa;
+    }
+    img {
+      height: 30px;
+      margin-right: 10px;
+    }
+    span {
+      position: relative;
+      bottom: 8px;
+    }
+    &.facebook-share img {
+      margin-right: 3px;
+    }
+    &.mail-share {
+      img {
+        height: 20px;
+        line-height: 30px;
+        position: relative;
+        top: 5px;
+      }
+      span {
+        bottom: 0;
+      }
     }
   }
 }

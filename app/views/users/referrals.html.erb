@@ -1,0 +1,62 @@
+<div class="container">
+  <%= render "account_side", :current => "referral" %>
+  <div class="right-panel">
+    <div class="free-meter">
+      <div class="free-content">
+        <h3>
+          <span><%= @user.total_free_months %></span>
+          FREE MONTHS
+        </h3>
+      </div>
+      <div class="free-wrapper">
+        <% @user.total_free_months.times do %>
+          <div class="black-safe small-safe">
+            <%= image_tag "safesquarelogo.png" %>
+          </div>
+        <% end %>
+        <% (25-@user.total_free_months).times do %>
+          <div class="grey-safe small-safe">
+            <%= image_tag "safesquarelogo.png" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="referral-content-wrap">
+      <h3>Earn more free months</h3>
+      <p>
+       Share Safe with your friends. Every time a friend becomes a member, we credit your account with a free month. Click below to share your custom referral link.
+      </p>
+      <div class="share-wrap">
+        <a target="_blank" href="https://www.facebook.com/sharer.php?s=100&p[title]=I%20joined%20Safe.%20You%20should%20too.&p[summary]=Let%27s%20face%20it%2C%20buying%20these%20things%20are%20super%20awkward.%20%20Let%20me%20save%20you%20the%20trouble.&p[url]=<%= u "#{request.protocol}#{request.host_with_port}#{select_pack_path}?ref=#{@user.referral_code}"%>&p[images][0]=http%3A%2F%2Fi3.ytimg.com%2Fvi%2FZUG9qYTJMsI%2Fhqdefault.jpg">
+          <div class="share-box facebook-share">
+            <%= image_tag "facebook-icon.png" %>
+            <span>share</span>
+          </div>
+        </a>
+        <a target="_blank" href="https://twitter.com/intent/tweet?text=Buying%20condoms%20are%20awkward%2C%20let%20me%20help%20you%3A%20<%= u "#{request.protocol}#{request.host_with_port}#{select_pack_path}?ref=#{@user.referral_code}"%>%20Join%20me.%20%40SafeTheDay&lang=en">
+          <div class="share-box">
+            <%= image_tag "twitter-icon.png" %>
+            <span>tweet</span>
+          </div>
+        </a>
+        <a target="_blank" href="mailto:?subject=SafeTheDay&body=Dear%20Friend%2C%0A%0ABuying%20condoms%20are%20the%20worst%2C%20and%20you%20know%20it.%20I%20joined%20Safe%20and%20saved%20myself%20those%20awkward%20moments.%20%20Let%20me%20make%20it%20easier%20for%20you%3A%20<%= u "#{request.protocol}#{request.host_with_port}#{select_pack_path}?ref=#{@user.referral_code}"%>.%20Join%20me.%0A%0AThanks!">
+          <div class="share-box mail-share">
+            <%= image_tag "mail-icon.png" %>
+            <span>email</span>
+          </div>
+        </a>
+      </div>
+      <p>
+       Or copy and paste this link wherever your friends will see it:
+      </p>
+      <input class="referral-text" type="text" readonly="readonly" value="<%= "#{request.protocol}#{request.host_with_port}#{select_pack_path}" %>?ref=<%= @user.referral_code %>">
+      <script type="text/javascript">
+        $('.referral-text').on('click', function() {
+          this.select();
+        });
+      </script>
+    </div>
+  </div>
+</div>
+

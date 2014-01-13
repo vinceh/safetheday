@@ -17,6 +17,16 @@ class PaymentsController < ApplicationController
       else
         redirect_to root_url
       end
+
+      if session[:referral] && Time.now <= Time.at(session[:referral_timeout])
+        referrer = User.find_by_referral_code(session[:referral])
+        referrer.give_free_month
+
+        UserMailer.free_month(referrer, @user)
+
+        session[:referral] = nil
+        session[:referral_timeout] = nil
+      end
     end
   end
 end

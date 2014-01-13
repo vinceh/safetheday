@@ -19,7 +19,13 @@
             Next bill date: <span class="bold"><%= (Time.at(@stripe_customer.subscription.current_period_end)+1.day).strftime("%b %d, %Y") %></span>
           </p>
           <p class="line-item">
-            Amount: <span class="bold"><%= "$"+display_fee(@sub.fee)+@sub.currency %></span>
+            Amount: <span class="bold">
+            <% if @stripe_customer.discount %>
+              FREE
+            <% else %>
+              <%= "$"+display_fee(@sub.fee)+@sub.currency %>
+            <% end %>
+          </span>
           </p>
         </div>
       </div>

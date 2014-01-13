@@ -82,4 +82,8 @@ class UsersController < ApplicationController
     flash[:notice] = "Subscription updated!  You will receive a box every #{region_sub.interval_words}"
     redirect_to :action => :account
   end
+
+  def referrals
+    @user = current_user
+  end
 end

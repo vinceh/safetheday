@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140102213701) do
+ActiveRecord::Schema.define(:version => 20140111083515) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",               :default => "", :null => false
@@ -42,11 +42,12 @@ ActiveRecord::Schema.define(:version => 20140102213701) do
     t.string   "stripe_charge_id"
     t.integer  "amount"
     t.integer  "stripe_fee"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.datetime "created_at",                           :null => false
+    t.datetime "updated_at",                           :null => false
     t.datetime "shipped_on"
     t.string   "subscription_id"
     t.string   "currency"
+    t.boolean  "free_month",        :default => false
   end
 
   create_table "regional_subscriptions", :force => true do |t|
@@ -114,6 +115,10 @@ ActiveRecord::Schema.define(:version => 20140102213701) do
     t.string   "card_last_four"
     t.string   "card_type"
     t.integer  "regional_subscription_id"
+    t.integer  "total_free_months",        :default => 0
+    t.integer  "current_free_months",      :default => 0
+    t.string   "referral_code"
+    t.boolean  "inactive",                 :default => false
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

@@ -13,6 +13,8 @@ class User < ActiveRecord::Base
                   :subscription_id, :shipping_first_name, :shipping_last_name, :shipping_address_one, :shipping_city,
                   :shipping_state, :shipping_country, :shipping_zipcode, :shipping_phone, :billing_address_two, :shipping_address_two
 
+  before_create :create_referral_code
+
   def create_subscription(subscription, stripe_token)
     self.regional_subscription = RegionalSubscription
                                     .where(state: billing_state,
@@ -88,7 +90,8 @@ class User < ActiveRecord::Base
   end
 
   def unsubscribe
-    self.regional_subscription_id = nil
+    self.inactive = true
+    self.referral_code = nil
     if save!
       cu = Stripe::Customer.retrieve(stripe_customer_id)
       cu.cancel_subscription
@@ -123,6 +126,40 @@ class User < ActiveRecord::Base
       return self.regional_subscription
     rescue Stripe::CardError => e
       nil
+    end
+  end
+
+  def give_free_month
+    # total amount of free months this user has earned
+    self.total_free_months = self.total_free_months + 1
+
+    # attempt to add a free month via Stripe coupon
+    # if user already has a coupon, add it to the current_free_months
+    if !add_stripe_free_month
+      self.current_free_months = self.current_free_months + 1
+    end
+
+    save!
+  end
+
+  def add_stripe_free_month
+    customer = Stripe::Customer.retrieve(self.stripe_customer_id)
+
+    if !customer.discount
+      customer.coupon = "free_month"
+      customer.save
+      return true
+    else
+      return false
+    end
+  end
+
+  protected
+
+  def create_referral_code
+    self.referral_code = loop do
+      random_token = SecureRandom.urlsafe_base64(nil, false)
+      break random_token unless User.exists?(referral_code: random_token)
     end
   end
 end

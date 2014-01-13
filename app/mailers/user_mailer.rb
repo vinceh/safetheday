@@ -12,4 +12,10 @@ class UserMailer < ActionMailer::Base
     @invoice = invoice
     mail(:to => @user.email, :subject => "Your Safe Subscription")
   end
+
+  def free_month(referrer, friend)
+    @referrer = referrer
+    @friend = friend
+    mail(:to => @referrer.email, :subject => "Good on Ya")
+  end
 end
