@@ -1,7 +1,7 @@
 <div class="container">
   <%= render "account_side", :current => "current" %>
   <div class="right-panel">
-    <% if current_user.regional_subscription %>
+    <% if !current_user.inactive %>
       <h3>
         Current Subscription
       </h3>

@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   before_filter :authenticate_user!
   before_filter :check_new
+  before_filter :check_active, :except => [:account, :history, :invoice]
 
   def account
     if current_user.regional_subscription

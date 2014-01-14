@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
   end
 
   def select_pack
-    if current_user.regional_subscription
+    if current_user.regional_subscription && !current_user.inactive
       redirect_to user_root_path
     elsif !session[:cart]
       redirect_to select_pack_path
@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
   end
 
   def no_sub
-    if current_user && current_user.regional_subscription
+    if current_user && !current_user.inactive
       redirect_to user_root_path
     end
   end
@@ -30,6 +30,12 @@ class ApplicationController < ActionController::Base
   def check_new
     if !current_user.stripe_customer_id
       redirect_to select_pack_path
+    end
+  end
+
+  def check_active
+    if current_user.inactive
+      redirect_to user_root_path
     end
   end
 end
