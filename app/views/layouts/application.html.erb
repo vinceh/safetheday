@@ -25,7 +25,7 @@
         <%= link_to "LOGOUT", destroy_user_session_path, :method => "DELETE", :class => "light" %>
       <% end%>
 
-      <% if !current_user || !current_user.regional_subscription %>
+      <% if !current_user || current_user.inactive %>
         <%= link_to "START", select_pack_path, :class => "light special-select" %>
       <% end %>
     </div>

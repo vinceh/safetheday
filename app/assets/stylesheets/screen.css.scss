@@ -1377,3 +1377,25 @@ a.light {
     }
   }
 }
+
+.restart-wrap {
+  border: 1px solid #aaa;
+  background-color: white;
+  .restart-inner {
+    margin: 5px;
+    border: 1px dashed #ddd ;
+    height: 200px;
+    text-align: center;
+    h3 {
+      margin-top: 55px;
+    }
+    p {
+      margin-top: 10px;
+    }
+    a {
+      @include inline-block;
+      margin-top: 15px;
+      padding: 5px 10px;
+    }
+  }
+}
