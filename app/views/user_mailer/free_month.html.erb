@@ -1,0 +1,66 @@
+<div style="background: #fff; width: 600px; margin: 0 auto 0 auto; border: 1px solid #bbb; padding-bottom: 50px;">
+  <div style="text-align: center; margin-top: 30px;">
+    <img src="https://s3.amazonaws.com/safetheday/mailer/logowords.png" style="width: 90px;">
+  </div>
+
+  <div style="width: 410px; margin: 0 auto 0 auto; margin-top: 30px;">
+    <img src="https://s3.amazonaws.com/safetheday/mailer/free-banner.jpg">
+  </div>
+
+  <p style="width: 410px; margin: 0 auto 0 auto; color: #777; font-size: 15px; line-height: 1.4em; margin-top: 30px;">
+    Your friend <%= @friend.full_name %> has subscribed through your referral, earning you <span style="font-weight: bold">1 free month</span> of Safe.
+  </p>
+
+  <div style="width: 410px; margin: 0 auto 0 auto;">
+    <div style="margin-top: 30px;">
+      <h3 style="font-weight: bold; font-size: 15px; margin: 0; color: #333;">
+        Earn More Free Months
+      </h3>
+
+      <p style="margin-top: 20px; color: #777; font-size: 15px; line-height: 1.4em;">
+        Click below to share your custom referral link for more free months.
+      </p>
+
+      <table>
+        <tr>
+          <td style="vertical-align: baseline; width: 123px; text-align: center; padding-right: 15px;">
+            <a target="_blank" style="padding: 10px; color: #777 !important; text-decoration: none; font-size: 15px; display: block; border: 1px solid #ddd;" href="https://www.facebook.com/sharer.php?s=100&p[title]=I%20joined%20Safe.%20You%20should%20too.&p[summary]=Let%27s%20face%20it%2C%20buying%20these%20things%20are%20super%20awkward.%20%20Let%20me%20save%20you%20the%20trouble.&p[url]=<%= u "#{@request.protocol}#{@request.host_with_port}#{select_pack_path}?ref=#{@user.referral_code}"%>&p[images][0]=http%3A%2F%2Fi3.ytimg.com%2Fvi%2FZUG9qYTJMsI%2Fhqdefault.jpg">
+              <img style="vertical-align: middle;" src="https://s3.amazonaws.com/safetheday/mailer/facebookicon.png" >
+              share
+            </a>
+          </td>
+          <td style="vertical-align: baseline; width: 123px; text-align: center; padding-right: 15px;">
+            <a target="_blank" style="padding: 10px; color: #777 !important; text-decoration: none; font-size: 15px; display: block; border: 1px solid #ddd;" href="https://twitter.com/intent/tweet?text=Buying%20condoms%20are%20awkward%2C%20let%20me%20help%20you%3A%20<%= u "#{@request.protocol}#{@request.host_with_port}#{select_pack_path}?ref=#{@user.referral_code}"%>%20Join%20me.%20%40SafeTheDay&lang=en">
+              <img style="vertical-align: middle; margin-right: 5px;" src="https://s3.amazonaws.com/safetheday/mailer/twittericon.png" >
+              share
+            </a>
+          </td>
+          <td style="vertical-align: baseline; width: 123px; text-align: center;">
+            <a target="_blank" style="padding: 10px; color: #777 !important; text-decoration: none; font-size: 15px; display: block; border: 1px solid #ddd;" href="mailto:?subject=SafeTheDay&body=Dear%20Friend%2C%0A%0ABuying%20condoms%20are%20the%20worst%2C%20and%20you%20know%20it.%20I%20joined%20Safe%20and%20saved%20myself%20those%20awkward%20moments.%20%20Let%20me%20make%20it%20easier%20for%20you%3A%20<%= u "#{@request.protocol}#{@request.host_with_port}#{select_pack_path}?ref=#{@user.referral_code}"%>.%20Join%20me.%0A%0AThanks!">
+              <img style="vertical-align: middle; margin-right: 5px;" src="https://s3.amazonaws.com/safetheday/mailer/mailicon2.png" >
+              share
+            </a>
+          </td>
+        </tr>
+      </table>
+
+      <p style="margin: 0; margin-top: 20px; color: #777; font-size: 15px; line-height: 1.4em;">
+        Or copy and paste this link wherever your friends will see it
+      </p>
+      <input type="text" readonly="readonly" style="margin-top: 30px; width: 390px; background-color: #eee; color: #555; border: 1px solid #ddd;
+        padding: 8px; margin-top: 20px;" value="<%= "#{@request.protocol}#{@request.host_with_port}#{select_pack_path}" %>?ref=<%= @user.referral_code %>">
+
+      <h3 style="font-weight: bold; font-size: 15px; margin: 0; margin-top: 30px; color: #333;">
+        Remember
+      </h3>
+
+      <p style="margin: 0; margin-top: 20px; color: #777; font-size: 15px; line-height: 1.4em;">
+        You can change your plan, mailing address, billing info, or view invoices anytime at SafeTheDay.com
+      </p>
+
+      <p style="margin: 0; margin-top: 15px; color: #777; font-size: 15px; line-height: 1.4em;">
+        Follow us on Facebook & Twitter to stay updated with new Safe products!
+      </p>
+    </div>
+  </div>
+</div>

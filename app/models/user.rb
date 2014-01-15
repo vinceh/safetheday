@@ -154,6 +154,14 @@ class User < ActiveRecord::Base
     end
   end
 
+  def full_name
+    if self.shipping_same
+      self.billing_first_name + " " + self.billing_last_name
+    else
+      self.shipping_first_name + " " + self.shipping_last_name
+    end
+  end
+
   protected
 
   def create_referral_code
