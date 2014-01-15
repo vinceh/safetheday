@@ -22,8 +22,6 @@ class PaymentsController < ApplicationController
         referrer = User.find_by_referral_code(session[:referral])
         referrer.give_free_month
 
-        UserMailer.free_month(referrer, @user)
-
         session[:referral] = nil
         session[:referral_timeout] = nil
       end

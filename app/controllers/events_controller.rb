@@ -32,8 +32,6 @@ class EventsController < ApplicationController
             end
             ch.metadata = meta
             ch.save
-
-            UserMailer.invoice(user, invoice).deliver
           else
             invoice.free_month = true
             invoice.save!
@@ -48,6 +46,10 @@ class EventsController < ApplicationController
           invoice = Invoice.find_by_stripe_charge_id(response.id)
           invoice.stripe_fee = response.fee
           invoice.save!
+        when 'customer.subscription.created'
+          response = event.data.object
+          user = User.find_by_stripe_customer_id(response.customer)
+          UserMailer.subscribed(user, request).deliver
       end
     end
 
