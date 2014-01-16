@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140111083515) do
+ActiveRecord::Schema.define(:version => 20140116052009) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",               :default => "", :null => false
@@ -118,7 +118,9 @@ ActiveRecord::Schema.define(:version => 20140111083515) do
     t.integer  "total_free_months",        :default => 0
     t.integer  "current_free_months",      :default => 0
     t.string   "referral_code"
-    t.boolean  "inactive",                 :default => false
+    t.boolean  "inactive",                 :default => true
+    t.string   "provider"
+    t.string   "uid"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

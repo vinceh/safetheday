@@ -3,5 +3,5 @@
   <%= (link_to "Refer Friends", user_referrals_path, :class => "item #{'active' if (current == 'referral')}") if !current_user.inactive %>
   <%= link_to "Payment/Shipment History", user_history_path, :class => "item #{'active' if current == 'history'}" %>
   <%= (link_to "Payment and Shipping", user_payment_path, :class => "item #{'active' if (current == 'address')}") if !current_user.inactive %>
-  <%= link_to "Account Settings", edit_user_registration_path, :class => "item #{'active' if current == 'settings'}" %>
+  <%= (link_to "Account Settings", edit_user_registration_path, :class => "item #{'active' if current == 'settings'}") if !current_user.provider %>
 </div>

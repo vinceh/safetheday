@@ -38,4 +38,10 @@ class ApplicationController < ActionController::Base
       redirect_to user_root_path
     end
   end
+
+  def check_omni
+    if current_user.provider
+      redirect_to user_root_path
+    end
+  end
 end

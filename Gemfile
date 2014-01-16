@@ -8,6 +8,7 @@ gem 'rails', '3.2.13'
 
 gem 'pg'
 gem 'devise', '~> 2.2.4'
+gem 'omniauth-facebook'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'spreadsheet'
 
@@ -26,6 +27,7 @@ end
 
 group :development do
   gem "better_errors"
+  gem 'certified'
 end
 
 gem 'jquery-rails'

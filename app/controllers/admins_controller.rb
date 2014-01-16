@@ -10,8 +10,8 @@ class AdminsController < ApplicationController
   end
 
   def shipped_subscription
-    @invoices = Invoice.where("invoices.shipped_on IS NOT NULL").where("amount > 0").order("shipped_on DESC")
-    @invoices << Invoice.where("invoices.shipped_on IS NOT NULL").where(:free_month => true).order("created_at DESC")
+    @invoices = Invoice.where("invoices.shipped_on IS NOT NULL").where("amount > 0").order("shipped_on DESC").all
+    @invoices.concat(Invoice.where("invoices.shipped_on IS NOT NULL").where(:free_month => true).order("created_at DESC").all)
   end
 
   def get_labels

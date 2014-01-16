@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :trackable, :validatable
+  devise :omniauthable, :omniauth_providers => [:facebook]
 
   attr_accessible :email, :password, :password_confirmation, :remember_me, :stripe_customer_id, :stripe_customer_id, :billing_first_name, :billing_last_name, :billing_address_one,
                   :billing_city, :billing_state, :billing_country, :billing_zipcode, :billing_phone, :shipping_same,
@@ -33,6 +34,7 @@ class User < ActiveRecord::Base
       token = Stripe::Token.retrieve(stripe_token)
       self.card_last_four = token.card.last4
       self.card_type = token.card.type
+      self.inactive = false
       save
 
       true
@@ -159,6 +161,26 @@ class User < ActiveRecord::Base
       self.billing_first_name + " " + self.billing_last_name
     else
       self.shipping_first_name + " " + self.shipping_last_name
+    end
+  end
+
+  def self.find_for_facebook_oauth(auth)
+    user = self.find_by_email(auth.info.email)
+
+    if !user
+      where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
+        user.provider = auth.provider
+        user.uid = auth.uid
+        user.email = auth.info.email
+        user.password = Devise.friendly_token[0,20]
+        user.save!
+      end
+    elsif user.provider && user.uid
+      return where(auth.slice(:provider, :uid)).first
+    else
+      user.provider = auth.provider
+      user.uid = auth.uid
+      user.save!
     end
   end
 

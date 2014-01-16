@@ -9,8 +9,8 @@ Safe::Application.routes.draw do
     get 'labels', :to => 'admins#get_labels', :as => :get_labels
   end
 
-  devise_for :users do
-    get 'account/settings', :to => 'devise/registrations#edit', :as => :edit_user_registration
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", :registrations => "users/registrations" } do
+    get 'account/settings', :to => 'users/registrations#edit', :as => :edit_user_registration
     get 'account', :to => 'users#account', :as => :user_root
     get 'account/referrals', :to => 'users#referrals', :as => :user_referrals
     get 'account/payment', :to => 'users#payment', :as => :user_payment

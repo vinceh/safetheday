@@ -5,3 +5,6 @@ GMAIL_USERNAME: 'c.tnecniv@gmail.com'
 GMAIL_PASSWORD: 'vincentchu1'
 journeyman: '12_ca'
 adventurer: '24_ca'
+
+FACEBOOK_APP_ID: '615208141847587'
+FACEBOOK_APP_SECRET: '069eb719ca78667782e291b19277b78a'
