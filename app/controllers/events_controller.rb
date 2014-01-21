@@ -22,6 +22,7 @@ class EventsController < ApplicationController
           invoice.stripe_charge_id = response.charge
           invoice.currency = response.currency
           invoice.subscription_id = response.lines.data[0].plan.id
+
           invoice.save!
 
           if !response.discount
@@ -41,11 +42,6 @@ class EventsController < ApplicationController
           user = User.find_by_stripe_customer_id(response.customer)
           user.paid = false
           user.save!
-        when 'charge.succeeded'
-          response = event.data.object
-          invoice = Invoice.find_by_stripe_charge_id(response.id)
-          invoice.stripe_fee = response.fee
-          invoice.save!
         when 'customer.subscription.created'
           response = event.data.object
           user = User.find_by_stripe_customer_id(response.customer)

@@ -10,7 +10,7 @@ class PaymentsController < ApplicationController
     if request.post?
       @user = current_user
       @user.update_attributes(params[:user])
-      sub = Subscription.find(params[:subscription])
+      sub = Subscription.find_by_shorthand(params[:subscription])
 
       if @user.valid? && sub && @user.create_subscription(sub, params[:stripeToken])
         redirect_to user_root_path
@@ -21,6 +21,7 @@ class PaymentsController < ApplicationController
       if session[:referral] && Time.now <= Time.at(session[:referral_timeout])
         referrer = User.find_by_referral_code(session[:referral])
         referrer.give_free_month
+        UserMailer.free_month(referrer, @user, request).deliver
 
         session[:referral] = nil
         session[:referral_timeout] = nil

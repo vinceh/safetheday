@@ -4,6 +4,8 @@ class RegionalSubscription < ActiveRecord::Base
   belongs_to :subscription
   has_many :taxes, :class_name => 'Tax'
 
+  attr_accessible :stripe_subscription_id, :subscription, :state
+
   attr_accessor :stripe_object_singleton
 
   def name

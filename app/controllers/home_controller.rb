@@ -3,6 +3,10 @@ class HomeController < ApplicationController
 
   before_filter :no_sub, :only => [:add_pack, :select_pack]
 
+  def index
+    render :layout => "home_layout"
+  end
+
   def select_pack
     @subs = Subscription.all
     session[:referral] = params[:ref] if params[:ref]

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Safe</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+  <%= csrf_meta_tags %>
+
+  <%= yield :head %>
+</head>
+<body>
+
+<div class="header">
+  <div class="backwash"></div>
+  <div class="container">
+    <%= link_to root_url do %>
+      <%= image_tag "safesquarelogo.png" %>
+    <% end %>
+    <div class="right-links">
+      <%= link_to "ACCOUNT", user_root_path, :class => "light" %>
+      <% if current_user %>
+        <%= link_to "LOGOUT", destroy_user_session_path, :method => "DELETE", :class => "light" %>
+      <% end%>
+
+      <% if !current_user || current_user.inactive %>
+        <%= link_to "START", select_pack_path, :class => "light special-select" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<%= yield %>
+
+</body>
+</html>

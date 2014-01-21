@@ -109,6 +109,12 @@
           </div>
         </div>
         <%= form_for @user, :url => update_payment_path, :method => "POST", :html => {:id => "payment-form", :class => "update-payment"} do |f| %>
+        <div class="accepted">
+          <%= image_tag "Visa.png" %>
+          <%= image_tag "MasterCard.png" %>
+          <%= image_tag "American Express.png" %>
+        </div>
+
           <%= hidden_field_tag 'subscription', session[:cart] %>
 
           <div class="payment-errors"></div>

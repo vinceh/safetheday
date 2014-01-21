@@ -8,7 +8,7 @@
       <% @invoices.each do |i| %>
         <%= link_to show_invoice_path(i.id), :class => 'invoice-wrap', :target => '_blank' do %>
           <div class="desc">
-            <%= i.created_at.strftime("%m/%d/%y") %> - <%= subs[i.subscription_id]['name'] %>
+            <%= i.created_at.strftime("%m/%d/%y") %> - <%= i.user.subscription.name %>
             <span class="state <%= "shipped" if i.shipped_on %>">
               <% if i.shipped_on %>
                 [ shipped ]

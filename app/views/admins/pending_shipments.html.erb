@@ -19,7 +19,7 @@
         <tr class="pending-item" data-id="<%= i.id %>">
           <td><%= i.user.subscription.name %> <%= i.free_month && "- FREE MONTH" || "" %></td>
           <td><%= (Time.now.to_date - i.created_at.to_date).to_i %></td>
-          <td><%= (i.created_at.to_date - i.created_at.to_date).to_i %></td>
+          <td><%= (i.updated_at.to_date - i.created_at.to_date).to_i && "Yes" || "No" %></td>
           <td>
             <%= link_to admin_mark_path(i.id), :method => "POST", :class => "btn mark-ship" do %>
               Mark Shipped

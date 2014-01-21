@@ -79,27 +79,6 @@ module ApplicationHelper
     ]
   end
 
-  def subs
-   {
-     '12_ca' => {
-       'name' => 'The Journeyman',
-       'desc' => '12 high quality condoms',
-       'interval' => '2-months',
-       'interval-words' => '2 Months',
-       'amount' => '$12.99CAD',
-       'tax' => '$0.79CAD',
-       'total' => '$12.76CAD',
-       'currency' => 'CAD'
-     },
-     '24_ca' => {
-       'name' => 'The Adventurer',
-       'interval' => 'month',
-       'amount' => '$12.99',
-       'tax' => '$0.79'
-     }
-   }
-  end
-
   def display_fee(fee)
     sprintf("%.2f", fee.to_f/100)
   end

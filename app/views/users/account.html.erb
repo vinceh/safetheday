@@ -52,18 +52,18 @@
           <% end %>
         </div>
         <div class="option">
-          <% if current_user.subscription.shorthand == 'jour' %>
+          <% if current_user.subscription.shorthand == 'wing' %>
             <p>
               Do you seek the ultimate pleasure? Upgrade to <span class="italic">The Adventurer</span>, $17/mo
             </p>
-            <%= link_to change_subscription_path(sub: 'adv'), :method => "POST", :class => "btn change" do %>
+            <%= link_to change_subscription_path(sub: 'conno'), :method => "POST", :class => "btn change" do %>
               switch to <br/> The Adventurer
             <% end %>
           <% else %>
             <p>
               Don't need the luxury? Switch to <span class="italic">The Journeyman</span>, $10/mo
             </p>
-            <%= link_to change_subscription_path(sub: 'jour'), :method => "POST", :class => "btn change" do %>
+            <%= link_to change_subscription_path(sub: 'wing'), :method => "POST", :class => "btn change" do %>
               switch to <br/> The Journeyman
             <% end %>
           <% end %>
