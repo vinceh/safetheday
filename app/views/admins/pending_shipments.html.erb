@@ -11,6 +11,7 @@
         <th>Days Active</th>
         <th>New Sub</th>
         <th>Actions</th>
+        <th>Timestamp</th>
         <th>
           <a class="mark-all">check all</a>
         </th>
@@ -24,6 +25,9 @@
             <%= link_to admin_mark_path(i.id), :method => "POST", :class => "btn mark-ship" do %>
               Mark Shipped
             <% end %>
+          </td>
+          <td>
+            <%= i.created_at.strftime("%m/%d/%y %H:%M")%>
           </td>
           <td>
             <input type="checkbox">
