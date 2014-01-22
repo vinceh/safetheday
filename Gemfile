@@ -11,13 +11,16 @@ gem 'devise', '~> 2.2.4'
 gem 'omniauth-facebook'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'spreadsheet'
+gem 'compass-rails'
+gem 'compass'
+gem 'sass-rails',   '~> 3.2.3'
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
+
   gem 'coffee-rails', '~> 3.2.1'
-  gem 'compass-rails'
+
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
