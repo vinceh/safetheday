@@ -51,9 +51,9 @@ body, .onepage-wrapper, html {
 .onepage-pagination li a:before{
     content: '';
     position: absolute;
-    width: 4px;
-    height: 4px;
-    background: rgba(0,0,0,0.85);
+    width: 8px;
+    height: 8px;
+    background: rgba(255,255,255,255.85);
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -63,9 +63,9 @@ body, .onepage-wrapper, html {
     width: 10px;
     height: 10px;
     background: none;
-    border: 1px solid black;
-    margin-top: -4px;
-    left: 8px;
+    border: 1px solid white;
+    margin-top: -3px;
+    left: 10px;
 }
 
 .disabled-onepage-scroll, .disabled-onepage-scroll .wrapper {

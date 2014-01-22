@@ -274,7 +274,7 @@ a {
     background-position: center;
     .content {
       position: relative;
-      top: 55%;
+      top: 50%;
       .words {
         padding: 20px;
         @include inline-block;
@@ -299,6 +299,16 @@ a {
           position: relative;
           color: #bbb;
           @include font-quicksand;
+        }
+        a {
+          position: relative;
+          @include inline-block;
+          color: white;
+          padding: 10px 20px;
+          margin-top: 20px;
+          font-size: 18px;
+          @include font-light;
+          border: none;
         }
       }
 
