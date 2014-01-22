@@ -6,6 +6,7 @@ class PaymentsController < ApplicationController
 
   def checkout
     @user = current_user
+    @sub = Subscription.find_by_shorthand(session[:cart])
 
     if request.post?
       @user = current_user

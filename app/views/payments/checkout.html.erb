@@ -1,13 +1,27 @@
 <div class="container checkout">
-  <div class="info">
-    <div class="inner">
-      <div class="avatar">
-        <%= image_tag "cube.png" %>
-      </div>
-      <div class="content">
-        <div class="line">
-          <div class="title">The Wingman</div>
-          <div class="price"></div>
+  <div class="left">
+    <h3>You've got this.</h3>
+    <div class="info">
+      <div class="inner">
+        <div class="avatar">
+          <%= image_tag "cube.png" %>
+        </div>
+        <div class="content">
+          <div class="line">
+            <div class="title"><%= @sub.name %></div>
+            <div class="price">$<%= display_fee(@sub.price) %>CAD</div>
+          </div>
+          <div class="line">
+            <div class="title">Shipping</div>
+            <div class="price">FREE</div>
+          </div>
+          <div class="line total">
+            <div class="title">Total</div>
+            <div class="price">$<%= display_fee(@sub.price) %>CAD</div>
+          </div>
+          <div class="note">
+            Applicable GST/HST will be applied to all orders.
+          </div>
         </div>
       </div>
     </div>
