@@ -27,7 +27,7 @@
             <% end %>
           </td>
           <td>
-            <%= i.created_at.strftime("%m/%d/%y %H:%M")%>
+            <%= i.created_at.in_time_zone("Pacific Time (US & Canada)").strftime("%m/%d/%y %H:%M")%>
           </td>
           <td>
             <input type="checkbox">
