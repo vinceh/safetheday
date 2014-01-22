@@ -13,4 +13,12 @@ class Invoice < ActiveRecord::Base
     self.shipped_on = Time.now
     save!
   end
+
+  def sub_type
+    if self.subscription_id.include?("reg")
+      return "The Wingman"
+    else
+      return "The Connoisseur"
+    end
+  end
 end

@@ -25,7 +25,7 @@
         <span><%= @invoice.created_at.strftime("%b %d, %Y") %></span>
       </h3>
       <div class="item bold">
-        <%= @invoice.user.subscription.name %>
+        <%= @invoice.sub_type %>
         <span>
           <%= "$"+display_fee(@charge.amount-tax_amounts_for(@charge))+@charge.currency.upcase %>
         </span>
