@@ -49,8 +49,18 @@ class User < ActiveRecord::Base
 
   def change_subscription(sub)
     sub = Subscription.find_by_shorthand(sub)
-    self.regional_subscription = RegionalSubscription.where(state: billing_state,
-                                                            subscription_id: sub.id).first
+
+    # really dirty
+    new_region = RegionalSubscription.where(state: billing_state,
+                                            subscription_id: sub.id).first
+
+    if !is_monthly?
+      self.regional_subscription = RegionalSubscription.where(state: billing_state,
+                                                              subscription_id: sub.id,
+                                                              stripe_subscription_id: new_region.stripe_subscription_id+"_bi").first
+    else
+      self.regional_subscription = new_region
+    end
 
     begin
       customer = Stripe::Customer.retrieve(self.stripe_customer_id)
