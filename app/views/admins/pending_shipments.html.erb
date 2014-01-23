@@ -8,6 +8,7 @@
     <table class="pending-items">
       <tr>
         <th>Subscription</th>
+        <th>User</th>
         <th>Days Active</th>
         <th>New Sub</th>
         <th>Actions</th>
@@ -19,6 +20,7 @@
       <% @invoices.each do |i| %>
         <tr class="pending-item" data-id="<%= i.id %>">
           <td><%= i.sub_type %> <%= i.free_month && "- FREE MONTH" || "" %></td>
+          <td><%= "#{i.user.billing_first_name} #{i.user.billing_last_name}" %> </td>
           <td><%= (Time.now.to_date - i.created_at.to_date).to_i %></td>
           <td><%= (i.updated_at.to_date - i.created_at.to_date).to_i && "Yes" || "No" %></td>
           <td>
