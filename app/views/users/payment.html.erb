@@ -149,8 +149,8 @@
           <h3>Billing Address</h3>
           <%= f.text_field :billing_first_name, :placeholder => "First Name", :required => true, :class => "billing-first"  %>
           <%= f.text_field :billing_last_name, :placeholder => "Last Name", :required => true, :class => "billing-last" %>
-          <%= f.text_field :billing_address_one, :placeholder => "Address Line 1", "data-stripe" => "address_line1", :required => true %>
-          <%= f.text_field :billing_address_two, :placeholder => "Address Line 2", "data-stripe" => "address_line2", :class => "not-required" %>
+          <%= f.text_field :billing_address_one, :placeholder => "Address Line 1 (ie. Street Address, PO Box)", "data-stripe" => "address_line1", :required => true %>
+          <%= f.text_field :billing_address_two, :placeholder => "Address Line 2 (Building name, Unit #, etc)", "data-stripe" => "address_line2", :class => "not-required" %>
           <%= f.select :billing_country, options_for_select(countries), {}, {"data-stripe" => "address_country", :required => true, :class => "country"} %>
           <div class="form-row city-info">
             <%= f.text_field :billing_city, :placeholder => "City", "data-stripe" => "address_city", :required => true %>
@@ -250,8 +250,8 @@
             <div class="shipping-info <%= "show" unless current_user.shipping_same %>">
               <%= f.text_field :shipping_first_name, :placeholder => "First Name", :required => true %>
               <%= f.text_field :shipping_last_name, :placeholder => "Last Name", :required => true %>
-              <%= f.text_field :shipping_address_one, :placeholder => "Address Line 1", :required => true %>
-              <%= f.text_field :shipping_address_two, :placeholder => "Address Line 2", :class => "not-required" %>
+              <%= f.text_field :shipping_address_one, :placeholder => "Address Line 1 (ie. Street Address, PO Box)", :required => true %>
+              <%= f.text_field :shipping_address_two, :placeholder => "Address Line 2 (Building name, Unit #, etc)", :class => "not-required" %>
               <%= f.select :shipping_country, options_for_select(countries), {}, {:class => "country"} %>
               <div class="form-row city-info">
                 <%= f.text_field :shipping_city, :placeholder => "City", :required => true %>
