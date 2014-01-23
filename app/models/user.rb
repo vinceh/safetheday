@@ -178,13 +178,17 @@ class User < ActiveRecord::Base
     user = self.find_by_email(auth.info.email)
 
     if !user
-      where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
+      user = where(auth.slice(:provider, :uid)).first
+      unless user
+        user = User.new
         user.provider = auth.provider
         user.uid = auth.uid
         user.email = auth.info.email
         user.password = Devise.friendly_token[0,20]
         user.save!
       end
+
+      return user
     elsif user.provider && user.uid
       return where(auth.slice(:provider, :uid)).first
     else
