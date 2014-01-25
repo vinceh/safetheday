@@ -163,18 +163,20 @@ body {
 a.light {
   color: #999;
   text-decoration: none;
+  @include transition-property(color);
+  @include transition-duration(0.3s);
   &:visited {
     color: #999;
   }
   &:hover {
-    text-decoration: underline;
+    color: #7595a3;
   }
   &.special-select {
-    color: $change !important;
+    color: $prime !important;
     padding: 5px;
     line-height: 1em;
     &:visited {
-      color: $change !important;
+      color: $prime !important;
     }
   }
 }
@@ -1175,7 +1177,8 @@ a {
     p {
       text-align: center;
       margin-top: 5px;
-      font-size: 25px;
+      font-size: 23px;
+      line-height: 1em;
       @include font-chronicle;
       color: #888;
     }
@@ -1209,12 +1212,11 @@ a {
       padding: 13px 30px;
       font-size: 22px;
       @include box-shadow(none);
-      background-color: #060606;
-      border: 1px solid #777;
-      color: #eee;
-      &:hover {
-        background-color: #111;
-      }
+      background-color: transparent;
+      border: 2px solid $prime;
+      @include font-gotham-light;
+      color: $prime;
+      @include border-radius(3px);
     }
     .avatar-wrap {
       position: relative;
@@ -1255,7 +1257,7 @@ a {
       .price {
         @include text-shadow(0 1px 0 white);
         padding: 15px 0 10px;
-        color: $change;
+        color: #222;
         line-height: 1.4em;
         font-size: 20px;
         @include font-regular;
