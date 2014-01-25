@@ -275,16 +275,25 @@ a {
     .content {
       position: relative;
       top: 50%;
+      text-align: center;
+      margin-top: -125px;
       .words {
         padding: 20px;
-        @include inline-block;
         position: relative;
+        text-align: center;
+        .stick {
+          width: 100px;
+          height: 3px;
+          background-color: white;
+          margin: 0 auto;
+          margin-bottom: 20px;
+        }
         h3 {
-          font-size: 70px;
-          @include font-quicksand;
+          font-size: 90px;
+          @include font-gotham;
           color: white;
           @include inline-block;
-          letter-spacing: 5px;
+          @include text-shadow(0 0 45px #333);
           span {
             position: relative;
           }
@@ -294,21 +303,30 @@ a {
           }
         }
         p {
-          margin-top: 10px;
           font-size: 23px;
           position: relative;
-          color: #bbb;
-          @include font-quicksand;
+          color: #ddd;
+          @include font-chronicle;
+          @include text-shadow(0 0 25px black);
+          line-height: 1.4em;
         }
         a {
           position: relative;
           @include inline-block;
           color: white;
           padding: 10px 20px;
-          margin-top: 20px;
+          margin-top: 30px;
           font-size: 18px;
-          @include font-light;
+          @include font-gotham-light;
           border: none;
+          background-color: transparent;
+          border: 2px solid $prime;
+          color: $prime;
+          @include border-radius(3px);
+          &:hover {
+            color: $prime;
+            background-color: transparent;
+          }
         }
       }
 
@@ -797,6 +815,7 @@ a {
       p {
         font-size: 18px;
         line-height: 1em;
+        margin-top: 5px;
         &.sub {
           font-size: 16px;
           color: #888;
@@ -1147,7 +1166,7 @@ a {
     position: relative;
     text-align: center;
     h1 {
-      @include font-quicksand;
+      @include font-gotham;
       color: #eee;
       text-align: center;
       margin-top: 75px;
@@ -1157,7 +1176,7 @@ a {
       text-align: center;
       margin-top: 5px;
       font-size: 25px;
-      @include font-light;
+      @include font-chronicle;
       color: #888;
     }
     img {
@@ -1180,7 +1199,7 @@ a {
     position: relative;
     text-align: center;
     &:first-child {
-      margin-left: 165px;
+      margin-left: 178px;
     }
     .select-btn {
       @include inline-block;
@@ -1273,7 +1292,7 @@ a {
       color: #555;
     }
     p {
-      font-size: 15px;
+      font-size: 16px;
       padding-bottom: 17px;
       margin-bottom: 17px;
 
@@ -1286,6 +1305,14 @@ a {
       padding: 30px 20px;
     }
   }
+}
+
+.dasher {
+  width: 100px;
+  margin: 0 auto;
+  border-top: 1px dashed #aaa;
+  height: 1px;
+  margin-top: 15px;
 }
 
 .static {

@@ -1,22 +1,45 @@
 @import "compass";
 
 @include font-face("ProximaNovaLight", font-files("ProximaNova-Light.otf"));
+@include font-face("GothamThin", font-files("Gotham/Gotham-Light.otf"));
 @include font-face("ProximaNovaSemiBold", font-files("ProximaNova-Semibold.otf"));
 @include font-face("ProximaNovaRegular", font-files("ProximaNova-Regular.otf"));
 @include font-face("Quicksand", font-files("Quicksand-Light.otf"));
+@include font-face("Gotham", font-files("Gotham/Gotham-Medium.otf"));
+@include font-face("GothamLight", font-files("Gotham/Gotham-Book.otf"));
+
+@include font-face("Chronicle", font-files("Chronicle/Chronicle Italic.otf"));
 
 @mixin font-regular {
-  font-family: "ProximaNovaRegular";
+  font-family: "Gotham";
 }
 
 @mixin font-light {
-  font-family: "ProximaNovaLight";
+  font-family: "GothamThin";
 }
 
 @mixin font-semibold {
-  font-family: "ProximaNovaSemiBold";
+  font-family: "GothamLight";
 }
 
 @mixin font-quicksand {
   font-family: "Quicksand";
+}
+
+@mixin font-gotham {
+  font-family: "Gotham";
+}
+
+@mixin font-gotham-light {
+  font-family: "GothamLight";
+}
+
+@mixin font-requiem {
+  font-family: "Requiem";
+}
+
+@mixin font-chronicle {
+  font-family: "Chronicle";
+  font-style: italic;
+  letter-spacing: 1px;
 }
