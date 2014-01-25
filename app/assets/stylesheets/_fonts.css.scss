@@ -11,7 +11,7 @@
 @include font-face("Chronicle", font-files("Chronicle/Chronicle Italic.otf"));
 
 @mixin font-regular {
-  font-family: "Gotham";
+  font-family: "GothamLight";
 }
 
 @mixin font-light {
@@ -19,7 +19,7 @@
 }
 
 @mixin font-semibold {
-  font-family: "GothamLight";
+  font-family: "Gotham";
 }
 
 @mixin font-quicksand {
