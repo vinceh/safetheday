@@ -311,15 +311,15 @@ a {
           position: relative;
           @include inline-block;
           color: white;
-          padding: 10px 20px;
+          padding: 11px 25px;
           margin-top: 30px;
-          font-size: 18px;
-          @include font-gotham-light;
+          font-size: 17px;
+          @include font-gotham;
           border: none;
           background-color: transparent;
-          border: 2px solid $prime;
+          border: 3px solid $prime;
           color: $prime;
-          @include border-radius(3px);
+          @include border-radius(100px);
           @include box-shadow(none);
           &:hover {
             color: $prime;
