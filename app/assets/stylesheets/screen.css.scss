@@ -290,7 +290,6 @@ a {
           @include font-gotham;
           color: white;
           @include inline-block;
-          @include text-shadow(0 0 45px #333);
           span {
             position: relative;
           }
@@ -304,26 +303,24 @@ a {
           position: relative;
           color: #ddd;
           @include font-chronicle;
-          @include text-shadow(0 0 25px black);
           line-height: 1.2em;
         }
         a {
           position: relative;
           @include inline-block;
           color: white;
-          padding: 11px 25px;
+          padding: 12px 26px;
           margin-top: 30px;
           font-size: 17px;
           @include font-gotham;
           border: none;
-          background-color: transparent;
-          border: 3px solid $prime;
-          color: $prime;
-          @include border-radius(100px);
+          background-color: $prime;
+          color: white;
+          @include border-radius(3px);
           @include box-shadow(none);
-          &:hover {
-            color: $prime;
-            background-color: transparent;
+          &:active {
+            color: white;
+            background-color: $prime;
           }
         }
       }
@@ -1166,15 +1163,15 @@ a {
     }
     .select-btn {
       @include inline-block;
-      width: 91%;
+      width: 60%;
       @include box-sizing(border-box);
-      padding: 13px 30px;
-      font-size: 22px;
+      padding: 14px 30px;
+      font-size: 18px;
       @include box-shadow(none);
-      background-color: transparent;
-      border: 2px solid $prime;
-      @include font-gotham-light;
-      color: $prime;
+      background-color: $prime;
+      margin-top: 15px;
+      @include font-gotham;
+      color: white;
       @include border-radius(3px);
     }
     .avatar-wrap {
@@ -1391,7 +1388,7 @@ a {
     margin-bottom: 15px;
   }
   input[type=submit] {
-    padding: 10px 15px;
+    padding: 9px 20px;
     margin-bottom: 20px;
   }
   a {
