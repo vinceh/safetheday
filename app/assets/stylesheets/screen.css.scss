@@ -274,6 +274,7 @@ a {
       top: 50%;
       text-align: center;
       margin-top: -125px;
+      -webkit-transform-style: preserve-3d;
       .words {
         padding: 20px;
         position: relative;
