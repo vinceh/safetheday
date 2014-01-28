@@ -68,10 +68,10 @@ input[type="submit"], button, .btn {
     }
   }
   &.cancel {
-    background-color: $error;
+    background-color: $prime;
   }
   &.cancel:hover, &.cancel:active {
-    background-color: #e54548;
+    background-color: $prime-pale;
   }
 
 }
@@ -771,7 +771,7 @@ a {
       @include text-shadow(1px 1px white);
     }
     .content {
-      width: 387px;
+      width: 405px;
       padding-left: 30px;
       p {
         font-size: 18px;
