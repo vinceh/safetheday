@@ -53,34 +53,24 @@
     $(this).css('background-image', 'url("'+$(this).attr('data-src')+'")');
   });
 
-  var pos = "200";
-  var animationTime = '600';
-  var easing = 'cubic-bezier(0.75,0.1,0.75,1)';
+  function transformWords($el, pos, time) {
+    var time = time || 600;
+    var ease = 'cubic-bezier(0.75,0.1,0.75,1)';
 
-  $('section .content').css({
-    "-webkit-transform": "translate3d(0, " + pos + "%, 0)",
-    "-webkit-transition": "all " + animationTime + "ms " + easing,
-    "-moz-transform": "translate3d(0, " + pos + "%, 0)",
-    "-moz-transition": "all " + animationTime + "ms " + easing,
-    "-ms-transform": "translate3d(0, " + pos + "%, 0)",
-    "-ms-transition": "all " + animationTime + "ms " + easing,
-    "transform": "translate3d(0, " + pos + "%, 0)",
-    "transition": "all " + animationTime + "ms " + easing
-  });
+    $el.css({
+      "-webkit-transform": "translate3d(0, " + pos + "%, 0)",
+      "-webkit-transition": "all " + time + "ms " + ease,
+      "-moz-transform": "translate3d(0, " + pos + "%, 0)",
+      "-moz-transition": "all " + time + "ms " + ease,
+      "-ms-transform": "translate3d(0, " + pos + "%, 0)",
+      "-ms-transition": "all " + time + "ms " + ease,
+      "transform": "translate3d(0, " + pos + "%, 0)",
+      "transition": "all " + time + "ms " + ease
+    });
+  }
 
-  var pos = "0";
-  var animationTime = '0';
-
-  $('.active .content').css({
-    "-webkit-transform": "translate3d(0, " + pos + "%, 0)",
-    "-webkit-transition": "all " + animationTime + "ms ",
-    "-moz-transform": "translate3d(0, " + pos + "%, 0)",
-    "-moz-transition": "all " + animationTime + "ms ",
-    "-ms-transform": "translate3d(0, " + pos + "%, 0)",
-    "-ms-transition": "all " + animationTime + "ms ",
-    "transform": "translate3d(0, " + pos + "%, 0)",
-    "transition": "all " + animationTime + "ms "
-  });
+  transformWords($('section .content'), '200');
+  transformWords($('.active .content'), '0', '0');
 
   $(".main").onepage_scroll({
     sectionContainer: "section", // sectionContainer accepts any kind of selector in case you don't want to use section
@@ -89,59 +79,20 @@
     pagination: true, // You can either show or hide the pagination. Toggle true for show, false for hide.
     updateURL: false, // Toggle this true if you want the URL to be updated automatically when the user scroll to each page.
     beforeMove: function(next, current) {
-      var pos = "-200";
+
+      var pos = '-200';
       if ( next < current ) {
         pos = '200';
       }
 
-      var animationTime = '600';
-      var easing = 'cubic-bezier(0.75,0.1,0.75,1)';
+      transformWords($($('section').get(current-1)).children('.content'),pos);
+      if ( Math.abs(next - current) > 1 ) {
+        transformWords($($('section').get(1)).children('.content'),pos);
+      }
 
-      $($('section').get(current-1)).children('.content').css({
-        "-webkit-transform": "translate3d(0, " + pos + "%, 0)",
-        "-webkit-transition": "all " + animationTime + "ms " + easing,
-        "-moz-transform": "translate3d(0, " + pos + "%, 0)",
-        "-moz-transition": "all " + animationTime + "ms " + easing,
-        "-ms-transform": "translate3d(0, " + pos + "%, 0)",
-        "-ms-transition": "all " + animationTime + "ms " + easing,
-        "transform": "translate3d(0, " + pos + "%, 0)",
-        "transition": "all " + animationTime + "ms " + easing
-      });
-
-
-      var pos = "0";
-      var animationTime = '600';
-      var easing = 'cubic-bezier(0.75,0.1,0.75,1)';
-
-      $('.active .content').css({
-        "-webkit-transform": "translate3d(0, " + pos + "%, 0)",
-        "-webkit-transition": "all " + animationTime + "ms " + easing,
-        "-moz-transform": "translate3d(0, " + pos + "%, 0)",
-        "-moz-transition": "all " + animationTime + "ms " + easing,
-        "-ms-transform": "translate3d(0, " + pos + "%, 0)",
-        "-ms-transition": "all " + animationTime + "ms " + easing,
-        "transform": "translate3d(0, " + pos + "%, 0)",
-        "transition": "all " + animationTime + "ms " + easing
-      });
-
-
+      transformWords($('.active .content'),0);
     }, // This option accepts a callback function. The function will be called before the page moves.
-    afterMove: function(index) {
-//      var pos = '0';
-//      var animationTime = '0';
-//
-//      $('.container').css({
-//        "-webkit-transform": "translate3d(0, " + pos + "%, 0)",
-//        "-webkit-transition": "all " + animationTime + "ms ",
-//        "-moz-transform": "translate3d(0, " + pos + "%, 0)",
-//        "-moz-transition": "all " + animationTime + "ms " ,
-//        "-ms-transform": "translate3d(0, " + pos + "%, 0)",
-//        "-ms-transition": "all " + animationTime + "ms ",
-//        "transform": "translate3d(0, " + pos + "%, 0)",
-//        "transition": "all " + animationTime + "ms "
-//      });
-
-    }, // This option accepts a callback function. The function will be called after the page moves.
+    afterMove: function(index) {}, // This option accepts a callback function. The function will be called after the page moves.
     loop: false, // You can have the page loop back to the top/bottom when the user navigates at up/down on the first/last page.
     responsiveFallback: false // You can fallback to normal page scroll by defining the width of the browser in which you want the responsive fallback to be triggered. For example, set this to 600 and whenever the browser's width is less than 600, the fallback will kick in.
   });

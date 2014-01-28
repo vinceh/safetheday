@@ -291,6 +291,7 @@ a {
           @include font-gotham;
           color: white;
           @include inline-block;
+          @include text-shadow(0 0 45px #333);
           span {
             position: relative;
           }
