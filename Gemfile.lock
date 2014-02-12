@@ -157,6 +157,7 @@ DEPENDENCIES
   better_errors
   certified
   coffee-rails (~> 3.2.1)
+  compass
   compass-rails
   devise (~> 2.2.4)
   jquery-rails

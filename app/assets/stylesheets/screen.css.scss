@@ -189,6 +189,13 @@ a {
   width: 100%;
   z-index: 999;
   height: 47px;
+  text-align: center;
+  .top-logo {
+    height: 16px;
+    position: relative;
+    top: 15px;
+    left: 73px;
+  }
   a {
     position: relative;
     top: 9px;
@@ -200,6 +207,9 @@ a {
       &:hover {
         opacity: 1;
       }
+    }
+    &:first-child {
+      float: left;
     }
   }
   a {
