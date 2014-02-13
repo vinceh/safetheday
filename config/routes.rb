@@ -35,6 +35,7 @@ Safe::Application.routes.draw do
   # static
   get "legal" => "home#legal", :as => :legal
   get "faq" => "home#faq", :as => :faq
+  get "product" => "home#product", :as => :product
 
   # Stripe Webhook
   post 'stripe-event' => 'events#stripe_event'
