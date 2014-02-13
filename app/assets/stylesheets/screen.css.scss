@@ -714,8 +714,9 @@ a {
     display: block;
     color: #777;
     border-right: 3px solid #f6f6f6;
-    @include transition-property(color, border);
+    @include transition-property(color, border, background-color);
     @include transition-duration(0.3s);
+    line-height: 1.4em;
     &:visited {
       color: #777;
     }
@@ -743,7 +744,8 @@ a {
     margin-top: 30px;
     display: table;
     padding: 20px;
-    background-color: #f3f3f3;
+    background-color: white;
+    border: 1px solid #ccc;
     position: relative;
     @include border-radius(3px);
     &:before, &:after
@@ -780,7 +782,8 @@ a {
       @include text-shadow(1px 1px white);
     }
     .content {
-      width: 405px;
+      border-left: 1px dashed #ddd;
+      width: 402px;
       padding-left: 30px;
       p {
         font-size: 18px;
