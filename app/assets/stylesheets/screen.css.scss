@@ -1213,7 +1213,7 @@ a {
       background-attachment: fixed;
       overflow: hidden;
       margin: 15px;
-      @include box-shadow(0 0 50px #222);
+      @include box-shadow(0 0 90px #333);
       .backwash {
         background-color: white;
       }
