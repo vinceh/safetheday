@@ -10,7 +10,7 @@
 
 p {
   line-height: 1.6em;
-  color: #777;
+  color: #666;
   font-family: "GothamLight";
 }
 
@@ -207,7 +207,7 @@ a {
   .top-logo {
     height: 16px;
     position: relative;
-    top: 15px;
+    top: 17px;
   }
   a {
     position: relative;
@@ -293,6 +293,13 @@ a {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    .foot {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      padding-bottom: 15px;
+    }
     .content {
       position: relative;
       top: 50%;
@@ -1166,7 +1173,7 @@ a {
       font-size: 23px;
       line-height: 1em;
       @include font-chronicle;
-      color: #888;
+      color: #ccc;
     }
     img {
       height: 30px;

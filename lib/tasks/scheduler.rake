@@ -220,12 +220,12 @@ task :sub_database_seed => :environment do
 
   # The overarching subscription objects
   reg = Subscription.create(name: "The Wingman",
-                            description: "8 Durex Sensi Thin, 1 Okamoto 003L Condoms",
+                            description: "8 Durex Sensi Thin, 1 Okamoto 0.03L Condoms",
                             price: "1200",
                             shorthand: "wing")
 
   pre = Subscription.create(name: "The Connoisseur",
-                            description: "9 Okamoto 003L Condoms",
+                            description: "9 Okamoto 0.03L Condoms",
                             price: "2000",
                             shorthand: "conno")
 
