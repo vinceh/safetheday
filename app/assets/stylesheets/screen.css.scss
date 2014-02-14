@@ -169,12 +169,12 @@ body {
 }
 
 a.light {
-  color: #999;
+  color: #ddd;
   text-decoration: none;
   @include transition-property(color);
   @include transition-duration(0.3s);
   &:visited {
-    color: #999;
+    color: #ddd;
   }
   &:hover {
     color: #7595a3;
@@ -239,8 +239,8 @@ a {
   }
   .backwash {
     position: absolute;
-    opacity: 0.1;
-    background-color: #bbb;
+    opacity: 0.2;
+    background-color: black;
   }
   .container {
     position: relative;
@@ -282,9 +282,6 @@ a {
     position: relative;
     top: 17px;
     text-align: center;
-  }
-  .light {
-    color: #ccc;
   }
 }
 
@@ -1726,7 +1723,7 @@ a {
   background: url("product/g7.jpg");
   background-size: cover;
   background-position: center;
-  height: 800px;
+  height: 900px;
   display: table;
   width: 100%;
   text-align: center;
