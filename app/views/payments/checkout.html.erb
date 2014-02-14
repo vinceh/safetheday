@@ -135,7 +135,7 @@
     <div class="field-help">The 16 digits on the front of the card</div>
 
     <div class="form-row credit-date">
-      <select data-stripe="exp-month" id="date_month" name="date[month]">
+      <select data-stripe="exp_month" id="date_month" name="date[month]">
         <option value="">Month</option>
         <option value="01">01</option>
         <option value="02">02</option>
@@ -151,7 +151,7 @@
       <option value="12">12</option>
     </select>
     <span> / </span>
-    <%= select_year 14, {start_year: Time.now.year, end_year: Time.now.year+10, prompt: 'Year'}, {"data-stripe" => "exp-year"} %>
+    <%= select_year 14, {start_year: Time.now.year, end_year: Time.now.year+10, prompt: 'Year'}, {"data-stripe" => "exp_year"} %>
     <div class="field-help">Expiration date - MM/YYYY </div>
   </div>
 
