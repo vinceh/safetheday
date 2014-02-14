@@ -792,8 +792,10 @@ a {
     .avatar {
       width: 185px;
       height: 1px;
+      text-align: center;
       img {
-        height: 175px;
+        height: 100px;
+        margin-top: 33px;
       }
     }
     p, h4 {
