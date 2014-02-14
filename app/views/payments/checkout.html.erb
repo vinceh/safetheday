@@ -4,7 +4,11 @@
     <div class="info">
       <div class="inner">
         <div class="avatar">
-          <%= image_tag "cube.png" %>
+          <% if current_user.subscription.shorthand == 'wing' %>
+            <%= image_tag "wing.png" %>
+          <% else %>
+            <%= image_tag "conno.png" %>
+          <% end %>
         </div>
         <div class="content">
           <div class="line">
