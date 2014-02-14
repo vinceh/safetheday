@@ -29,7 +29,7 @@ class User < ActiveRecord::Base
       )
 
       self.stripe_customer_id = customer.id
-      self.plan_ending_date = Time.at(customer.subscription.current_period_end)
+      self.plan_ending_date = Time.at(customer.subscriptions[0].current_period_end)
 
       token = Stripe::Token.retrieve(stripe_token)
       self.card_last_four = token.card.last4
