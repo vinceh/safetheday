@@ -13,8 +13,13 @@
         Your Order
       </h3>
       <div style="display: table; width: 100%; margin-top: 15px;">
-        <div style="float: left; width: 130px">
-          <img src="https://s3.amazonaws.com/safetheday/mailer/cubey.png" style="height: 100px;">
+        <div style="float: left; width: 130px; text-align: center;">
+          <% if @sub.subscription.shorthand == 'wing' %>
+            <img src="https://safetheday.com/assets/product/wing.png" style="height: 70px; margin-top: 30px;">
+          <% else %>
+            <img src="https://safetheday.com/assets/product/conno.png" style="height: 70px; margin-top: 30px;">
+          <% end %>
+
         </div>
         <div style="float: left; width: 230px; font-size: 13px; color: #777777;">
           <div style="display: table; width: 100%; margin-bottom: 10px;">
