@@ -61,7 +61,7 @@
     <h1>
       THE ULTIMATE PLEASURE AWAITS
     </h1>
-    <%= link_to "GET SAFE", select_pack_path, :class => 'btn change' %>
+    <%= link_to "GET SAFE", select_pack_path, :class => 'btn change product-convert' %>
   </div>
 </div>
 
@@ -69,4 +69,10 @@
   $(window).load(function() {
     $('.hero').css('height', $('html, body').outerHeight());
   });
+
+  $('.product-convert').on('click', function() {
+    console.log("ha");
+    mixpanel.track("product convert");
+  });
+
 </script>

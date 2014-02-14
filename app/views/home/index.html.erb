@@ -4,7 +4,7 @@
 <% end %>
 
 <div class="main">
-  <section class="unit active" data-src="<%= image_path("sexygirl8.jpg") %>">
+  <section class="unit active" data-src="<%= image_path("product/g2.jpg") %>">
     <div class="content container">
       <div class="words">
         <div class="stick"></div>
@@ -14,11 +14,11 @@
         <p>
           This is your time. Leave nothing to chance.
         </p>
-        <%= link_to "I GOT THIS", select_pack_path, :class => 'btn' %>
+        <%= link_to "I GOT THIS", select_pack_path, :class => 'btn landing-btn' %>
       </div>
     </div>
   </section>
-  <section class="unit" data-src="<%= image_path("sexygirl6.jpg") %>">
+  <section class="unit" data-src="<%= image_path("product/g4.jpg") %>">
     <div class="content container">
       <div class="words">
         <div class="stick"></div>
@@ -28,11 +28,11 @@
         <p>
           Great moments are born from great opportunity. You were meant for it.
         </p>
-        <%= link_to "I'M READY", select_pack_path, :class => 'btn change' %>
+        <%= link_to "I'M READY", select_pack_path, :class => 'btn change landing-btn' %>
       </div>
     </div>
   </section>
-  <section class="unit" data-src="<%= image_path("sexygirl7.jpg") %>">
+  <section class="unit" data-src="<%= image_path("product/g5.jpg") %>">
     <div class="content container">
       <div class="words">
         <div class="stick"></div>
@@ -42,7 +42,7 @@
         <p>
           Quality protection for ultimate pleasure - delivered to your doorstep.
         </p>
-        <%= link_to "OKAY, GOT IT", select_pack_path, :class => 'btn' %>
+        <%= link_to "OKAY, GOT IT", select_pack_path, :class => 'btn landing-btn' %>
       </div>
     </div>
     <div class="foot">
@@ -108,4 +108,8 @@
       e.stopImmediatePropagation();
     }
   }
+
+  $('.landing-btn').on('click', function() {
+    mixpanel.track("landing convert");
+  });
 </script>

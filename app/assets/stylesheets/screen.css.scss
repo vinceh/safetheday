@@ -1164,7 +1164,7 @@ a {
       @include font-gotham;
       color: #eee;
       text-align: center;
-      margin-top: 75px;
+      margin-top: 80px;
       font-size: 60px;
     }
     p {
@@ -1186,7 +1186,7 @@ a {
 
 .selections {
   display: table;
-  margin-top: 55px;
+  margin-top: 80px;
   .selection {
     float: left;
     width: 345px;
@@ -1244,6 +1244,7 @@ a {
       .avatar-inner {
         margin: 10px;
         position: relative;
+
       }
       .price {
         @include text-shadow(0 1px 0 white);
@@ -1274,8 +1275,8 @@ a {
     .avatar {
       text-align: center;
       img {
-        height: 200px;
-        margin: 15px 0;
+        height: 140px;
+        margin: 60px 0;
       }
     }
     h4 {
@@ -1628,7 +1629,7 @@ a {
 
 .hero {
   height: 800px;
-  background: url("sexygirl8.jpg");
+  background: url("product/g6.jpg");
   background-size: cover;
   background-position: center;
   display: table;
@@ -1722,7 +1723,7 @@ a {
 }
 
 .convert {
-  background: url("product/legs.jpg");
+  background: url("product/g7.jpg");
   background-size: cover;
   background-position: center;
   height: 800px;
@@ -1738,7 +1739,8 @@ a {
       margin-bottom: 100px;
     }
     a {
-      padding: 10px 20px;
+      padding: 10px 30px;
+      font-size: 22px;
     }
   }
 }
