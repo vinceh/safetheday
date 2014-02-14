@@ -4,7 +4,7 @@
   <%= javascript_include_tag "jquery.payment" %>
 
   <script type="text/javascript">
-    Stripe.setPublishableKey('pk_test_h3DuEFi6li4dKSe8ZcfporXg');
+    Stripe.setPublishableKey('<%= ENV['PUBLISHABLE_KEY'] %>');
 
     var stripeResponseHandler = function(status, response) {
       var $form = $('#payment-form');
