@@ -131,7 +131,7 @@ class User < ActiveRecord::Base
       customer = Stripe::Customer.retrieve(self.stripe_customer_id)
       customer.update_subscription(:plan => self.regional_subscription.stripe_subscription_id,
                                    :prorate => false,
-                                   :trial_end => customer.subscription.current_period_end)
+                                   :trial_end => customer.subscriptions.data[0].current_period_end)
 
       save
 

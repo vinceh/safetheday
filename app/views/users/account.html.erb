@@ -20,7 +20,7 @@
             Billing & delivery: <span class="bold"><%= @sub.interval_words %></span>
           </p>
           <p class="line-item">
-            Next bill date: <span class="bold"><%= (Time.at(@stripe_customer.subscription.current_period_end)+1.day).strftime("%b %d, %Y") %></span>
+            Next bill date: <span class="bold"><%= (Time.at(@stripe_customer.subscriptions[0].current_period_end)+1.day).strftime("%b %d, %Y") %></span>
           </p>
           <p class="line-item">
             Amount: <span class="bold">

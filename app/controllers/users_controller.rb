@@ -45,7 +45,7 @@ class UsersController < ApplicationController
     end
 
     feed.member_since = current_user.created_at
-    feed.subscription = current_user.subscription.name
+    feed.subscription = current_user.subscriptions.data[0].name
     feed.save!
 
     redirect_to user_root_path
