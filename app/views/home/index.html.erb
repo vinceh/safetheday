@@ -109,7 +109,6 @@
     }
   }
 
-  $('.landing-btn').on('click', function() {
-    mixpanel.track("landing convert");
-  });
+  mixpanel.track('landing');
+  mixpanel.track_links('.landing-btn', 'landing convert');
 </script>

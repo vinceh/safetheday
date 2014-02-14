@@ -14,6 +14,7 @@ gem 'spreadsheet'
 gem 'compass-rails'
 gem 'compass'
 gem 'sass-rails',   '~> 3.2.3'
+gem 'mixpanel-ruby'
 
 # Gems used only for assets and not required
 # in production environments by default.
