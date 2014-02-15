@@ -4,12 +4,7 @@ class HomeController < ApplicationController
   before_filter :no_sub, :only => [:add_pack, :select_pack]
 
   def index
-
-    if rand(0..1) == 0
-      render :layout => "home_layout"
-    else
-      redirect_to :action => :product
-    end
+    render :layout => "home_layout"
   end
 
   def select_pack
