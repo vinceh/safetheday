@@ -15,7 +15,7 @@
   </div>
 
   <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-    <%= f.email_field :email, :autofocus => true, :placeholder => "You Email" %>
+    <%= f.email_field :email, :autofocus => true, :placeholder => "Your Email" %>
     <%= f.password_field :password, :placeholder => "• • • • • • • • • •" %>
 
     <div><%= f.submit "Sign in" %></div>
