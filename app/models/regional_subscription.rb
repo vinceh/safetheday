@@ -23,7 +23,7 @@ class RegionalSubscription < ActiveRecord::Base
     return @stripe_object_singleton
   end
 
-  def interval_words
+  def interval_words(stripe_object)
     stripe_object.interval_count.to_s + " " + stripe_object.interval.capitalize+(stripe_object.interval_count > 1 ? "s" : "" )
   end
 

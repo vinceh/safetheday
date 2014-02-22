@@ -14,20 +14,20 @@
           <% end %>
         </div>
         <div class="content">
-          <h4><%= @sub.name %></h4>
-          <p class="sub"><%= @sub.description %></p>
+          <h4><%= current_user.subscription.name %></h4>
+          <p class="sub"><%= current_user.subscription.description %></p>
           <p class="line-item">
-            Billing & delivery: <span class="bold"><%= @sub.interval_words %></span>
+            Delivery: <span class="bold"><%= current_user.delivery_interval %></span>
           </p>
           <p class="line-item">
-            Next bill date: <span class="bold"><%= (Time.at(@stripe_customer.subscriptions.data[0].current_period_end)+1.day).strftime("%b %d, %Y") %></span>
+            Next bill date: <span class="bold"><%= current_user.next_bill_date_in_words %></span>
           </p>
           <p class="line-item">
             Amount: <span class="bold">
-            <% if @stripe_customer.discount %>
+            <% if current_user.stripe_object.discount %>
               FREE
             <% else %>
-              <%= "$"+display_fee(@sub.fee)+@sub.currency %>
+              <%= "$"+display_fee(current_user.full_price)+current_user.stripe_object.currency.upcase %>
             <% end %>
           </span>
           </p>

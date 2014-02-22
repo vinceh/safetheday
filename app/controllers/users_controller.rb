@@ -7,10 +7,6 @@ class UsersController < ApplicationController
   before_filter :check_provider, :only => []
 
   def account
-    if current_user.regional_subscription
-      @sub = current_user.regional_subscription
-      @stripe_customer = Stripe::Customer.retrieve(current_user.stripe_customer_id)
-    end
   end
 
   def payment

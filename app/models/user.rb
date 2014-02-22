@@ -1,5 +1,4 @@
 class User < ActiveRecord::Base
-
   has_many :invoices
   belongs_to :subscription
   # Include default devise modules. Others available are:
@@ -15,6 +14,15 @@ class User < ActiveRecord::Base
                   :shipping_state, :shipping_country, :shipping_zipcode, :shipping_phone, :billing_address_two, :shipping_address_two
 
   before_create :create_referral_code
+
+  attr_accessor :stripe_object_singleton
+
+  def stripe_object
+    if !@stripe_object_singleton
+      @stripe_object_singleton = Stripe::Customer.retrieve(stripe_customer_id)
+    end
+    return @stripe_object_singleton
+  end
 
   def create_subscription(subscription, stripe_token)
     self.subscription = subscription
@@ -48,48 +56,55 @@ class User < ActiveRecord::Base
     end
   end
 
-  def change_subscription(sub)
-    sub = Subscription.find_by_shorthand(sub)
-
-    # really dirty
-    new_region = RegionalSubscription.where(state: billing_state,
-                                            subscription_id: sub.id).first
-
-    if !is_monthly?
-      self.regional_subscription = RegionalSubscription.where(state: billing_state,
-                                                              subscription_id: sub.id,
-                                                              stripe_subscription_id: new_region.stripe_subscription_id+"_bi").first
+  def delivery_interval
+    if stripe_object.subscriptions.data[0].quantity = 1
+      return "Monthly"
     else
-      self.regional_subscription = new_region
+      return "2 Weeks"
     end
+  end
+
+  def next_bill_date_in_words
+    (Time.at(stripe_object.subscriptions.data[0].current_period_end)+1.day).strftime("%b %d, %Y")
+  end
+
+  def full_price
+    subscription.price + calculate_tax
+  end
+
+  def change_subscription(sub)
+    self.subscription = sub
 
     begin
+      if shipping_country == "CA"
+        stripe_plan = self.subscription.stripe + "_ca"
+      else
+        stripe_plan = self.subscription.stripe + "_us"
+      end
+
       customer = Stripe::Customer.retrieve(self.stripe_customer_id)
-      customer.update_subscription(:plan => self.regional_subscription.stripe_subscription_id,
-                                   :prorate => false)
+      customer.update_subscription(:plan => stripe_plan,
+                                   :prorate => false,
+                                   :quantity => stripe_object.subscriptions.data[0].quantity)
 
       save
 
-      return sub
+      true
     rescue Stripe::CardError => e
       nil
     end
   end
 
   def update_payment(stripe_token)
-    self.regional_subscription = RegionalSubscription
-                                    .where(state: billing_state,
-                                           subscription_id: self.regional_subscription.subscription_id).first
-
     begin
       customer = Stripe::Customer.retrieve(self.stripe_customer_id)
-      customer.update_subscription(:plan => self.regional_subscription.stripe_subscription_id,
-                                   :prorate => false,
-                                   :card => stripe_token)
+      customer.card = stripe_token
+      customer.save
 
       token = Stripe::Token.retrieve(stripe_token)
       self.card_last_four = token.card.last4
       self.card_type = token.card.type
+
       save
 
       true
@@ -114,32 +129,13 @@ class User < ActiveRecord::Base
   # really hackish way of doing this
   # but if the stripe_subscription_id doesn't end in _bi then it's monthly
   def is_monthly?
-    !regional_subscription.stripe_subscription_id.include?('bi')
+    stripe_object.subscriptions.data[0].quantity == 1
   end
 
   def change_interval
-    current = regional_subscription.stripe_subscription_id
-
-    if is_monthly?
-      current = current + "_bi"
-    else
-      current.slice!("_bi")
-    end
-
-    self.regional_subscription = RegionalSubscription.where(stripe_subscription_id: current).first
-
-    begin
-      customer = Stripe::Customer.retrieve(self.stripe_customer_id)
-      customer.update_subscription(:plan => self.regional_subscription.stripe_subscription_id,
-                                   :prorate => false,
-                                   :trial_end => customer.subscriptions.data[0].current_period_end)
-
-      save
-
-      return self.regional_subscription
-    rescue Stripe::CardError => e
-      nil
-    end
+    customer.update_subscription(:plan => stripe_plan,
+                                 :prorate => false,
+                                 :quantity => (is_monthly? && 2) || 1 )
   end
 
   def give_free_month
@@ -202,7 +198,7 @@ class User < ActiveRecord::Base
   def calculate_tax
     total = 0
 
-    taxes.all.each do |t|
+    taxes.each do |t|
       total = total + (self.subscription.price * (t.percentage.to_f / 100)).round
     end
 
@@ -210,7 +206,7 @@ class User < ActiveRecord::Base
   end
 
   def taxes
-    Tax.where(country: self.shipping_country, state: self.shipping_state).all
+    Tax.where(country: self.billing_country, state: self.billing_state).all
   end
 
   protected
