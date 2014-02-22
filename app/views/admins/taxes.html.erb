@@ -1,0 +1,25 @@
+<%= render "admin_side", :current => "taxes" %>
+
+<div class="contenter">
+  <div class="section">
+    <h1>Taxes</h1>
+  </div>
+  <div class="section">
+    <table>
+      <tr>
+        <th>Country</th>
+        <th>State/Province</th>
+        <th>Type</th>
+        <th>%</th>
+      </tr>
+      <% @taxes.each do |t| %>
+        <tr>
+          <td><%= t.country %></td>
+          <td><%= t.state %></td>
+          <td><%= t.shorthand %></td>
+          <td><%= t.percentage %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

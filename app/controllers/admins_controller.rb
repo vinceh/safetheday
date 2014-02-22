@@ -90,4 +90,12 @@ class AdminsController < ApplicationController
 
     redirect_to :action => :pending_shipments
   end
+
+  def subs
+    @subs = Subscription.all
+  end
+
+  def taxes
+    @taxes = Tax.all
+  end
 end

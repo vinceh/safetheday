@@ -55,8 +55,18 @@ a {
   }
   table {
     width: 100%;
+    font-family: "GothamLight";
     tbody, tr {
       width: 100%;
+    }
+    &.pending-items {
+      th:last-child {
+        width: 75px;
+        text-align: center;
+      }
+      td:last-child {
+        text-align: center;
+      }
     }
     tr {
       @include transition-property(background-color);
@@ -78,18 +88,11 @@ a {
       width: 100%/6;
       @include font-regular;
       font-size: 18px;
-      &:last-child {
-        width: 75px;
-        text-align: center;
-      }
     }
     th, td {
       padding: 15px;
     }
     td {
-      &:last-child {
-        text-align: center;
-      }
       a {
         font-size: 13px;
         padding: 5px 10px;

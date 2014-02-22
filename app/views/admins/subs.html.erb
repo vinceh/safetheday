@@ -1,0 +1,23 @@
+<%= render "admin_side", :current => "subs" %>
+
+<div class="contenter">
+  <div class="section">
+    <h1>Subscriptions</h1>
+  </div>
+  <div class="section">
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+      </tr>
+      <% @subs.each do |s| %>
+        <tr>
+          <td><%= s.name %></td>
+          <td><%= s.description %></td>
+          <td><%= "$#{display_fee(s.price)}" %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
