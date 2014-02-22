@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
 
   has_many :invoices
-  belongs_to :regional_subscription
+  belongs_to :subscription
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -17,15 +17,20 @@ class User < ActiveRecord::Base
   before_create :create_referral_code
 
   def create_subscription(subscription, stripe_token)
-    self.regional_subscription = RegionalSubscription
-                                    .where(state: billing_state,
-                                           subscription_id: subscription.id).first
+    self.subscription = subscription
 
     begin
+      if shipping_country == "CA"
+        stripe_plan = self.subscription.stripe + "_ca"
+      else
+        stripe_plan = self.subscription.stripe + "_us"
+      end
+
       customer = Stripe::Customer.create(
         :card  => stripe_token,
-        :plan => self.regional_subscription.stripe_subscription_id,
-        :email => self.email
+        :plan => stripe_plan,
+        :email => self.email,
+        :account_balance => calculate_tax
       )
 
       self.stripe_customer_id = customer.id
@@ -41,10 +46,6 @@ class User < ActiveRecord::Base
     rescue Stripe::CardError => e
       nil
     end
-  end
-
-  def subscription
-    regional_subscription.subscription
   end
 
   def change_subscription(sub)
@@ -196,6 +197,20 @@ class User < ActiveRecord::Base
       user.uid = auth.uid
       user.save!
     end
+  end
+
+  def calculate_tax
+    total = 0
+
+    taxes.all.each do |t|
+      total = total + (self.subscription.price * (t.percentage.to_f / 100)).round
+    end
+
+    return total
+  end
+
+  def taxes
+    Tax.where(country: self.shipping_country, state: self.shipping_state).all
   end
 
   protected

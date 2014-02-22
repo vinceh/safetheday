@@ -9,6 +9,19 @@ class EventsController < ApplicationController
       event = Stripe::Event.retrieve(id)
 
       case event.type
+        when 'invoice.created'
+          response = event.data.object
+
+          if !response.closed
+            user = User.find_by_stripe_customer_id(response.customer)
+
+            Stripe::InvoiceItem.create(
+              :customer => response.customer,
+              :amount => user.calculate_tax,
+              :currency => response.currency,
+              :invoice => response.id
+            )
+          end
         when 'invoice.payment_succeeded'
           response = event.data.object
           user = User.find_by_stripe_customer_id(response.customer)
@@ -28,7 +41,7 @@ class EventsController < ApplicationController
           if !response.discount
             ch = Stripe::Charge.retrieve(invoice.stripe_charge_id)
             meta = {}
-            user.regional_subscription.taxes.each do |t|
+            user.taxes.each do |t|
               meta[t.shorthand] = t.percentage
             end
             ch.metadata = meta
