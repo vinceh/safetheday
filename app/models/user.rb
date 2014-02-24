@@ -57,11 +57,15 @@ class User < ActiveRecord::Base
   end
 
   def delivery_interval
-    if stripe_object.subscriptions.data[0].quantity = 1
+    if current_quantity == 1
       return "Monthly"
     else
       return "2 Weeks"
     end
+  end
+
+  def current_quantity
+    stripe_object.subscriptions.data[0].quantity
   end
 
   def next_bill_date_in_words
@@ -69,7 +73,7 @@ class User < ActiveRecord::Base
   end
 
   def full_price
-    subscription.price + calculate_tax
+    (subscription.price + calculate_tax)*current_quantity
   end
 
   def change_subscription(sub)
@@ -89,7 +93,7 @@ class User < ActiveRecord::Base
 
       save
 
-      true
+      return self.subscription
     rescue Stripe::CardError => e
       nil
     end
@@ -133,9 +137,19 @@ class User < ActiveRecord::Base
   end
 
   def change_interval
-    customer.update_subscription(:plan => stripe_plan,
-                                 :prorate => false,
-                                 :quantity => (is_monthly? && 2) || 1 )
+    begin
+      stripe_object.update_subscription(:plan => current_plan_id,
+                                        :prorate => false,
+                                        :quantity => (is_monthly? && 2) || 1 )
+
+      true
+    rescue Stripe::CardError => e
+      nil
+    end
+  end
+
+  def current_plan_id
+    stripe_object.subscriptions.data[0].plan.id
   end
 
   def give_free_month
@@ -151,11 +165,23 @@ class User < ActiveRecord::Base
     save!
   end
 
+  def give_pending_free_month
+    self.current_free_months = self.current_free_months - 1
+    add_stripe_free_month
+    save!
+  end
+
   def add_stripe_free_month
-    customer = Stripe::Customer.retrieve(self.stripe_customer_id)
+    customer = stripe_object
 
     if !customer.discount
-      customer.coupon = "free_month"
+      if self.shipping_country == "CA"
+        coupon = "free_month_ca"
+      else
+        coupon = "free_month_US"
+      end
+
+      customer.coupon = coupon
       customer.save
       return true
     else

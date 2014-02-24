@@ -51,7 +51,7 @@ class UsersController < ApplicationController
     @user = current_user
     @user.update_attributes(params[:user])
 
-    flash[:success] = "Shipping address updated!  Your next box will be shipped to your new address."
+    flash[:notice] = "Shipping address updated!  Your next box will be shipped to your new address."
 
     redirect_to :action => :payment
   end
@@ -62,26 +62,22 @@ class UsersController < ApplicationController
 
     if @user.valid? && @user.update_payment(params[:stripeToken])
 
-      flash[:success] = "Credit Card Updated!  Your next box will be charged to your new Credit Card."
+      flash[:notice] = "Credit Card Updated!  Your next box will be charged to your new Credit Card."
       redirect_to :action => :payment
     end
   end
 
   def change_subscription
-    sub = current_user.change_subscription(params[:sub])
+    sub = current_user.change_subscription(Subscription.find_by_shorthand(params[:sub]))
 
     flash[:notice] = "Subscription updated!  You will receive a box of #{sub.name} in your next shipment."
     redirect_to :action => :account
   end
 
   def change_interval
+    if current_user.change_interval
 
-    if true
-      redirect_to :action => :account
-    else
-      region_sub = current_user.change_interval
-
-      flash[:notice] = "Subscription updated!  You will receive a box every #{region_sub.interval_words}"
+      flash[:notice] = "Subscription updated!  Your delivery has changed to #{current_user.delivery_interval.downcase}"
       redirect_to :action => :account
     end
   end

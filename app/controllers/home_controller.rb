@@ -17,6 +17,4 @@ class HomeController < ApplicationController
     session[:cart] = params[:pack]
     redirect_to new_user_registration_path
   end
-
-
 end

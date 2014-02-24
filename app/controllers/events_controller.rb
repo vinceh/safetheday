@@ -49,6 +49,10 @@ class EventsController < ApplicationController
           else
             invoice.free_month = true
             invoice.save!
+
+            if user.current_free_months > 0
+              user.give_pending_free_month
+            end
           end
         when 'invoice.payment_failed'
           response = event.data.object

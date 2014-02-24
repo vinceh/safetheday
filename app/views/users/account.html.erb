@@ -55,6 +55,23 @@
             <% end %>
           <% end %>
         </div>
+        <div class="option">
+          <% if current_user.is_monthly? %>
+            <p>
+              Need more? Good for you! Get a box delivered every 2 weeks.
+            </p>
+            <%= link_to change_interval_path, :method => "POST", :class => "btn change" do %>
+              get delivery <br/> every 2 weeks
+            <% end %>
+          <% else %>
+            <p>
+              Want less condoms?  Get a delivery every month!
+            </p>
+            <%= link_to change_interval_path, :method => "POST", :class => "btn change" do %>
+              get delivery <br/> every month
+            <% end %>
+          <% end %>
+        </div>
       </div>
 
       <a class="danger-link">
