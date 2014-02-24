@@ -2,6 +2,7 @@
   <%= javascript_include_tag "validate.min.js" %>
   <%= javascript_include_tag "https://js.stripe.com/v2/" %>
   <%= javascript_include_tag "jquery.payment" %>
+  <%= javascript_include_tag "jquery.customSelect.min" %>
 
   <script type="text/javascript">
     Stripe.setPublishableKey('<%= ENV['PUBLISHABLE_KEY'] %>');
@@ -63,7 +64,7 @@
       <div class="current-wrap">
         <h3>
           Credit Card
-          <a class="hider" data-target="update-payment" data-origin="billing">edit</a>
+          <a class="hider credit-hider" data-target="update-payment" data-origin="billing">edit</a>
         </h3>
         <div class="billing">
           <div class="card-wrap">
@@ -138,7 +139,7 @@
               <option value="11">11</option>
               <option value="12">12</option>
             </select>
-            <span> / </span>
+            <span class="slash"> / </span>
             <%= select_year 14, {start_year: Time.now.year, end_year: Time.now.year+10, prompt: 'Year'}, {"data-stripe" => "exp_year"} %>
             <div class="field-help">Expiration date - MM/YYYY </div>
           </div>
@@ -154,7 +155,7 @@
           <%= f.select :billing_country, options_for_select(countries), {}, {"data-stripe" => "address_country", :required => true, :class => "country"} %>
           <div class="form-row city-info">
             <%= f.text_field :billing_city, :placeholder => "City", "data-stripe" => "address_city", :required => true %>
-            <%= f.select :billing_state, ca_provinces, {}, {"data-stripe" => "address_state", :required => true} %>
+            <%= f.select :billing_state, ca_provinces, {}, {"data-stripe" => "address_state", :required => true, :class => "state-select" } %>
             <%= f.text_field :billing_zipcode, :placeholder => "Postal/Zip Code", "data-stripe" => "address_zip", :required => true %>
           </div>
           <%= f.text_field :billing_phone, :placeholder => "Phone", :required => true %>
@@ -255,7 +256,7 @@
               <%= f.select :shipping_country, options_for_select(countries), {}, {:class => "country"} %>
               <div class="form-row city-info">
                 <%= f.text_field :shipping_city, :placeholder => "City", :required => true %>
-                <%= f.select :shipping_state, ca_provinces %>
+                <%= f.select :shipping_state, ca_provinces, {}, :class => "state-select" %>
                 <%= f.text_field :shipping_zipcode, :placeholder => "Postal/Zip Code", :required => true %>
               </div>
               <%= f.text_field :shipping_phone, :placeholder => "Phone" %>
@@ -286,6 +287,7 @@
     }
     else {
       $('.shipping-info').show();
+      $('select').trigger('update');
     }
   });
 
@@ -296,6 +298,7 @@
 
     $origin.hide();
     $target.show();
+    $('select').trigger('update');
   });
 
   $('.canceller').on('click', function() {
@@ -310,5 +313,6 @@
   $(window).load(function() {
     $('.card-number').payment('formatCardNumber');
     $('.cvc').payment('formatCardCVC');
+    $('select').customSelect();
   });
 </script>

@@ -96,14 +96,14 @@ span {
   }
 }
 
-input, select {
+input, select, .customSelect {
   @include font-light;
   outline: none;
   font-size: 16px;
   color: #333;
   @include transition-property(background-color, border);
   @include transition-duration(0.3s);
-  &[type='text'], &[type='email'], &[type='password'] {
+  &[type='text'], &[type='email'], &[type='password'], &.customSelect {
     margin: 0;
     padding: 10px;
     border: 1px solid #ccc;
@@ -524,11 +524,12 @@ a {
       margin-bottom: 10px;
     }
     &.credit-date {
-      span {
-        margin: 0 5px;
-      }
-      select {
+      select, .customSelect {
+        @include box-sizing(border-box);
         width: 224px;
+      }
+      .slash {
+        margin: 0 5px;
       }
     }
     &.city-info {
@@ -545,11 +546,16 @@ a {
       }
     }
   }
-  select {
+  select, .customSelect {
     margin-bottom: 10px;
-    &.country {
+    @include box-sizing(border-box);
+    padding: 12px 12px 11px;
+    &.country,  {
       display: block;
       width: 472px;
+    }
+    &.state-select {
+      width: 72px;
     }
   }
   p {
@@ -1739,5 +1745,33 @@ a {
       font-size: 22px;
     }
   }
+}
+
+.customSelect {
+
+}
+
+.customSelect.customSelectHover {
+  /* Styles for when the select box is hovered */
+}
+
+.customSelect.customSelectOpen {
+  /* Styles for when the select box is open */
+}
+
+.customSelect.customSelectFocus {
+  /* Styles for when the select box is in focus */
+}
+
+.customSelect.customSelectDisabledOption {
+  /* Styles for when the selected item is a disabled one */
+}
+
+.customSelect.customSelectDisabled {
+  /* Styles for when the select box itself is disabled */
+}
+
+.customSelectInner {
+  /* You can style the inner box too */
 }
 
