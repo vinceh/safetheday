@@ -14,7 +14,7 @@
       </h3>
       <div style="display: table; width: 100%; margin-top: 15px;">
         <div style="float: left; width: 130px; text-align: center;">
-          <% if @sub.subscription.shorthand == 'wing' %>
+          <% if @user.subscription.shorthand == 'wing' %>
             <img src="https://safetheday.com/assets/product/wing.png" style="height: 70px; margin-top: 30px;">
           <% else %>
             <img src="https://safetheday.com/assets/product/conno.png" style="height: 70px; margin-top: 30px;">
@@ -24,10 +24,10 @@
         <div style="float: left; width: 230px; font-size: 13px; color: #777777;">
           <div style="display: table; width: 100%; margin-bottom: 10px;">
             <div style="float: left;">
-              <%= @sub.subscription.name %>
+              <%= @user.subscription.name %>
             </div>
             <div style="float: right; font-weight: bold; color: #555555;">
-              <%= "$"+display_fee(@sub.subscription.price)+@sub.currency %>
+              <%= "$"+display_fee(@user.subscription.price)+@user.currency.upcase %>
             </div>
           </div>
           <div style="display: table; width: 100%; margin-bottom: 10px;">
@@ -35,7 +35,7 @@
               Tax
             </div>
             <div style="float: right; font-weight: bold; color: #555555;">
-              <%= "$"+display_fee(@sub.fee-@sub.subscription.price)+@sub.currency %>
+              <%= "$"+display_fee(@user.calculate_tax)+@user.currency.upcase %>
             </div>
           </div>
           <hr style="border: 0; border-top: 1px dashed #cccccc; margin-bottom: 10px;">
@@ -44,7 +44,7 @@
               Total
             </div>
             <div style="float: right; font-weight: bold; color: #555555; font-size: 16px;">
-              <%= "$"+display_fee(@sub.fee)+@sub.currency %>
+              <%= "$"+display_fee(@user.total_fee)+@user.currency.upcase %>
             </div>
           </div>
         </div>

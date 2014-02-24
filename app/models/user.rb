@@ -171,6 +171,14 @@ class User < ActiveRecord::Base
     save!
   end
 
+  def total_fee
+    (self.subscription.price + calculate_tax) * current_quantity
+  end
+
+  def currency
+    stripe_object.currency
+  end
+
   def add_stripe_free_month
     customer = stripe_object
 

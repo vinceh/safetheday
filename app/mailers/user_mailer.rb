@@ -4,7 +4,6 @@ class UserMailer < ActionMailer::Base
 
   def subscribed(user, request)
     @user = user
-    @sub = @user.regional_subscription
     @request = request
     mail(:to => @user.email, :subject => "Welcome to Safe")
   end
