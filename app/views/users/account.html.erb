@@ -41,14 +41,14 @@
         <div class="option">
           <% if current_user.subscription.shorthand == 'wing' %>
             <p>
-              Do you seek the ultimate pleasure? Upgrade to <span class="italic">The Connoisseur</span>, $20
+              Do you seek the ultimate pleasure? Upgrade to <span class="italic">The Connoisseur</span>, $15
             </p>
             <%= link_to change_subscription_path(sub: 'conno'), :method => "POST", :class => "btn change" do %>
               switch to <br/> The Connoisseur
             <% end %>
           <% else %>
             <p>
-              Don't need the luxury? Switch to <span class="italic">The Wingman</span>, $12
+              Don't need the luxury? Switch to <span class="italic">The Wingman</span>, $9
             </p>
             <%= link_to change_subscription_path(sub: 'wing'), :method => "POST", :class => "btn change" do %>
               switch to <br/> The Wingman
