@@ -1706,6 +1706,7 @@ a {
   background: url("product/g8.jpg");
   background-size: cover;
   background-position: top;
+  background-attachment: fixed;
   display: table;
   width: 100%;
   .words {
@@ -1794,12 +1795,14 @@ a {
   background: url("product/closeup.jpg");
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
 }
 
 .convert {
   background: url("product/g7.jpg");
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   height: 900px;
   display: table;
   width: 100%;
