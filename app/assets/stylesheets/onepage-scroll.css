@@ -30,7 +30,7 @@ body, .onepage-wrapper, html {
 
 .onepage-pagination {
     position: absolute;
-    right: 10px;
+    right: 22px;
     top: 45%;
     z-index: 5;
     list-style: none;
@@ -40,6 +40,7 @@ body, .onepage-wrapper, html {
 .onepage-pagination li {
     padding: 0;
     text-align: center;
+    margin-bottom: 0;
 }
 .onepage-pagination li a{
     padding: 10px;
