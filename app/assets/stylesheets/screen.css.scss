@@ -813,6 +813,10 @@ a {
         margin-top: 33px;
       }
     }
+    h4 {
+      font-family: "Gotham";
+      text-transform: uppercase;
+    }
     p, h4 {
       @include text-shadow(1px 1px white);
     }
@@ -821,16 +825,22 @@ a {
       width: 402px;
       padding-left: 30px;
       p {
-        font-size: 18px;
+        font-size: 15px;
         line-height: 1em;
         margin-top: 5px;
         &.sub {
-          font-size: 16px;
+          font-size: 15px;
           color: #888;
+          text-transform: uppercase;
         }
       }
       .line-item {
+        text-transform: uppercase;
         margin: 25px 0;
+        span {
+          text-transform: none;
+          color: 333;
+        }
         &:last-child {
           margin-bottom: 0;
         }
