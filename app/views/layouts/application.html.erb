@@ -4,6 +4,7 @@
   <title>Safe</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "jquery.placeholder.js" %>
   <%= csrf_meta_tags %>
 
   <%= yield :head %>
@@ -18,6 +19,10 @@
 
     ga('create', 'UA-48043721-1', 'safetheday.com');
     ga('send', 'pageview');
+
+    $(window).load(function() {
+      $('input, textarea').placeholder();
+    });
 
   </script>
 
