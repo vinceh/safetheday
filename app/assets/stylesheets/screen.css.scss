@@ -207,7 +207,7 @@ a {
   .top-logo {
     height: 16px;
     position: relative;
-    top: 17px;
+    top: 16px;
   }
   a {
     position: relative;
@@ -259,7 +259,7 @@ a {
 }
 
 .footer {
-  background-color: #161616;
+  background-color: #262626;
   height: 50px;
   position: relative;
   z-index: 999;
@@ -1687,9 +1687,9 @@ a {
 
 .hero {
   height: 800px;
-  background: url("product/g6.jpg");
+  background: url("product/g8.jpg");
   background-size: cover;
-  background-position: center;
+  background-position: top;
   display: table;
   width: 100%;
   .words {
