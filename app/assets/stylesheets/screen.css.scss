@@ -466,6 +466,10 @@ a {
   display: table;
 }
 
+.strike {
+  text-decoration: line-through;
+}
+
 #payment-form, .user-form {
   float: right;
   margin: 100px 0 200px;
@@ -1258,7 +1262,18 @@ a {
         text-align: center;
         background-color: #ddd;
         border-top: 1px dashed #bbb;
+        span.strike {
+          color: #777;
+        }
         span {
+          display: block;
+          margin: 10px 0;
+          &.limited {
+            font-size: 16px;
+            color: #666;
+          }
+        }
+        span.sub {
           @include font-light;
           color: #777;
           font-size: 16px;

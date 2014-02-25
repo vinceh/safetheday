@@ -43,7 +43,7 @@ task :stripe_seed => :environment do
   puts "Creating Stripe Plans..."
   # Canada
   Stripe::Plan.create(
-    :amount => 1200,
+    :amount => 900,
     :interval => 'month',
     :name => 'Regular Canada',
     :currency => 'cad',
@@ -51,7 +51,7 @@ task :stripe_seed => :environment do
   )
 
   Stripe::Plan.create(
-    :amount => 2000,
+    :amount => 1500,
     :interval => 'month',
     :name => 'Premium Canada',
     :currency => 'cad',
@@ -60,7 +60,7 @@ task :stripe_seed => :environment do
 
   # US
   Stripe::Plan.create(
-    :amount => 1200,
+    :amount => 900,
     :interval => 'month',
     :name => 'Regular US',
     :currency => 'usd',
@@ -68,7 +68,7 @@ task :stripe_seed => :environment do
   )
 
   Stripe::Plan.create(
-    :amount => 2000,
+    :amount => 1500,
     :interval => 'month',
     :name => 'Premium US',
     :currency => 'usd',
@@ -84,13 +84,13 @@ task :sub_database_seed => :environment do
   puts "Creating subscriptions..."
   Subscription.create(name: "The Wingman",
                       description: "8 Durex Sensi Thin, 1 Okamoto 0.03L Condom",
-                      price: "1200",
+                      price: "900",
                       shorthand: "wing",
                       stripe: "reg")
 
   Subscription.create(name: "The Connoisseur",
                       description: "9 Okamoto 0.03L Condoms",
-                      price: "2000",
+                      price: "1500",
                       shorthand: "conno",
                       stripe: "prem")
 
