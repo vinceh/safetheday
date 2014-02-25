@@ -321,6 +321,7 @@ a {
           color: white;
           @include inline-block;
           @include text-shadow(0 0 45px #333);
+          letter-spacing: 1px;
           span {
             position: relative;
           }
