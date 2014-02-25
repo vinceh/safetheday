@@ -1203,6 +1203,10 @@ a {
     &:first-child {
       margin-left: 178px;
     }
+    .pack-select {
+      font-family: "Gotham";
+      @include inline-block;
+    }
     .select-btn {
       @include inline-block;
       width: 60%;
@@ -1250,11 +1254,33 @@ a {
       .avatar-inner {
         margin: 10px;
         position: relative;
+        line-height: 1.7em;
+        .limited {
+          font-family: "GothamThin";
+          text-transform: uppercase;
+          font-size: 16px;
+          color: #666;
 
+          -webkit-backface-visibility: hidden;
+          @include rotate(315deg);
+          position: absolute;
+          left: -80px;
+          top: -29px;
+          background-color: $secondary;
+          text-shadow: none;
+          color: white;
+          padding: 36px 13px 3px;
+          width: 162px;
+          text-align: center;
+          font-size: 13px;
+          letter-spacing: 1px;
+          color: #eee;
+          line-height: 1.4em;
+        }
       }
       .price {
         @include text-shadow(0 1px 0 white);
-        padding: 25px 0 20px;
+        padding: 10px 0;
         color: #222;
         line-height: 1.1emem;
         font-size: 20px;
@@ -1262,16 +1288,14 @@ a {
         text-align: center;
         background-color: #ddd;
         border-top: 1px dashed #bbb;
+        position: relative;
+        overflow: hidden;
         span.strike {
           color: #777;
         }
         span {
           display: block;
           margin: 10px 0;
-          &.limited {
-            font-size: 16px;
-            color: #666;
-          }
         }
         span.sub {
           @include font-light;
@@ -1283,17 +1307,28 @@ a {
     h3 {
       text-align: center;
       text-transform: uppercase;
-      padding-top: 30px;
-      font-family: "GothamLight";
+      padding-top: 40px;
+      font-family: "Gotham";
       @include text-shadow(0 1px 0 white);
       font-size: 25px;
       color: #333;
+      line-height: 1.5em;
+      letter-spacing: 2px;
+      span {
+        &:first-child {
+          display: block;
+          font-family: "GothamLight";
+        }
+        &:last-child {
+          font-size: 30px;
+        }
+      }
     }
     .avatar {
       text-align: center;
       img {
         height: 140px;
-        margin: 60px 0;
+        margin: 25px 0;
       }
     }
     h4 {
