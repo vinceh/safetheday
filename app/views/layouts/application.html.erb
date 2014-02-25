@@ -65,9 +65,18 @@ mixpanel.init("44aba3b1b987db22c8a8dbf6ac9f4822");</script><!-- end Mixpanel -->
     <span></span>
     <%= link_to "FAQ", faq_path,:class => "light" %>
     <span></span>
-    <%= link_to "TWITTER", "https://twitter.com/goplaysafe",:class => "light", :target => "_blank" %>
+    <%= link_to "https://twitter.com/goplaysafe",:class => "light", :target => "_blank" do %>
+      <%= image_tag "icons/twittericon.png" %>
+    <% end %>
     <span></span>
-    <%= link_to "FACEBOOK", "https://www.facebook.com/GoPlaySafe", :class => "light", :target => "_blank" %>
+    <%= link_to "https://www.facebook.com/GoPlaySafe", :class => "light", :target => "_blank" do %>
+      <%= image_tag "icons/facebookicon.png" %>
+    <% end %>
+    <span></span>
+    <%= link_to "mailto:hello@safetheday.com",:class => "light", :target => "_blank" do %>
+      <%= image_tag "icons/emailicon.png" %>
+    <% end %>
+
   </div>
 </div>
 

@@ -268,9 +268,9 @@ a {
     font-size: 25px;
     background-color: #ddd;
     @include border-radius(5px);
-    height: 3px;
-    width: 3px;
-    margin: 0 3px 0 2px;
+    height: 2px;
+    width: 2px;
+    margin: 0 5px 0 4px;
     @include inline-block;
     position: relative;
     bottom: 1px;
@@ -279,6 +279,9 @@ a {
     position: relative;
     top: 17px;
     text-align: center;
+  }
+  img {
+    height: 12px;
   }
 }
 
@@ -293,6 +296,9 @@ a {
       width: 100%;
       text-align: center;
       padding-bottom: 15px;
+      img {
+        height: 12px;
+      }
     }
     .content {
       position: relative;
