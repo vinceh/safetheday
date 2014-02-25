@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
     return @stripe_object_singleton
   end
 
-  def create_subscription(subscription, stripe_token)
+  def create_subscription(subscription, stripe_token, coupon_id = nil)
     self.subscription = subscription
 
     begin
@@ -34,11 +34,16 @@ class User < ActiveRecord::Base
         stripe_plan = self.subscription.stripe + "_us"
       end
 
+      discount = discount_for_coupon(coupon_id)
+      tax = calculate_tax - discount[0]
+      tax = (tax * (1-discount[1].to_f/100)).round
+
       customer = Stripe::Customer.create(
         :card  => stripe_token,
         :plan => stripe_plan,
         :email => self.email,
-        :account_balance => calculate_tax
+        :account_balance => tax,
+        :coupon => coupon_id
       )
 
       self.stripe_customer_id = customer.id
@@ -250,5 +255,23 @@ class User < ActiveRecord::Base
       random_token = SecureRandom.urlsafe_base64(nil, false)
       break random_token unless User.exists?(referral_code: random_token)
     end
+  end
+
+  private
+
+  def discount_for_coupon(coupon_id)
+    discount = [0,0]
+
+    begin
+      c = Stripe::Coupon.retrieve(coupon_id)
+
+      if c.valid
+        discount[0] = c.amount_off || 0
+        discount[1] = c.percent_off || 0
+      end
+    rescue
+    end
+
+    discount
   end
 end

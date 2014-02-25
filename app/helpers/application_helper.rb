@@ -88,6 +88,6 @@ module ApplicationHelper
     charge.metadata.each do |k, v|
       total = total + v.to_i
     end
-    return (@charge.amount.to_f * (total.to_f/100).to_f).to_i
+    return @charge.amount - (@charge.amount.to_f / (1+total.to_f/100).to_f).to_i
   end
 end

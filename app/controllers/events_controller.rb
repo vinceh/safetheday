@@ -31,14 +31,21 @@ class EventsController < ApplicationController
           invoice = Invoice.new
           invoice.user = user
           invoice.stripe_invoice_id = response.id
-          invoice.amount = response.total
+          invoice.amount = response.amount_due
           invoice.stripe_charge_id = response.charge
           invoice.currency = response.currency
           invoice.subscription_id = response.lines.data[0].plan.id
 
           invoice.save!
 
-          if !response.discount
+          if response.discount && response.discount.coupon.percent_off == 100
+            invoice.free_month = true
+            invoice.save!
+
+            if user.current_free_months > 0
+              user.give_pending_free_month
+            end
+          else
             ch = Stripe::Charge.retrieve(invoice.stripe_charge_id)
             meta = {}
             user.taxes.each do |t|
@@ -46,13 +53,6 @@ class EventsController < ApplicationController
             end
             ch.metadata = meta
             ch.save
-          else
-            invoice.free_month = true
-            invoice.save!
-
-            if user.current_free_months > 0
-              user.give_pending_free_month
-            end
           end
         when 'invoice.payment_failed'
           response = event.data.object

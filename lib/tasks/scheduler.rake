@@ -1,5 +1,4 @@
 task :admin => :environment do
-
   puts "Creating admin..."
 
   newuser = Admin.new({ :email => 'admin@safetheday.com',
@@ -18,6 +17,23 @@ task :clean_tables => :environment do
   Subscription.destroy_all
 
   puts "Done"
+end
+
+task :delete_stripe_data => :environment do
+  coupons = Stripe::Coupon.all
+  plans = Stripe::Plan.all
+
+  puts "Deleting coupons..."
+
+  coupons.data.each do |c|
+    c.delete
+  end
+
+  puts "Deleting plans..."
+
+  plans.data.each do |p|
+    p.delete
+  end
 end
 
 task :stripe_seed => :environment do
