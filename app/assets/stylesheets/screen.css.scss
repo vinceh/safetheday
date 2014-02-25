@@ -197,7 +197,6 @@ a {
 }
 
 .header {
-  border-bottom: 1px solid #aaa;
   position: absolute;
   top: 0;
   width: 100%;
@@ -246,7 +245,6 @@ a {
     position: relative;
   }
   &.dark {
-    border-bottom: 1px solid #aaa;
     .backwash {
       position: absolute;
       opacity: 0.4;
@@ -656,6 +654,7 @@ a {
               float: right;
               font-weight: bold;
               color: #333;
+
             }
           }
           .note {
@@ -1297,15 +1296,22 @@ a {
         position: relative;
         overflow: hidden;
         span.strike {
-          color: #777;
+          color: #999;
+          font-size: 18px;
+          @include text-shadow(none);
         }
         span {
           display: block;
           margin: 10px 0;
+          &.real {
+            font-family: "Gotham";
+            color: #333;
+            font-size: 23px;
+          }
         }
         span.sub {
           @include font-light;
-          color: #777;
+          color: #333;
           font-size: 16px;
         }
       }
