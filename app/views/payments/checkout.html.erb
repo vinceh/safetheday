@@ -16,8 +16,14 @@
         </div>
         <div class="content">
           <div class="line">
-            <div class="title"><%= @sub.name %></div>
-            <div class="price">$<%= display_fee(@sub.price) %>CAD</div>
+            <div class="title"><%= @sub.name %> <br/>
+              <% if @quantity == 2 %>
+                <span>biweekly delivery</span>
+              <% else %>
+                <span>monthly delivery</span>
+              <% end %>
+            </div>
+            <div class="price">$<%= display_fee(@sub.price * @quantity) %>CAD</div>
           </div>
           <div class="line">
             <div class="title">Shipping</div>
@@ -25,10 +31,10 @@
           </div>
           <div class="line total">
             <div class="title">Total</div>
-            <div class="price">$<%= display_fee(@sub.price) %>CAD</div>
+            <div class="price">$<%= display_fee(@sub.price * @quantity) %>CAD</div>
           </div>
           <div class="note">
-            Applicable GST/HST will be applied to all orders.
+            Applicable taxes will be applied to all orders.
           </div>
         </div>
       </div>
@@ -121,6 +127,7 @@
 
   <%= form_for @user, :url => customer_payment_path, :method => "POST", :html => {:id => "payment-form"} do |f| %>
     <%= hidden_field_tag 'subscription', session[:cart] %>
+    <%= hidden_field_tag 'quantity', session[:quantity] %>
 
     <h3>
       Credit Card Information <%= image_tag "lock.png" %>

@@ -47,15 +47,15 @@
             <p>
               Do you seek the ultimate pleasure? Upgrade to <span class="italic">The Connoisseur</span>, $15
             </p>
-            <%= link_to change_subscription_path(sub: 'conno'), :method => "POST", :class => "btn change" do %>
-              switch to <br/> The Connoisseur
+            <%= link_to change_subscription_path(sub: 'conno'), :method => "POST", :confirm => "Are you sure you want to upgrade to The Connoisseur?",  :class => "btn change" do %>
+              <span>switch to</span> <br/> The Connoisseur
             <% end %>
           <% else %>
             <p>
               Don't need the luxury? Switch to <span class="italic">The Wingman</span>, $9
             </p>
-            <%= link_to change_subscription_path(sub: 'wing'), :method => "POST", :class => "btn change" do %>
-              switch to <br/> The Wingman
+            <%= link_to change_subscription_path(sub: 'wing'), :method => "POST", :confirm => "Are you sure you want to downgrade to The Wingman?", :class => "btn change" do %>
+              <span>switch to</span> <br/> The Wingman
             <% end %>
           <% end %>
         </div>
@@ -64,15 +64,15 @@
             <p>
               Need more? Good for you! Get a box delivered every 2 weeks.
             </p>
-            <%= link_to change_interval_path, :method => "POST", :class => "btn change" do %>
-              get delivery <br/> every 2 weeks
+            <%= link_to change_interval_path, :method => "POST", :confirm => "Are you sure you want your condoms every 2 weeks?", :class => "btn change" do %>
+              <span>get delivery</span> <br/> every 2 weeks
             <% end %>
           <% else %>
             <p>
               Want less condoms?  Get a delivery every month!
             </p>
-            <%= link_to change_interval_path, :method => "POST", :class => "btn change" do %>
-              get delivery <br/> every month
+            <%= link_to change_interval_path, :method => "POST", :confirm => "Are you sure you condoms your every month?", :class => "btn change" do %>
+              <span>get delivery</span> <br/> every month
             <% end %>
           <% end %>
         </div>

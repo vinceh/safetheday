@@ -21,15 +21,21 @@
           <span class="limited">limited <br/> offer</span>
         </div>
         <div class="price">
-          <span class="strike">$12/mo</span>
-          <span class="real">$9/mo</span>
+          <span class="strike">$12/box</span>
+          <span class="real">$9/box</span>
           <span class="sub">S&H incl.</span>
         </div>
       </div>
 
-      <%= link_to add_pack_path("wing"), :class => "select-btn" do %>
-        SELECT
-      <% end %>
+      <div class="select-btn-wrap">
+        <div class="want">get a box every</div>
+        <%= link_to add_pack_path("wing", quantity: 1), :class => "select-btn" do %>
+          MONTH &middot; <span>$9/mo</span>
+        <% end %>
+        <%= link_to add_pack_path("wing", quantity: 2), :class => "select-btn" do %>
+          2 WEEKS &middot; <span>$18/mo</span>
+        <% end %>
+      </div>
 
       <div class="powers">
         <p>
@@ -68,9 +74,15 @@
         </div>
       </div>
 
-      <%= link_to add_pack_path("conno"), :class => "select-btn" do %>
-        SELECT
-      <% end %>
+      <div class="select-btn-wrap">
+        <div class="want">get a box every</div>
+        <%= link_to add_pack_path("conno", quantity: 1), :class => "select-btn" do %>
+          MONTH &middot; <span>$15/mo</span>
+        <% end %>
+        <%= link_to add_pack_path("conno", quantity: 2), :class => "select-btn" do %>
+          2 WEEKS &middot; <span>$30/mo</span>
+        <% end %>
+      </div>
 
       <div class="powers">
         <p>

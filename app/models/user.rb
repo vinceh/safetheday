@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
     return @stripe_object_singleton
   end
 
-  def create_subscription(subscription, stripe_token, coupon_id = nil)
+  def create_subscription(subscription, stripe_token, quantity, coupon_id = nil)
     self.subscription = subscription
 
     begin
@@ -37,13 +37,15 @@ class User < ActiveRecord::Base
       discount = discount_for_coupon(coupon_id)
       tax = calculate_tax - discount[0]
       tax = (tax * (1-discount[1].to_f/100)).round
+      tax = tax * quantity
 
       customer = Stripe::Customer.create(
         :card  => stripe_token,
         :plan => stripe_plan,
         :email => self.email,
         :account_balance => tax,
-        :coupon => coupon_id
+        :coupon => coupon_id,
+        :quantity => quantity
       )
 
       self.stripe_customer_id = customer.id
@@ -135,8 +137,6 @@ class User < ActiveRecord::Base
     end
   end
 
-  # really hackish way of doing this
-  # but if the stripe_subscription_id doesn't end in _bi then it's monthly
   def is_monthly?
     stripe_object.subscriptions.data[0].quantity == 1
   end

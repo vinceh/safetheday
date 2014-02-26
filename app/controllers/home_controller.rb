@@ -15,6 +15,7 @@ class HomeController < ApplicationController
 
   def add_pack
     session[:cart] = params[:pack]
+    session[:quantity] = params[:quantity]
     redirect_to new_user_registration_path
   end
 end
