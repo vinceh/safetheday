@@ -6,6 +6,7 @@ Safe::Application.routes.draw do
     get 'subs', :to => 'admins#subs', :as => :admin_subs
     get 'taxes', :to => 'admins#taxes', :as => :admin_taxes
     get 'invoices', :to => 'admins#invoices', :as => :admin_invoices
+    get 'users', :to => 'admins#users', :as => :admin_users
 
     post 'mark-shipped/:id', :to => 'admins#mark_shipped', :as => :admin_mark
     post 'bulk-mark', :to => 'admins#bulk_mark', :as => :bulk_mark

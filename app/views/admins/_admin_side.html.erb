@@ -4,6 +4,7 @@
   </div>
   <%= link_to "Pending Shipments", admin_root_path, :class => "item #{'active' if current == 'pending'}" %>
   <%= link_to "Past Shipments", admin_shipped_path, :class => "item #{'active' if current == 'shipped'}" %>
+  <%= link_to "Users", admin_users_path, :class => "item #{'active' if current == 'users'}" %>
   <%= link_to "Subscriptions", admin_subs_path, :class => "item #{'active' if current == 'subs'}" %>
   <%= link_to "Taxes", admin_taxes_path, :class => "item #{'active' if current == 'taxes'}" %>
   <%= link_to "Invoices", admin_invoices_path, :class => "item #{'active' if current == 'invoices'}" %>

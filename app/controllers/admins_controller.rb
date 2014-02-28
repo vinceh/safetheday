@@ -102,4 +102,8 @@ class AdminsController < ApplicationController
   def invoices
     @invoices = Invoice.all
   end
+
+  def users
+    @users = User.all
+  end
 end

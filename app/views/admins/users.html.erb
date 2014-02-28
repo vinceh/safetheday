@@ -1,0 +1,25 @@
+<%= render "admin_side", :current => "users" %>
+
+<div class="contenter">
+  <div class="section">
+    <h1>Taxes</h1>
+  </div>
+  <div class="section">
+    <table>
+      <tr>
+        <th>Nane</th>
+        <th>Country</th>
+        <th>Province/State</th>
+        <th>Current Subscription</th>
+      </tr>
+      <% @users.each do |u| %>
+        <tr>
+          <td><%= u.shipping_first_name + " " + u.shipping_last_name %></td>
+          <td><%= u.shipping_country %></td>
+          <td><%= u.shipping_state %></td>
+          <td><%= u.subscription.name %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
