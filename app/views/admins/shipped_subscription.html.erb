@@ -8,6 +8,7 @@
     <table>
       <tr>
         <th>Subscription</th>
+        <th>User</th>
         <th>Shipped On</th>
         <th></th>
         <th></th>
@@ -16,6 +17,7 @@
       <% @invoices.each do |i| %>
         <tr>
           <td><%= i.user.subscription.name %> <%= i.free_month && "- FREE MONTH" || "" %></td>
+          <td><%= i.user.billing_first_name + " " + i.user.billing_last_name %></td>
           <td><%= i.shipped_on.strftime("%m/%d/%y")%></td>
           <td></td>
           <td></td>
