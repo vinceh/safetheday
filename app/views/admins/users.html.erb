@@ -14,9 +14,9 @@
       </tr>
       <% @users.each do |u| %>
         <tr>
-          <td><%= u.shipping_first_name + " " + u.shipping_last_name %></td>
-          <td><%= u.shipping_country %></td>
-          <td><%= u.shipping_state %></td>
+          <td><%= u.user.billing_first_name + " " + u.user.billing_last_name %></td>
+          <td><%= u.billing_country %></td>
+          <td><%= u.billing_state %></td>
           <td><%= u.subscription.name %></td>
         </tr>
       <% end %>
