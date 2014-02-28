@@ -104,6 +104,6 @@ class AdminsController < ApplicationController
   end
 
   def users
-    @users = User.where(inactive: false)
+    @users = User.where(inactive: false).all
   end
 end
