@@ -1,8 +1,20 @@
 <%= render "admin_side", :current => "users" %>
 
 <div class="contenter">
-  <div class="section">
-    <h1>Taxes</h1>
+  <div class="section stats">
+    <h1>Users</h1>
+    <div class="bigdata">
+      <div class="value"><%= User.all.size %></div>
+      <div class="sub">total users</div>
+    </div>
+    <div class="bigdata">
+      <div class="value"><%= User.where(inactive: true).size %></div>
+      <div class="sub">inactive users</div>
+    </div>
+    <div class="bigdata">
+      <div class="value"><%= User.where(inactive: false).size %></div>
+      <div class="sub">paying customers</div>
+    </div>
   </div>
   <div class="section">
     <table>
