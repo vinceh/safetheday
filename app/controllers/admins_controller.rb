@@ -98,4 +98,8 @@ class AdminsController < ApplicationController
   def taxes
     @taxes = Tax.all
   end
+
+  def invoices
+    @invoices = Invoice.all
+  end
 end
