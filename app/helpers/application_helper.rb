@@ -7,6 +7,22 @@ module ApplicationHelper
     ]
   end
 
+  def user_country(user)
+    if user.billing_country == "CA"
+      [['Canada', 'CA']]
+    else
+      [['United States', 'US']]
+    end
+  end
+
+  def provinces_for_user(user)
+    if user.billing_country == "CA"
+      ca_provinces
+    else
+      us_states
+    end
+  end
+
   def ca_provinces
     [
       ['AB', 'AB'],

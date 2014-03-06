@@ -174,7 +174,7 @@
   <%= f.text_field :billing_last_name, :placeholder => "Last Name", :required => true, :class => "billing-last" %>
   <%= f.text_field :billing_address_one, :placeholder => "Address Line 1 (ie. Street Address, PO Box)", "data-stripe" => "address_line1", :required => true %>
   <%= f.text_field :billing_address_two, :placeholder => "Address Line 2 (Building name, Unit #, etc)", "data-stripe" => "address_line2 ", :class => "not-required" %>
-  <%= f.select :billing_country, options_for_select(countries), {}, {"data-stripe" => "address_country", :required => true, :class => "country billing-country-select"} %>
+  <%= f.select :billing_country, options_for_select(countries), {}, {"data-stripe" => "address_country", :required => true, :class => "country billing-country-select", "data-states" => "billing-state-select"} %>
   <div class="form-row city-info">
     <%= f.text_field :billing_city, :placeholder => "City", "data-stripe" => "address_city", :required => true %>
     <%= f.select :billing_state, options_for_select(ca_provinces), {}, {"data-stripe" => "address_state", :required => true, :class => "state-select billing-state-select"} %>
@@ -194,10 +194,10 @@
     <%= f.text_field :shipping_last_name, :placeholder => "Last Name" %>
     <%= f.text_field :shipping_address_one, :placeholder => "Address Line 1 (ie. Street Address, PO Box)" %>
     <%= f.text_field :shipping_address_two, :placeholder => "Address Line 2 (Building name, Unit #, etc)", :class => "not-required" %>
-    <%= f.select :shipping_country, options_for_select(countries), {}, {:class => "country"} %>
+    <%= f.select :shipping_country, options_for_select(countries), {}, {:class => "country", "data-states" => "shipping-state-select"} %>
     <div class="form-row city-info">
       <%= f.text_field :shipping_city, :placeholder => "City"%>
-      <%= f.select :shipping_state, options_for_select(ca_provinces), {}, :class => "state-select" %>
+      <%= f.select :shipping_state, options_for_select(ca_provinces), {}, :class => "state-select shipping-state-select" %>
       <%= f.text_field :shipping_zipcode, :placeholder => "Postal/Zip Code" %>
     </div>
     <%= f.text_field :shipping_phone, :placeholder => "Phone" %>
@@ -299,40 +299,24 @@
       ['WY', 'WY']
     ]
 
-  var current = "CA";
-
   $('select').customSelect({
-    changed: function(select) {
+    changed: function(select, customSelectSpan, newVal, oldVal) {
       $select = $(select);
-      if ($select.hasClass('billing-country-select') && select.val() != current) {
-        $currency = $('.currency');
-        $states = $('.billing-state-select');
+      if (newVal != oldVal && $select.attr('data-states') != null) {
+        $statesSelect = $('.'+$select.attr('data-states'));
+        var states = select.val() == 'CA' && ca_states || us_states;
 
-        if (select.val() == 'CA') {
-          $currency.html('CAD');
+        $statesSelect.find('option').remove();
+        $.each(states, function(index, item) {
+          $option = $('<option value="' + item[0] + '">' + item[1] + '</option>');
+          $statesSelect.append($option);
+        });
 
-          $states.find('option').remove();
-
-          $.each(ca_states, function(index, item) {
-            $option = $('<option value="' + item[0] + '">' + item[1] + '</option>');
-            $states.append($option);
-          });
-
-          current = "CA";
+        if ($select.hasClass('billing-country-select')) {
+          $currency = $('.currency');
+          $currency.html($select.val()+'D');
         }
-        else {
-          $currency.html('USD');
 
-          $states.find('option').remove();
-
-          $.each(us_states, function(index, item) {
-            $option = $('<option value="' + item[0] + '">' + item[1] + '</option>');
-            $states.append($option);
-          });
-
-          current = "US";
-        }
-        console.log('ha');
         $('select').trigger('update');
       }
     }

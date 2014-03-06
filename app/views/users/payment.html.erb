@@ -156,10 +156,10 @@
           <%= f.text_field :billing_last_name, :placeholder => "Last Name", :required => true, :class => "billing-last" %>
           <%= f.text_field :billing_address_one, :placeholder => "Address Line 1 (ie. Street Address, PO Box)", "data-stripe" => "address_line1", :required => true %>
           <%= f.text_field :billing_address_two, :placeholder => "Address Line 2 (Building name, Unit #, etc)", "data-stripe" => "address_line2", :class => "not-required" %>
-          <%= f.select :billing_country, options_for_select(countries), {}, {"data-stripe" => "address_country", :required => true, :class => "country"} %>
+          <%= f.select :billing_country, options_for_select(user_country(@user)), {}, {"data-stripe" => "address_country", :required => true, :class => "country"} %>
           <div class="form-row city-info">
             <%= f.text_field :billing_city, :placeholder => "City", "data-stripe" => "address_city", :required => true %>
-            <%= f.select :billing_state, ca_provinces, {}, {"data-stripe" => "address_state", :required => true, :class => "state-select" } %>
+            <%= f.select :billing_state, provinces_for_user(@user), {}, {"data-stripe" => "address_state", :required => true, :class => "state-select" } %>
             <%= f.text_field :billing_zipcode, :placeholder => "Postal/Zip Code", "data-stripe" => "address_zip", :required => true %>
           </div>
           <%= f.text_field :billing_phone, :placeholder => "Phone", :required => true %>
@@ -257,10 +257,10 @@
               <%= f.text_field :shipping_last_name, :placeholder => "Last Name", :required => true %>
               <%= f.text_field :shipping_address_one, :placeholder => "Address Line 1 (ie. Street Address, PO Box)", :required => true %>
               <%= f.text_field :shipping_address_two, :placeholder => "Address Line 2 (Building name, Unit #, etc)", :class => "not-required" %>
-              <%= f.select :shipping_country, options_for_select(countries), {}, {:class => "country"} %>
+              <%= f.select :shipping_country, options_for_select(countries), {}, {:class => "country shipping-country", "data-states" => "shipping-state-select"} %>
               <div class="form-row city-info">
                 <%= f.text_field :shipping_city, :placeholder => "City", :required => true %>
-                <%= f.select :shipping_state, ca_provinces, {}, :class => "state-select" %>
+                <%= f.select :shipping_state, ca_provinces, {}, {:class => "state-select shipping-state shipping-state-select"} %>
                 <%= f.text_field :shipping_zipcode, :placeholder => "Postal/Zip Code", :required => true %>
               </div>
               <%= f.text_field :shipping_phone, :placeholder => "Phone" %>
@@ -314,9 +314,102 @@
     $target.show();
   });
 
+  var ca_states =
+    [
+      ['AB', 'AB'],
+      ['BC', 'BC'],
+      ['MB', 'MB'],
+      ['NB', 'NB'],
+      ['NL', 'NL'],
+      ['NS', 'NS'],
+      ['NT', 'NT'],
+      ['NU', 'NU'],
+      ['ON', 'ON'],
+      ['PE', 'PE'],
+      ['SK', 'SK'],
+      ['YT', 'YT']
+    ]
+
+  var us_states =
+    [
+      ['AK', 'AK'],
+      ['AL', 'AL'],
+      ['AR', 'AR'],
+      ['AZ', 'AZ'],
+      ['CA', 'CA'],
+      ['CO', 'CO'],
+      ['CT', 'CT'],
+      ['DC', 'DC'],
+      ['DE', 'DE'],
+      ['FL', 'FL'],
+      ['GA', 'GA'],
+      ['HI', 'HI'],
+      ['IA', 'IA'],
+      ['ID', 'ID'],
+      ['IL', 'IL'],
+      ['IN', 'IN'],
+      ['KS', 'KS'],
+      ['KY', 'KY'],
+      ['LA', 'LA'],
+      ['MA', 'MA'],
+      ['MD', 'MD'],
+      ['ME', 'ME'],
+      ['MI', 'MI'],
+      ['MN', 'MN'],
+      ['MO', 'MO'],
+      ['MS', 'MS'],
+      ['MT', 'MT'],
+      ['NC', 'NC'],
+      ['ND', 'ND'],
+      ['NE', 'NE'],
+      ['NH', 'NH'],
+      ['NJ', 'NJ'],
+      ['NM', 'NM'],
+      ['NV', 'NV'],
+      ['NY', 'NY'],
+      ['OH', 'OH'],
+      ['OK', 'OK'],
+      ['OR', 'OR'],
+      ['PA', 'PA'],
+      ['RI', 'RI'],
+      ['SC', 'SC'],
+      ['SD', 'SD'],
+      ['TN', 'TN'],
+      ['TX', 'TX'],
+      ['UT', 'UT'],
+      ['VA', 'VA'],
+      ['VT', 'VT'],
+      ['WA', 'WA'],
+      ['WI', 'WI'],
+      ['WV', 'WV'],
+      ['WY', 'WY']
+    ]
+
   $(window).load(function() {
     $('.card-number').payment('formatCardNumber');
     $('.cvc').payment('formatCardCVC');
-    $('select').customSelect();
+
+    $('select').customSelect({
+      changed: function(select, customSelectSpan, newVal, oldVal) {
+        $select = $(select);
+        if (newVal != oldVal && $select.attr('data-states') != null) {
+          $statesSelect = $('.'+$select.attr('data-states'));
+          var states = select.val() == 'CA' && ca_states || us_states;
+
+          $statesSelect.find('option').remove();
+          $.each(states, function(index, item) {
+            $option = $('<option value="' + item[0] + '">' + item[1] + '</option>');
+            $statesSelect.append($option);
+          });
+
+          if ($select.hasClass('billing-country-select')) {
+            $currency = $('.currency');
+            $currency.html($select.val()+'D');
+          }
+
+          $('select').trigger('update');
+        }
+      }
+    });
   });
 </script>

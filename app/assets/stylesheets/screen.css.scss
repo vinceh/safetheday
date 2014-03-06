@@ -103,6 +103,7 @@ input, select, .customSelect {
   color: #333;
   @include transition-property(background-color, border);
   @include transition-duration(0.3s);
+  background-color: white;
   &[type='text'], &[type='email'], &[type='password'], &.customSelect {
     margin: 0;
     padding: 10px;
@@ -130,6 +131,7 @@ select {
   padding: 9px;
   margin: 0;
   border: 1px solid #ccc;
+
   &:focus, &:hover {
     border: 1px solid #999;
   }
