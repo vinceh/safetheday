@@ -23,7 +23,7 @@
                 <span>monthly delivery</span>
               <% end %>
             </div>
-            <div class="price">$<%= display_fee(@sub.price * @quantity) %>CAD</div>
+            <div class="price">$<%= display_fee(@sub.price * @quantity) %><span class="currency">CAD</span></div>
           </div>
           <div class="line">
             <div class="title">Shipping</div>
@@ -31,7 +31,7 @@
           </div>
           <div class="line total">
             <div class="title">Total</div>
-            <div class="price">$<%= display_fee(@sub.price * @quantity) %>CAD</div>
+            <div class="price">$<%= display_fee(@sub.price * @quantity) %><span class="currency">CAD</span></div>
           </div>
           <div class="note">
             Applicable taxes will be applied to all orders.
@@ -174,10 +174,10 @@
   <%= f.text_field :billing_last_name, :placeholder => "Last Name", :required => true, :class => "billing-last" %>
   <%= f.text_field :billing_address_one, :placeholder => "Address Line 1 (ie. Street Address, PO Box)", "data-stripe" => "address_line1", :required => true %>
   <%= f.text_field :billing_address_two, :placeholder => "Address Line 2 (Building name, Unit #, etc)", "data-stripe" => "address_line2 ", :class => "not-required" %>
-  <%= f.select :billing_country, options_for_select(countries), {}, {"data-stripe" => "address_country", :required => true, :class => "country"} %>
+  <%= f.select :billing_country, options_for_select(countries), {}, {"data-stripe" => "address_country", :required => true, :class => "country billing-country-select"} %>
   <div class="form-row city-info">
     <%= f.text_field :billing_city, :placeholder => "City", "data-stripe" => "address_city", :required => true %>
-    <%= f.select :billing_state, options_for_select(ca_provinces), {}, {"data-stripe" => "address_state", :required => true, :class => "state-select"} %>
+    <%= f.select :billing_state, options_for_select(ca_provinces), {}, {"data-stripe" => "address_state", :required => true, :class => "state-select billing-state-select"} %>
     <%= f.text_field :billing_zipcode, :placeholder => "Postal/Zip Code", "data-stripe" => "address_zip", :required => true %>
   </div>
   <%= f.text_field :billing_phone, :placeholder => "Phone", :required => true %>
@@ -228,7 +228,115 @@
     $('.cvc').payment('formatCardCVC');
   });
 
-  $('select').customSelect();
+  var ca_states =
+    [
+      ['AB', 'AB'],
+      ['BC', 'BC'],
+      ['MB', 'MB'],
+      ['NB', 'NB'],
+      ['NL', 'NL'],
+      ['NS', 'NS'],
+      ['NT', 'NT'],
+      ['NU', 'NU'],
+      ['ON', 'ON'],
+      ['PE', 'PE'],
+      ['SK', 'SK'],
+      ['YT', 'YT']
+    ]
+
+  var us_states =
+    [
+      ['AK', 'AK'],
+      ['AL', 'AL'],
+      ['AR', 'AR'],
+      ['AZ', 'AZ'],
+      ['CA', 'CA'],
+      ['CO', 'CO'],
+      ['CT', 'CT'],
+      ['DC', 'DC'],
+      ['DE', 'DE'],
+      ['FL', 'FL'],
+      ['GA', 'GA'],
+      ['HI', 'HI'],
+      ['IA', 'IA'],
+      ['ID', 'ID'],
+      ['IL', 'IL'],
+      ['IN', 'IN'],
+      ['KS', 'KS'],
+      ['KY', 'KY'],
+      ['LA', 'LA'],
+      ['MA', 'MA'],
+      ['MD', 'MD'],
+      ['ME', 'ME'],
+      ['MI', 'MI'],
+      ['MN', 'MN'],
+      ['MO', 'MO'],
+      ['MS', 'MS'],
+      ['MT', 'MT'],
+      ['NC', 'NC'],
+      ['ND', 'ND'],
+      ['NE', 'NE'],
+      ['NH', 'NH'],
+      ['NJ', 'NJ'],
+      ['NM', 'NM'],
+      ['NV', 'NV'],
+      ['NY', 'NY'],
+      ['OH', 'OH'],
+      ['OK', 'OK'],
+      ['OR', 'OR'],
+      ['PA', 'PA'],
+      ['RI', 'RI'],
+      ['SC', 'SC'],
+      ['SD', 'SD'],
+      ['TN', 'TN'],
+      ['TX', 'TX'],
+      ['UT', 'UT'],
+      ['VA', 'VA'],
+      ['VT', 'VT'],
+      ['WA', 'WA'],
+      ['WI', 'WI'],
+      ['WV', 'WV'],
+      ['WY', 'WY']
+    ]
+
+  var current = "CA";
+
+  $('select').customSelect({
+    changed: function(select) {
+      $select = $(select);
+      if ($select.hasClass('billing-country-select') && select.val() != current) {
+        $currency = $('.currency');
+        $states = $('.billing-state-select');
+
+        if (select.val() == 'CA') {
+          $currency.html('CAD');
+
+          $states.find('option').remove();
+
+          $.each(ca_states, function(index, item) {
+            $option = $('<option value="' + item[0] + '">' + item[1] + '</option>');
+            $states.append($option);
+          });
+
+          current = "CA";
+        }
+        else {
+          $currency.html('USD');
+
+          $states.find('option').remove();
+
+          $.each(us_states, function(index, item) {
+            $option = $('<option value="' + item[0] + '">' + item[1] + '</option>');
+            $states.append($option);
+          });
+
+          current = "US";
+        }
+        console.log('ha');
+        $('select').trigger('update');
+      }
+    }
+  });
 </script>
 
 <% content_for :head do %>

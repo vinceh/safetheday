@@ -28,7 +28,7 @@ class User < ActiveRecord::Base
     self.subscription = subscription
 
     begin
-      if shipping_country == "CA"
+      if billing_country == "CA"
         stripe_plan = self.subscription.stripe + "_ca"
       else
         stripe_plan = self.subscription.stripe + "_us"
@@ -39,14 +39,26 @@ class User < ActiveRecord::Base
       tax = (tax * (1-discount[1].to_f/100)).round
       tax = tax * quantity
 
-      customer = Stripe::Customer.create(
-        :card  => stripe_token,
-        :plan => stripe_plan,
-        :email => self.email,
-        :account_balance => tax,
-        :coupon => coupon_id,
-        :quantity => quantity
-      )
+      if billing_country == "CA"
+        customer = Stripe::Customer.create(
+          :card  => stripe_token,
+          :plan => stripe_plan,
+          :email => self.email,
+          :account_balance => tax,
+          :coupon => coupon_id,
+          :quantity => quantity
+        )
+      else
+        customer = Stripe::Customer.create(
+          :card  => stripe_token,
+          :plan => stripe_plan,
+          :email => self.email,
+          :coupon => coupon_id,
+          :quantity => quantity
+        )
+      end
+
+
 
       self.stripe_customer_id = customer.id
       self.plan_ending_date = Time.at(customer.subscriptions.data[0].current_period_end)
