@@ -24,14 +24,15 @@ class AdminsController < ApplicationController
 
     # Setting the titles
     titles = sheet.row(0)
-    titles.push("First Name")
-    titles.push("Last Name")
-    titles.push("Address Line 1")
-    titles.push("Address Line 2")
+    titles.push("FirstName")
+    titles.push("LastName")
+    titles.push("Address1")
+    titles.push("Address2")
     titles.push("City")
-    titles.push("Province")
-    titles.push("Country")
-    titles.push("Postal Code")
+    titles.push("State")
+    titles.push("PostalCode")
+    titles.push("Country/Region")
+
 
     # Write the data
     x = 1
@@ -48,8 +49,8 @@ class AdminsController < ApplicationController
         row.push(invoice.user.billing_address_two)
         row.push(invoice.user.billing_city)
         row.push(invoice.user.billing_state)
-        row.push(invoice.user.billing_country)
         row.push(invoice.user.billing_zipcode)
+        row.push(friendly_country(invoice.user.billing_country))
       else
         row.push(invoice.user.shipping_first_name)
         row.push(invoice.user.shipping_last_name)
@@ -57,8 +58,8 @@ class AdminsController < ApplicationController
         row.push(invoice.user.shipping_address_two)
         row.push(invoice.user.shipping_city)
         row.push(invoice.user.shipping_state)
-        row.push(invoice.user.shipping_country)
         row.push(invoice.user.shipping_zipcode)
+        row.push(friendly_country(invoice.user.shipping_country))
       end
 
       x = x + 1
@@ -105,5 +106,16 @@ class AdminsController < ApplicationController
 
   def users
     @users = User.where(inactive: false).all
+  end
+
+  private
+
+  def friendly_country(shorthand)
+    case shorthand
+      when "CA"
+        return "Canada"
+      when "US"
+        return "United States"
+    end
   end
 end
