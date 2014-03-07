@@ -20,6 +20,7 @@
     <table>
       <tr>
         <th>Nane</th>
+        <th>Email</th>
         <th>Country</th>
         <th>Province/State</th>
         <th>Current Subscription</th>
@@ -27,6 +28,7 @@
       <% @users.each do |u| %>
         <tr>
           <td><%= u.billing_first_name + " " + u.billing_last_name %></td>
+          <td><%= u.email %></td>
           <td><%= u.billing_country %></td>
           <td><%= u.billing_state %></td>
           <td><%= u.subscription.name %></td>
