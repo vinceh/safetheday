@@ -99,7 +99,7 @@ class User < ActiveRecord::Base
     self.subscription = sub
 
     begin
-      if shipping_country == "CA"
+      if billing_country == "CA"
         stripe_plan = self.subscription.stripe + "_ca"
       else
         stripe_plan = self.subscription.stripe + "_us"
@@ -200,7 +200,7 @@ class User < ActiveRecord::Base
     customer = stripe_object
 
     if !customer.discount
-      if self.shipping_country == "CA"
+      if self.billing_country == "CA"
         coupon = "free_month_ca"
       else
         coupon = "free_month_US"
