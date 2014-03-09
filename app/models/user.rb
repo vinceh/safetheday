@@ -203,7 +203,7 @@ class User < ActiveRecord::Base
       if self.billing_country == "CA"
         coupon = "free_month_ca"
       else
-        coupon = "free_month_US"
+        coupon = "free_month_us"
       end
 
       customer.coupon = coupon
