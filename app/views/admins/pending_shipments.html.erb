@@ -17,24 +17,26 @@
           <a class="mark-all">check all</a>
         </th>
       </tr>
-      <% @invoices.each do |i| %>
-        <tr class="pending-item" data-id="<%= i.id %>">
-          <td><%= i.sub_type %> <%= i.free_month && "- FREE MONTH" || "" %></td>
-          <td><%= "#{i.user.billing_first_name} #{i.user.billing_last_name}" %> </td>
-          <td><%= (Time.now.to_date - i.created_at.to_date).to_i %></td>
-          <td><%= (i.updated_at.to_date - i.created_at.to_date).to_i && "Yes" || "No" %></td>
-          <td>
-            <%= link_to admin_mark_path(i.id), :method => "POST", :class => "btn mark-ship" do %>
-              Mark Shipped
-            <% end %>
-          </td>
-          <td>
-            <%= i.created_at.in_time_zone("Pacific Time (US & Canada)").strftime("%m/%d/%y %H:%M")%>
-          </td>
-          <td>
-            <input type="checkbox">
-          </td>
-        </tr>
+      <% @pending.each do |p| %>
+        <% if (Time.now.to_date - p.ship_start_date.to_date).to_i >= 0 %>
+          <tr class="pending-item" data-id="<%= p.id %>">
+            <td><%= p.invoice.sub_type %> <%= p.invoice.free_month && "- FREE MONTH" || "" %></td>
+            <td><%= "#{p.invoice.user.billing_first_name} #{p.invoice.user.billing_last_name}" %> </td>
+            <td><%= (Time.now.to_date - p.ship_start_date.to_date).to_i %></td>
+            <td><%= (p.invoice.updated_at.to_date - p.invoice.created_at.to_date).to_i && "Yes" || "No" %></td>
+            <td>
+              <%= link_to admin_mark_path(p.id), :method => "POST", :class => "btn mark-ship" do %>
+                Mark Shipped
+              <% end %>
+            </td>
+            <td>
+              <%= p.invoice.created_at.in_time_zone("Pacific Time (US & Canada)").strftime("%m/%d/%y %H:%M")%>
+            </td>
+            <td>
+              <input type="checkbox">
+            </td>
+          </tr>
+        <% end %>
       <% end %>
     </table>
   </div>

@@ -38,6 +38,8 @@ class EventsController < ApplicationController
 
           invoice.save!
 
+          PendingShipment.create_from_invoice(invoice)
+
           if response.discount && response.discount.coupon.percent_off == 100
             invoice.free_month = true
             invoice.save!

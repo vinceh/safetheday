@@ -9,6 +9,31 @@ task :admin => :environment do
   puts "Done"
 end
 
+task :convert_shipments => :environment do
+  puts "Converting current invoices to shipments..."
+
+  invoices = Invoice.where("amount > 0 or free_month = true")
+
+  invoices.each do |i|
+    p = PendingShipment.new
+    p.invoice = i
+    p.shipped_on = i.shipped_on
+    p.ship_start_date = i.created_at
+    p.save!
+
+    invoice = Stripe::Invoice.retrieve(i.stripe_invoice_id)
+    if invoice.lines.data[0].quantity == 2
+      p = PendingShipment.new
+      p.invoice = i
+      p.shipped_on = i.shipped_on
+      p.ship_start_date = i.created_at + 15.days
+      p.save!
+    end
+  end
+
+  puts "Done"
+end
+
 task :clean_tables => :environment do
   puts "Cleaning out Taxes table..."
   Tax.destroy_all

@@ -14,11 +14,11 @@
         <th></th>
         <th></th>
       </tr>
-      <% @invoices.each do |i| %>
+      <% @shipped.each do |s| %>
         <tr>
-          <td><%= i.subscription_id %> <%= i.free_month && "- FREE MONTH" || "" %></td>
-          <td><%= i.user.billing_first_name + " " + i.user.billing_last_name %></td>
-          <td><%= i.shipped_on.strftime("%m/%d/%y")%></td>
+          <td><%= s.invoice.subscription_id %> <%= s.invoice.free_month && "- FREE MONTH" || "" %></td>
+          <td><%= s.invoice.user.billing_first_name + " " + s.invoice.user.billing_last_name %></td>
+          <td><%= s.shipped_on.strftime("%m/%d/%y")%></td>
           <td></td>
           <td></td>
           <td></td>

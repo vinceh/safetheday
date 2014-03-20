@@ -6,12 +6,11 @@ class AdminsController < ApplicationController
   before_filter :authenticate_admin!
 
   def pending_shipments
-    @invoices = Invoice.where(:shipped_on => nil).where("amount > 0 or free_month = true").order("created_at ASC")
+    @pending = PendingShipment.where(:shipped_on => nil)
   end
 
   def shipped_subscription
-    @invoices = Invoice.where("invoices.shipped_on IS NOT NULL").where("amount > 0").order("shipped_on DESC").all
-    @invoices.concat(Invoice.where("invoices.shipped_on IS NOT NULL").where(:free_month => true).order("created_at DESC").all)
+    @shipped = PendingShipment.where("pending_shipments.shipped_on IS NOT NULL")
   end
 
   def get_labels
@@ -74,8 +73,8 @@ class AdminsController < ApplicationController
 
   def bulk_mark
     params[:items].split(",").each do |id|
-      invoice = Invoice.find(id.to_i)
-      invoice.mark_shipped
+      shipment = PendingShipment.find(id.to_i)
+      shipment.mark_shipped
     end
 
     flash[:notice] = "Shipments Marked Successfully"
@@ -84,8 +83,8 @@ class AdminsController < ApplicationController
   end
 
   def mark_shipped
-    invoice = Invoice.find(params[:id])
-    invoice.mark_shipped
+    shipment = PendingShipment.find(params[:id])
+    shipment.mark_shipped
 
     flash[:notice] = "Shipment Marked Successfully"
 

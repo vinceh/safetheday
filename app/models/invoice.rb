@@ -9,11 +9,6 @@ class Invoice < ActiveRecord::Base
     self.currency.upcase!
   end
 
-  def mark_shipped
-    self.shipped_on = Time.now
-    save!
-  end
-
   def sub_type
     if self.subscription_id.include?("reg")
       return "The Wingman"
