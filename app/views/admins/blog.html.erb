@@ -1,0 +1,24 @@
+<%= render "admin_side", :current => "blog" %>
+
+<div class="contenter blog-wrap">
+  <div class="section">
+    <h1>Blog</h1>
+    <%= link_to "New Post", new_post_path, :class => "btn new_blog_link" %>
+  </div>
+  <div class="section">
+    <table>
+      <tr>
+        <th>Title</th>
+        <th>Date Created</th>
+        <th>Actions</th>
+      </tr>
+      <% @posts.each do |p| %>
+        <tr>
+          <td><%= p.title %></td>
+          <td><%= p.created_at.strftime("%b %d, %Y") %></td>
+          <td></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

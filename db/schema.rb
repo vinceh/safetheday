@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140222003539) do
+ActiveRecord::Schema.define(:version => 20140319205818) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",               :default => "", :null => false
@@ -48,6 +48,15 @@ ActiveRecord::Schema.define(:version => 20140222003539) do
     t.string   "subscription_id"
     t.string   "currency"
     t.boolean  "free_month",        :default => false
+  end
+
+  create_table "posts", :force => true do |t|
+    t.text     "body"
+    t.string   "title"
+    t.string   "hero_image"
+    t.string   "thumbnail_image"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
   create_table "subscriptions", :force => true do |t|

@@ -7,6 +7,9 @@ Safe::Application.routes.draw do
     get 'taxes', :to => 'admins#taxes', :as => :admin_taxes
     get 'invoices', :to => 'admins#invoices', :as => :admin_invoices
     get 'users', :to => 'admins#users', :as => :admin_users
+    get 'blog', :to => 'admins#blog', :as => :admin_blog
+    get 'post/new', :to => 'admins#new_post', :as => :new_post
+    post 'post/new', :to => 'admins#new_post', :as => :create_post
 
     post 'mark-shipped/:id', :to => 'admins#mark_shipped', :as => :admin_mark
     post 'bulk-mark', :to => 'admins#bulk_mark', :as => :bulk_mark

@@ -119,6 +119,7 @@ input, select, .customSelect {
 
 textarea {
   border: 1px solid #ccc;
+  outline: none;
   &:focus, &:hover {
     border: 1px solid #999;
   }

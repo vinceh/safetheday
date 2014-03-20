@@ -108,6 +108,14 @@ class AdminsController < ApplicationController
     @users = User.where(inactive: false).all
   end
 
+  def blog
+    @posts = Post.all
+  end
+
+  def new_post
+    @post = Post.new
+  end
+
   private
 
   def friendly_country(shorthand)

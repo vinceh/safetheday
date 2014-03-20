@@ -1,0 +1,25 @@
+<div class="new-post-wrap">
+  <h1>New Blog Post</h1>
+
+  <div class="new-wrap">
+    <div class="editor-wrap">
+      <%= form_for @post, url: create_post_path do |f| %>
+        <%= f.text_field :title, :placeholder => "Title" %>
+        <%= f.text_field :hero_image, :placeholder => "Hero Image URL" %>
+        <%= f.text_field :thumbnail_image, :placeholder => "Thumbnail Image URL" %>
+        <%= f.text_area :body %>
+        <%= f.submit "Create" %>
+      <% end %>
+    </div>
+    <div class="preview-wrap">
+      <div class="content"></div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $('textarea').on('input propertychange', function() {
+    $('.content').html($(this).val());
+  });
+</script>
+
