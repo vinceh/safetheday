@@ -38,7 +38,7 @@ class AdminsController < ApplicationController
     params[:items].split(",").each do |id|
       row = sheet.row(x)
 
-      invoice = Invoice.find(id.to_i)
+      invoice = PendingShipment.find(id.to_i).invoice
       user = invoice.user
 
       if user.shipping_same
