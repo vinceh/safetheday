@@ -105,6 +105,7 @@ class AdminsController < ApplicationController
 
   def users
     @users = User.where(inactive: false).all
+    @inactive = User.where(inactive: true).all
   end
 
   def blog

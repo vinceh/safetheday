@@ -36,4 +36,20 @@
       <% end %>
     </table>
   </div>
+  <div class="section">
+    <table>
+      <tr>
+        <th>Inactive Emails</th>
+        <th>Date Joined</th>
+        <th>Via</th>
+      </tr>
+      <% @inactive.each do |u| %>
+        <tr>
+          <td><%= u.email %></td>
+          <td><%= u.created_at.strftime("%b %d, %Y") %></td>
+          <td><%= u.provider || "Website Signup" %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
 </div>
